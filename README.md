@@ -36,7 +36,7 @@ Easily copy shading nodes from [Maya](http://www.autodesk.com/products/maya/over
 
 ### Installation
 1. Quit Maya
-2. Clone maya2katana repository and place it to:
+2. Clone maya2katana repository (or download zip, extract and rename directory from "maya2katana-master" to "maya2katana") and place it to:
 ```
 Windows: \Users\<username>\Documents\maya\scripts
 Linux: ~/maya/scripts
