@@ -1,0 +1,151 @@
+<node baseType="ArnoldShadingNode" edited="true" name="alRemapColor" selected="true" type="ArnoldShadingNode">
+  <port name="input" type="in">
+    <metadata>
+      <entry key="label" value="Input"/>
+    </metadata>
+  </port>
+  <port name="input.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="input.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="input.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="gamma" type="in">
+    <metadata>
+      <entry key="label" value="Gamma"/>
+    </metadata>
+  </port>
+  <port name="saturation" type="in">
+    <metadata>
+      <entry key="label" value="Saturation"/>
+    </metadata>
+  </port>
+  <port name="hueOffset" type="in">
+    <metadata>
+      <entry key="label" value="Hue offset"/>
+    </metadata>
+  </port>
+  <port name="contrast" type="in">
+    <metadata>
+      <entry key="page" value="Contrast"/>
+      <entry key="label" value="Contrast"/>
+    </metadata>
+  </port>
+  <port name="contrastPivot" type="in">
+    <metadata>
+      <entry key="page" value="Contrast"/>
+      <entry key="label" value="Pivot"/>
+    </metadata>
+  </port>
+  <port name="gain" type="in">
+    <metadata>
+      <entry key="label" value="Gain"/>
+    </metadata>
+  </port>
+  <port name="exposure" type="in">
+    <metadata>
+      <entry key="label" value="Exposure"/>
+    </metadata>
+  </port>
+  <port name="mask" type="in">
+    <metadata>
+      <entry key="label" value="Mask"/>
+    </metadata>
+  </port>
+  <port name="out" type="out">
+    <tags>
+      <tag name="rgb"/>
+    </tags>
+  </port>
+  <port name="out.r" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.g" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.b" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="ArnoldShadingNode">
+    <string_parameter name="name" value="ArnoldShadingNode"/>
+    <string_parameter name="nodeType" value="alRemapColor"/>
+    <string_parameter name="__lastValue" value="p2iodgcktrwq5lxdxqrqja5pgueflx73q6eoivakl7vr6bmps7iuFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="input">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0.18"/>
+          <number_parameter name="i1" value="0.18"/>
+          <number_parameter name="i2" value="0.18"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="gamma">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="saturation">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="hueOffset">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="contrast">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="contrastPivot">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.18"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="gain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="exposure">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="mask">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>

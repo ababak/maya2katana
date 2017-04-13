@@ -1,0 +1,56 @@
+<node baseType="ArnoldShadingNode" edited="true" name="luminance" selected="true" type="ArnoldShadingNode">
+  <port name="input" type="in"/>
+  <port name="input.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="input.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="input.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="mode" type="in"/>
+  <port name="out" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="luminance">
+    <string_parameter name="name" value="luminance"/>
+    <string_parameter name="nodeType" value="rgb_to_float"/>
+    <string_parameter name="__lastValue" value="aogfzygz2365uegjtgrbvclvu4snvq75a37qclk4qcyi7tbue464False"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="input">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="mode">
+        <number_parameter name="enable" value="1"/>
+        <string_parameter name="value" value="4"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>

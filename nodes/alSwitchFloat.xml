@@ -1,0 +1,125 @@
+<node baseType="ArnoldShadingNode" edited="true" name="alSwitchFloat" selected="true" type="ArnoldShadingNode">
+  <port name="inputA" type="in">
+    <metadata>
+      <entry key="label" value="InputA"/>
+    </metadata>
+  </port>
+  <port name="inputB" type="in">
+    <metadata>
+      <entry key="label" value="InputB"/>
+    </metadata>
+  </port>
+  <port name="inputC" type="in">
+    <metadata>
+      <entry key="label" value="InputC"/>
+    </metadata>
+  </port>
+  <port name="inputD" type="in">
+    <metadata>
+      <entry key="label" value="InputD"/>
+    </metadata>
+  </port>
+  <port name="inputE" type="in">
+    <metadata>
+      <entry key="label" value="InputE"/>
+    </metadata>
+  </port>
+  <port name="inputF" type="in">
+    <metadata>
+      <entry key="label" value="InputF"/>
+    </metadata>
+  </port>
+  <port name="inputG" type="in">
+    <metadata>
+      <entry key="label" value="InputG"/>
+    </metadata>
+  </port>
+  <port name="inputH" type="in">
+    <metadata>
+      <entry key="label" value="InputH"/>
+    </metadata>
+  </port>
+  <port name="mix" type="in">
+    <metadata>
+      <entry key="label" value="mix"/>
+    </metadata>
+  </port>
+  <port name="threshold" type="in">
+    <metadata>
+      <entry key="label" value="threshold"/>
+    </metadata>
+  </port>
+  <port name="out" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="alSwitchFloat">
+    <string_parameter name="name" value="alSwitchFloat"/>
+    <string_parameter name="nodeType" value="alSwitchFloat"/>
+    <string_parameter name="__lastValue" value="uubwipionx6clhinbdlibtsw2q3rqzbobkbw2bqv5wx5bjebwbc4False"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="inputA">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="inputB">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="inputC">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.15"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="inputD">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.3"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="inputE">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.45"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="inputF">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.6"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="inputG">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.75"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="inputH">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.9"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="mix">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="threshold">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>

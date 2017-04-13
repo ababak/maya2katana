@@ -1,0 +1,53 @@
+<node baseType="ArnoldShadingNode" edited="true" name="facing_ratio" selected="true" type="ArnoldShadingNode">
+  <port name="bias" type="in"/>
+  <port name="gain" type="in"/>
+  <port name="linear" type="in">
+    <tags>
+      <tag name="byte or int or uint or boolean"/>
+    </tags>
+  </port>
+  <port name="invert" type="in"/>
+  <port name="out" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="facing_ratio">
+    <string_parameter name="name" value="facing_ratio"/>
+    <string_parameter name="nodeType" value="facing_ratio"/>
+    <string_parameter name="__lastValue" value="wtakmog7fexotvt2stz7rwvlham5eo2vfzjl3oulvn3bi5kurwwqFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="bias">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="gain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="invert">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="linear">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>

@@ -1,0 +1,383 @@
+<node baseType="ArnoldShadingNode" edited="true" name="mix" selected="true" type="ArnoldShadingNode">
+  <port name="input1" type="in"/>
+  <port name="input1.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="input1.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="input1.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="input1.a" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="input2" type="in"/>
+  <port name="input2.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="input2.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="input2.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="input2.a" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="mix" type="in"/>
+  <port name="aov_direct_diffuse" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_direct_specular" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_indirect_diffuse" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_indirect_specular" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_reflection" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_refraction" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_refraction_opacity" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_emission" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_sss" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_volume" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_volume_opacity" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_custom1" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_custom2" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_custom3" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_custom4" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_custom5" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_custom6" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_custom7" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_custom8" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_custom9" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_custom10" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_custom11" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_custom12" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_custom13" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_custom14" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_custom15" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_custom16" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="out" type="out">
+    <tags>
+      <tag name="rgba"/>
+    </tags>
+  </port>
+  <port name="out.r" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.g" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.b" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.a" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="mix">
+    <string_parameter name="name" value="mix"/>
+    <string_parameter name="nodeType" value="mix"/>
+    <string_parameter name="__lastValue" value="uskntfupdtun2jn4zvp2s6tbyymeeqre6wewkm36iewhu4ucm4wyFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="input1">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="4" tupleSize="4">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+          <number_parameter name="i3" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="input2">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="4" tupleSize="4">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+          <number_parameter name="i3" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="mix">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_direct_diffuse">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="direct_diffuse"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_direct_specular">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="direct_specular"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_indirect_diffuse">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="indirect_diffuse"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_indirect_specular">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="indirect_specular"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_reflection">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="reflection"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_refraction">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="refraction"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_refraction_opacity">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="refraction_opacity"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_emission">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="emission"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_sss">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="sss"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_volume">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="volume"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_volume_opacity">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="volume_opacity"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_custom1">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_custom2">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_custom3">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_custom4">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_custom5">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_custom6">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_custom7">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_custom8">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_custom9">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_custom10">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_custom11">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_custom12">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_custom13">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_custom14">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_custom15">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_custom16">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>

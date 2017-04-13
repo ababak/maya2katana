@@ -1,0 +1,150 @@
+<node baseType="ArnoldShadingNode" edited="true" name="space_transform" selected="true" type="ArnoldShadingNode">
+  <port name="input" type="in"/>
+  <port name="input.x" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="input.y" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="input.z" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="type" type="in"/>
+  <port name="order" type="in"/>
+  <port name="invert_x" type="in"/>
+  <port name="invert_y" type="in"/>
+  <port name="invert_z" type="in"/>
+  <port name="color_to_signed" type="in"/>
+  <port name="from" type="in"/>
+  <port name="to" type="in"/>
+  <port name="tangent" type="in"/>
+  <port name="tangent.x" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="tangent.y" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="tangent.z" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="scale" type="in"/>
+  <port name="set_normal" type="in"/>
+  <port name="out" type="out">
+    <tags>
+      <tag name="vector"/>
+    </tags>
+  </port>
+  <port name="out.x" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.y" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.z" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="space_transform">
+    <string_parameter name="name" value="space_transform"/>
+    <string_parameter name="nodeType" value="space_transform"/>
+    <string_parameter name="__lastValue" value="zbj245cyywg4t4lgq4vq5l6eea3mnijfi4wtg2caoydne6tubw5iFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="input">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="type">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="point"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="order">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="XYZ"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="invert_x">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="invert_y">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="invert_z">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="color_to_signed">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="from">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="world"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="to">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="world"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="tangent">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="scale">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="set_normal">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>

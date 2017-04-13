@@ -1,0 +1,102 @@
+<node baseType="ArnoldShadingNode" edited="true" name="two_sided" selected="true" type="ArnoldShadingNode">
+  <port name="front" type="in"/>
+  <port name="front.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="front.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="front.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="front.a" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="back" type="in"/>
+  <port name="back.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="back.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="back.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="back.a" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="out" type="out">
+    <tags>
+      <tag name="rgb"/>
+    </tags>
+  </port>
+  <port name="out.r" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.g" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.b" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="two_sided">
+    <string_parameter name="name" value="two_sided"/>
+    <string_parameter name="nodeType" value="two_sided"/>
+    <string_parameter name="__lastValue" value="hb3xldzxfvw4mkgvnsselxfpiuvcgiholmr5ewx4gihfy2jwlqdyFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="front">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="4" tupleSize="4">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+          <number_parameter name="i3" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="back">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="4" tupleSize="4">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+          <number_parameter name="i3" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>

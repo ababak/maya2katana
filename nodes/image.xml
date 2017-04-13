@@ -1,0 +1,317 @@
+<node baseType="ArnoldShadingNode" edited="true" name="image" selected="true" type="ArnoldShadingNode">
+  <port name="filename" type="in"/>
+  <port name="filter" type="in">
+    <metadata>
+      <entry key="page" value="Sampling"/>
+    </metadata>
+  </port>
+  <port name="mipmap_bias" type="in">
+    <metadata>
+      <entry key="page" value="Sampling"/>
+    </metadata>
+  </port>
+  <port name="single_channel" type="in">
+    <metadata>
+      <entry key="page" value="Channels"/>
+    </metadata>
+  </port>
+  <port name="start_channel" type="in">
+    <metadata>
+      <entry key="page" value="Channels"/>
+    </metadata>
+  </port>
+  <port name="swrap" type="in">
+    <metadata>
+      <entry key="page" value="Coordinates"/>
+    </metadata>
+  </port>
+  <port name="twrap" type="in">
+    <metadata>
+      <entry key="page" value="Coordinates"/>
+    </metadata>
+  </port>
+  <port name="sscale" type="in">
+    <metadata>
+      <entry key="page" value="Coordinates"/>
+    </metadata>
+  </port>
+  <port name="tscale" type="in">
+    <metadata>
+      <entry key="page" value="Coordinates"/>
+    </metadata>
+  </port>
+  <port name="sflip" type="in">
+    <metadata>
+      <entry key="page" value="Coordinates"/>
+    </metadata>
+  </port>
+  <port name="tflip" type="in">
+    <metadata>
+      <entry key="page" value="Coordinates"/>
+    </metadata>
+  </port>
+  <port name="soffset" type="in">
+    <metadata>
+      <entry key="page" value="Coordinates"/>
+    </metadata>
+  </port>
+  <port name="toffset" type="in">
+    <metadata>
+      <entry key="page" value="Coordinates"/>
+    </metadata>
+  </port>
+  <port name="swap_st" type="in">
+    <metadata>
+      <entry key="page" value="Coordinates"/>
+    </metadata>
+  </port>
+  <port name="uvcoords" type="in">
+    <metadata>
+      <entry key="page" value="Coordinates"/>
+    </metadata>
+  </port>
+  <port name="uvcoords.x" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="uvcoords.y" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="uvset" type="in">
+    <metadata>
+      <entry key="page" value="Coordinates"/>
+    </metadata>
+  </port>
+  <port name="multiply" type="in">
+    <metadata>
+      <entry key="page" value="Output"/>
+    </metadata>
+  </port>
+  <port name="multiply.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="multiply.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="multiply.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="offset" type="in">
+    <metadata>
+      <entry key="page" value="Output"/>
+    </metadata>
+  </port>
+  <port name="offset.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="offset.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="offset.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="ignore_missing_tiles" type="in">
+    <metadata>
+      <entry key="page" value="Tags"/>
+    </metadata>
+  </port>
+  <port name="missing_tile_color" type="in">
+    <metadata>
+      <entry key="page" value="Tags"/>
+    </metadata>
+  </port>
+  <port name="missing_tile_color.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="missing_tile_color.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="missing_tile_color.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="missing_tile_color.a" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="out" type="out">
+    <tags>
+      <tag name="rgba"/>
+    </tags>
+  </port>
+  <port name="out.r" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.g" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.b" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.a" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="image">
+    <string_parameter name="name" value="image"/>
+    <string_parameter name="nodeType" value="image"/>
+    <string_parameter name="__lastValue" value="w4g7rzmwupey7sjezd25oggrjeafhoppikoeaslykih5vgz26mzaFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="filename">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="filter">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="smart_bicubic"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="mipmap_bias">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="swrap">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="periodic"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="twrap">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="periodic"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="soffset">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="toffset">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="sscale">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="tscale">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="sflip">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="tflip">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="swap_st">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="uvcoords">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="2" tupleSize="2">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="uvset">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="single_channel">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="start_channel">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="multiply">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="1"/>
+          <number_parameter name="i1" value="1"/>
+          <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="offset">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="ignore_missing_tiles">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="missing_tile_color">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="4" tupleSize="4">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+          <number_parameter name="i3" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>

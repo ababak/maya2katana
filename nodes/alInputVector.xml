@@ -1,0 +1,218 @@
+<node baseType="ArnoldShadingNode" edited="true" name="alInputVector" selected="true" type="ArnoldShadingNode">
+  <port name="input" type="in">
+    <metadata>
+      <entry key="label" value="Input"/>
+    </metadata>
+  </port>
+  <port name="type" type="in">
+    <metadata>
+      <entry key="label" value="Type"/>
+    </metadata>
+  </port>
+  <port name="userName" type="in">
+    <metadata>
+      <entry key="label" value="User name"/>
+    </metadata>
+  </port>
+  <port name="vector" type="in">
+    <metadata>
+      <entry key="label" value="Custom"/>
+    </metadata>
+  </port>
+  <port name="vector.x" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="vector.y" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="vector.z" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="matrix" type="in">
+    <metadata>
+      <entry key="page" value="Transform"/>
+      <entry key="label" value="Matrix"/>
+    </metadata>
+  </port>
+  <port name="matrix.i0" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="matrix.i1" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="matrix.i2" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="matrix.i3" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="matrix.i4" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="matrix.i5" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="matrix.i6" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="matrix.i7" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="matrix.i8" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="matrix.i9" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="matrix.i10" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="matrix.i11" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="matrix.i12" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="matrix.i13" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="matrix.i14" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="matrix.i15" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="coordinates" type="in">
+    <metadata>
+      <entry key="page" value="Transform"/>
+      <entry key="label" value="Coordinates"/>
+    </metadata>
+  </port>
+  <port name="out" type="out">
+    <tags>
+      <tag name="vector"/>
+    </tags>
+  </port>
+  <port name="out.x" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.y" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.z" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="alInputVector">
+    <string_parameter name="name" value="alInputVector"/>
+    <string_parameter name="nodeType" value="alInputVector"/>
+    <string_parameter name="__lastValue" value="2nkudvuq5n6gvps27765nzo5q46gtmxmf4jc5elgwmfv7lktddi4False"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="input">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="P"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="userName">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="vector">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="type">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="Point"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="matrix">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="16" tupleSize="4">
+          <number_parameter name="i0" value="1"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+          <number_parameter name="i3" value="0"/>
+          <number_parameter name="i4" value="0"/>
+          <number_parameter name="i5" value="1"/>
+          <number_parameter name="i6" value="0"/>
+          <number_parameter name="i7" value="0"/>
+          <number_parameter name="i8" value="0"/>
+          <number_parameter name="i9" value="0"/>
+          <number_parameter name="i10" value="1"/>
+          <number_parameter name="i11" value="0"/>
+          <number_parameter name="i12" value="0"/>
+          <number_parameter name="i13" value="0"/>
+          <number_parameter name="i14" value="0"/>
+          <number_parameter name="i15" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="coordinates">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="cartesian"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>

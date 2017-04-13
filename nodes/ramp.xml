@@ -1,0 +1,91 @@
+<node baseType="ArnoldShadingNode" edited="true" name="ramp_rgb" selected="true" type="ArnoldShadingNode">
+  <port name="type" type="in"/>
+  <port name="input" type="in"/>
+  <port name="position" type="in"/>
+  <port name="color" type="in"/>
+  <port name="color.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="color.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="color.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="interpolation" type="in"/>
+  <port name="out" type="out">
+    <tags>
+      <tag name="rgb"/>
+    </tags>
+  </port>
+  <port name="out.r" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.g" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.b" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="ramp_rgb">
+    <string_parameter name="name" value="ramp_rgb"/>
+    <string_parameter name="nodeType" value="ramp_rgb"/>
+    <string_parameter name="__lastValue" value="h6aut5hcc3oqpdvnirpymir5qythvcbubl3u5n64wrobolvkwgdqFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="type">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="custom"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="input">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="position">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="isDynamicArray" value="1"/>
+        <numberarray_parameter name="value" size="0" tupleSize="1">
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="color">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="isDynamicArray" value="1"/>
+        <numberarray_parameter name="value" size="0" tupleSize="3">
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="interpolation">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="isDynamicArray" value="1"/>
+        <numberarray_parameter name="value" size="0" tupleSize="1">
+        </numberarray_parameter>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>

@@ -1,0 +1,15 @@
+<node baseType="NetworkMaterial" edited="true" name="NetworkMaterial" selected="true" type="NetworkMaterial" x="-1567.477417" y="-1895.901367">
+  <port name="arnoldSurface" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="arnoldBump" type="in"/>
+  <port name="out" type="out"/>
+  <group_parameter name="NetworkMaterial">
+    <string_parameter name="name" value="NetworkMaterial"/>
+    <string_parameter name="namespace" value=""/>
+    <string_parameter name="addTerminal" value=""/>
+    <stringarray_parameter name="publicInterfaceOrder" size="0" tupleSize="1"/>
+  </group_parameter>
+</node>

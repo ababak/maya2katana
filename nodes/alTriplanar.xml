@@ -1,0 +1,283 @@
+<node baseType="ArnoldShadingNode" edited="true" name="alTriplanar" selected="true" type="ArnoldShadingNode">
+  <port name="input" type="in">
+    <metadata>
+      <entry key="label" value="Background"/>
+    </metadata>
+  </port>
+  <port name="input.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="input.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="input.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="space" type="in">
+    <metadata>
+      <entry key="label" value="Space"/>
+    </metadata>
+  </port>
+  <port name="normal" type="in">
+    <metadata>
+      <entry key="label" value="Normal"/>
+    </metadata>
+  </port>
+  <port name="tiling" type="in">
+    <metadata>
+      <entry key="label" value="Tiling"/>
+    </metadata>
+  </port>
+  <port name="frequency" type="in">
+    <metadata>
+      <entry key="label" value="Frequency"/>
+    </metadata>
+  </port>
+  <port name="texture" type="in">
+    <metadata>
+      <entry key="label" value="Texture"/>
+    </metadata>
+  </port>
+  <port name="blendSoftness" type="in">
+    <metadata>
+      <entry key="page" value="Blending"/>
+      <entry key="label" value="Blend Softness"/>
+    </metadata>
+  </port>
+  <port name="cellSoftness" type="in">
+    <metadata>
+      <entry key="page" value="Blending"/>
+      <entry key="label" value="Cell Softness"/>
+    </metadata>
+  </port>
+  <port name="scalex" type="in">
+    <metadata>
+      <entry key="page" value="Positioning"/>
+      <entry key="label" value="X Scale"/>
+    </metadata>
+  </port>
+  <port name="scaley" type="in">
+    <metadata>
+      <entry key="page" value="Positioning"/>
+      <entry key="label" value="Y Scale"/>
+    </metadata>
+  </port>
+  <port name="scalez" type="in">
+    <metadata>
+      <entry key="page" value="Positioning"/>
+      <entry key="label" value="Z Scale"/>
+    </metadata>
+  </port>
+  <port name="offsetx" type="in">
+    <metadata>
+      <entry key="page" value="Positioning"/>
+      <entry key="label" value="X Offset"/>
+    </metadata>
+  </port>
+  <port name="offsety" type="in">
+    <metadata>
+      <entry key="page" value="Positioning"/>
+      <entry key="label" value="Y Offset"/>
+    </metadata>
+  </port>
+  <port name="offsetz" type="in">
+    <metadata>
+      <entry key="page" value="Positioning"/>
+      <entry key="label" value="Z Offset"/>
+    </metadata>
+  </port>
+  <port name="rotx" type="in">
+    <metadata>
+      <entry key="page" value="Positioning"/>
+      <entry key="label" value="X Rotation"/>
+    </metadata>
+  </port>
+  <port name="roty" type="in">
+    <metadata>
+      <entry key="page" value="Positioning"/>
+      <entry key="label" value="Y Rotation"/>
+    </metadata>
+  </port>
+  <port name="rotz" type="in">
+    <metadata>
+      <entry key="page" value="Positioning"/>
+      <entry key="label" value="Z Rotation"/>
+    </metadata>
+  </port>
+  <port name="rotjitterx" type="in">
+    <metadata>
+      <entry key="page" value="Positioning"/>
+      <entry key="label" value="X Rotation Jitter"/>
+    </metadata>
+  </port>
+  <port name="rotjittery" type="in">
+    <metadata>
+      <entry key="page" value="Positioning"/>
+      <entry key="label" value="Y Rotation Jitter"/>
+    </metadata>
+  </port>
+  <port name="rotjitterz" type="in">
+    <metadata>
+      <entry key="page" value="Positioning"/>
+      <entry key="label" value="Z Rotation Jitter"/>
+    </metadata>
+  </port>
+  <port name="mipMapBias" type="in">
+    <metadata>
+      <entry key="label" value="Mip map bias"/>
+    </metadata>
+  </port>
+  <port name="out" type="out">
+    <tags>
+      <tag name="rgb"/>
+    </tags>
+  </port>
+  <port name="out.r" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.g" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.b" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="alTriplanar">
+    <string_parameter name="name" value="alTriplanar"/>
+    <string_parameter name="nodeType" value="alTriplanar"/>
+    <string_parameter name="__lastValue" value="n7uxdpcxa27rco2zw7z2hhq3sebkqbobnvpnp22rgokcwcbbx4yqFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="input">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="texture">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="space">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="world"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="normal">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="Geometric"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="tiling">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="regular"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="frequency">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="mipMapBias">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="blendSoftness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="cellSoftness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="scalex">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="scaley">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="scalez">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="offsetx">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="offsety">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="offsetz">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="rotx">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="roty">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="rotz">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="rotjitterx">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="rotjittery">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="rotjitterz">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>

@@ -1,0 +1,65 @@
+<node baseType="ArnoldShadingNode" edited="true" name="alCombineFloat" selected="true" type="ArnoldShadingNode">
+  <port name="input1" type="in">
+    <metadata>
+      <entry key="label" value="input1"/>
+    </metadata>
+  </port>
+  <port name="input2" type="in">
+    <metadata>
+      <entry key="label" value="input2"/>
+    </metadata>
+  </port>
+  <port name="input3" type="in">
+    <metadata>
+      <entry key="label" value="input3"/>
+    </metadata>
+  </port>
+  <port name="combineOp" type="in">
+    <metadata>
+      <entry key="label" value="Combine Op"/>
+    </metadata>
+  </port>
+  <port name="out" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="alCombineFloat">
+    <string_parameter name="name" value="alCombineFloat"/>
+    <string_parameter name="nodeType" value="alCombineFloat"/>
+    <string_parameter name="__lastValue" value="y2w4qnlzzwatkpeargxlaie6pu6lbz4mghounek6dtgd4tvcw52yFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="input1">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="input2">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="input3">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="combineOp">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="multiply 1*2"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>

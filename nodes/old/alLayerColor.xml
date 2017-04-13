@@ -1,0 +1,432 @@
+<node baseType="ArnoldShadingNode" edited="true" name="alLayerColor" selected="true" type="ArnoldShadingNode">
+  <port name="layer1" type="in">
+    <metadata>
+      <entry key="label" value="Layer 1"/>
+    </metadata>
+  </port>
+  <port name="layer1.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer1.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer1.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer1a" type="in">
+    <metadata>
+      <entry key="label" value="Layer 1 Alpha"/>
+    </metadata>
+  </port>
+  <port name="layer1blend" type="in">
+    <metadata>
+      <entry key="label" value="Mode"/>
+    </metadata>
+  </port>
+  <port name="layer2" type="in">
+    <metadata>
+      <entry key="label" value="Layer 2"/>
+    </metadata>
+  </port>
+  <port name="layer2.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer2.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer2.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer2a" type="in">
+    <metadata>
+      <entry key="label" value="Layer 2 Alpha"/>
+    </metadata>
+  </port>
+  <port name="layer2blend" type="in">
+    <metadata>
+      <entry key="label" value="Mode"/>
+    </metadata>
+  </port>
+  <port name="layer3" type="in">
+    <metadata>
+      <entry key="label" value="Layer 3"/>
+    </metadata>
+  </port>
+  <port name="layer3.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer3.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer3.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer3a" type="in">
+    <metadata>
+      <entry key="label" value="Layer 3 Alpha"/>
+    </metadata>
+  </port>
+  <port name="layer3blend" type="in">
+    <metadata>
+      <entry key="label" value="Mode"/>
+    </metadata>
+  </port>
+  <port name="layer4" type="in">
+    <metadata>
+      <entry key="label" value="Layer 4"/>
+    </metadata>
+  </port>
+  <port name="layer4.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer4.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer4.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer4a" type="in">
+    <metadata>
+      <entry key="label" value="Layer 4 Alpha"/>
+    </metadata>
+  </port>
+  <port name="layer4blend" type="in">
+    <metadata>
+      <entry key="label" value="Mode"/>
+    </metadata>
+  </port>
+  <port name="layer5" type="in">
+    <metadata>
+      <entry key="label" value="Layer 5"/>
+    </metadata>
+  </port>
+  <port name="layer5.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer5.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer5.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer5a" type="in">
+    <metadata>
+      <entry key="label" value="Layer 5 Alpha"/>
+    </metadata>
+  </port>
+  <port name="layer5blend" type="in">
+    <metadata>
+      <entry key="label" value="Mode"/>
+    </metadata>
+  </port>
+  <port name="layer6" type="in">
+    <metadata>
+      <entry key="label" value="Layer 6"/>
+    </metadata>
+  </port>
+  <port name="layer6.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer6.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer6.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer6a" type="in">
+    <metadata>
+      <entry key="label" value="Layer 6 Alpha"/>
+    </metadata>
+  </port>
+  <port name="layer6blend" type="in">
+    <metadata>
+      <entry key="label" value="Mode"/>
+    </metadata>
+  </port>
+  <port name="layer7" type="in">
+    <metadata>
+      <entry key="label" value="Layer 7"/>
+    </metadata>
+  </port>
+  <port name="layer7.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer7.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer7.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer7a" type="in">
+    <metadata>
+      <entry key="label" value="Layer 7 Alpha"/>
+    </metadata>
+  </port>
+  <port name="layer7blend" type="in">
+    <metadata>
+      <entry key="label" value="Mode"/>
+    </metadata>
+  </port>
+  <port name="layer8" type="in">
+    <metadata>
+      <entry key="label" value="Layer 8"/>
+    </metadata>
+  </port>
+  <port name="layer8.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer8.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer8.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="layer8a" type="in">
+    <metadata>
+      <entry key="label" value="Layer 8 Alpha"/>
+    </metadata>
+  </port>
+  <port name="layer8blend" type="in">
+    <metadata>
+      <entry key="label" value="Mode"/>
+    </metadata>
+  </port>
+  <port name="out" type="out">
+    <tags>
+      <tag name="rgb"/>
+    </tags>
+  </port>
+  <port name="out.r" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.g" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.b" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="alLayerColor">
+    <string_parameter name="name" value="alLayerColor"/>
+    <string_parameter name="nodeType" value="alLayerColor"/>
+    <string_parameter name="__lastValue" value="pkwlrbfc56vpngkohlhe7cz3pmgb2xyeri7bmwiscgnq6354kobeFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="layer1">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer1a">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer1blend">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="Normal"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="layer2">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer2a">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer2blend">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="Normal"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="layer3">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer3a">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer3blend">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="Normal"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="layer4">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer4a">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer4blend">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="Normal"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="layer5">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer5a">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer5blend">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="Normal"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="layer6">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer6a">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer6blend">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="Normal"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="layer7">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer7a">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer7blend">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="Normal"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="layer8">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer8a">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer8blend">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="Normal"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>

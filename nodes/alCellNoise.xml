@@ -1,0 +1,550 @@
+<node baseType="ArnoldShadingNode" edited="true" name="alCellNoise" selected="true" type="ArnoldShadingNode">
+  <port name="space" type="in">
+    <metadata>
+      <entry key="label" value="Space"/>
+    </metadata>
+  </port>
+  <port name="frequency" type="in">
+    <metadata>
+      <entry key="label" value="Frequency"/>
+    </metadata>
+  </port>
+  <port name="mode" type="in">
+    <metadata>
+      <entry key="label" value="Mode"/>
+    </metadata>
+  </port>
+  <port name="octaves" type="in">
+    <metadata>
+      <entry key="page" value="Features"/>
+      <entry key="label" value="Octaves"/>
+    </metadata>
+  </port>
+  <port name="randomness" type="in">
+    <metadata>
+      <entry key="label" value="Randomness"/>
+    </metadata>
+  </port>
+  <port name="lacunarity" type="in">
+    <metadata>
+      <entry key="page" value="Features"/>
+      <entry key="label" value="Lacunarity"/>
+    </metadata>
+  </port>
+  <port name="color1" type="in">
+    <metadata>
+      <entry key="page" value="Features"/>
+      <entry key="label" value="Color 1"/>
+    </metadata>
+  </port>
+  <port name="color1.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="color1.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="color1.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="color2" type="in">
+    <metadata>
+      <entry key="page" value="Features"/>
+      <entry key="label" value="Color 2"/>
+    </metadata>
+  </port>
+  <port name="color2.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="color2.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="color2.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="smoothChips" type="in">
+    <metadata>
+      <entry key="page" value="Chips"/>
+      <entry key="label" value="Smooth"/>
+    </metadata>
+  </port>
+  <port name="randomChips" type="in">
+    <metadata>
+      <entry key="page" value="Chips"/>
+      <entry key="label" value="Randomize"/>
+    </metadata>
+  </port>
+  <port name="chipColor1" type="in">
+    <metadata>
+      <entry key="page" value="Chips"/>
+      <entry key="label" value="Chip color 1"/>
+    </metadata>
+  </port>
+  <port name="chipColor1.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="chipColor1.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="chipColor1.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="chipProb1" type="in">
+    <metadata>
+      <entry key="page" value="Chips"/>
+      <entry key="label" value="Chip probability 1"/>
+    </metadata>
+  </port>
+  <port name="chipColor2" type="in">
+    <metadata>
+      <entry key="page" value="Chips"/>
+      <entry key="label" value="Chip color 2"/>
+    </metadata>
+  </port>
+  <port name="chipColor2.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="chipColor2.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="chipColor2.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="chipProb2" type="in">
+    <metadata>
+      <entry key="page" value="Chips"/>
+      <entry key="label" value="Chip probability 2"/>
+    </metadata>
+  </port>
+  <port name="chipColor3" type="in">
+    <metadata>
+      <entry key="page" value="Chips"/>
+      <entry key="label" value="Chip color 3"/>
+    </metadata>
+  </port>
+  <port name="chipColor3.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="chipColor3.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="chipColor3.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="chipProb3" type="in">
+    <metadata>
+      <entry key="page" value="Chips"/>
+      <entry key="label" value="Chip probability 3"/>
+    </metadata>
+  </port>
+  <port name="chipColor4" type="in">
+    <metadata>
+      <entry key="page" value="Chips"/>
+      <entry key="label" value="Chip color 4"/>
+    </metadata>
+  </port>
+  <port name="chipColor4.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="chipColor4.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="chipColor4.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="chipProb4" type="in">
+    <metadata>
+      <entry key="page" value="Chips"/>
+      <entry key="label" value="Chip probability 4"/>
+    </metadata>
+  </port>
+  <port name="chipColor5" type="in">
+    <metadata>
+      <entry key="page" value="Chips"/>
+      <entry key="label" value="Chip color 5"/>
+    </metadata>
+  </port>
+  <port name="chipColor5.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="chipColor5.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="chipColor5.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="chipProb5" type="in">
+    <metadata>
+      <entry key="page" value="Chips"/>
+      <entry key="label" value="Chip probability 5"/>
+    </metadata>
+  </port>
+  <port name="P" type="in">
+    <metadata>
+      <entry key="label" value="P"/>
+    </metadata>
+  </port>
+  <port name="P.x" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="P.y" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="P.z" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="RMPinputMin" type="in">
+    <metadata>
+      <entry key="page" value="Features.Remap"/>
+      <entry key="label" value="Input min"/>
+    </metadata>
+  </port>
+  <port name="RMPinputMax" type="in">
+    <metadata>
+      <entry key="page" value="Features.Remap"/>
+      <entry key="label" value="Input max"/>
+    </metadata>
+  </port>
+  <port name="RMPcontrast" type="in">
+    <metadata>
+      <entry key="page" value="Features.Remap.Contrast"/>
+      <entry key="label" value="Contrast"/>
+    </metadata>
+  </port>
+  <port name="RMPcontrastPivot" type="in">
+    <metadata>
+      <entry key="page" value="Features.Remap.Contrast"/>
+      <entry key="label" value="Pivot"/>
+    </metadata>
+  </port>
+  <port name="RMPbias" type="in">
+    <metadata>
+      <entry key="page" value="Features.Remap.Bias and gain"/>
+      <entry key="label" value="Bias"/>
+    </metadata>
+  </port>
+  <port name="RMPgain" type="in">
+    <metadata>
+      <entry key="page" value="Features.Remap.Bias and gain"/>
+      <entry key="label" value="Gain"/>
+    </metadata>
+  </port>
+  <port name="RMPoutputMin" type="in">
+    <metadata>
+      <entry key="page" value="Features.Remap"/>
+      <entry key="label" value="Output min"/>
+    </metadata>
+  </port>
+  <port name="RMPoutputMax" type="in">
+    <metadata>
+      <entry key="page" value="Features.Remap"/>
+      <entry key="label" value="Output max"/>
+    </metadata>
+  </port>
+  <port name="RMPclampEnable" type="in">
+    <metadata>
+      <entry key="page" value="Features.Remap.Clamp"/>
+      <entry key="label" value="Enable"/>
+    </metadata>
+  </port>
+  <port name="RMPthreshold" type="in">
+    <metadata>
+      <entry key="page" value="Features.Remap.Clamp"/>
+      <entry key="label" value="Expand"/>
+    </metadata>
+  </port>
+  <port name="RMPclampMin" type="in">
+    <metadata>
+      <entry key="page" value="Features.Remap.Clamp"/>
+      <entry key="label" value="Min"/>
+    </metadata>
+  </port>
+  <port name="RMPclampMax" type="in">
+    <metadata>
+      <entry key="page" value="Features.Remap.Clamp"/>
+      <entry key="label" value="Max"/>
+    </metadata>
+  </port>
+  <port name="out" type="out">
+    <tags>
+      <tag name="rgb"/>
+    </tags>
+  </port>
+  <port name="out.r" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.g" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.b" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="alCellNoise">
+    <string_parameter name="name" value="alCellNoise"/>
+    <string_parameter name="nodeType" value="alCellNoise"/>
+    <string_parameter name="__lastValue" value="i7xy6crdb4gwzonfit4ud4d4zyexbhfnl7xzqtw63ffgvdc7ownyFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="space">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="world"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="frequency">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="mode">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="features"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="randomness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="octaves">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="lacunarity">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="2.121"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPinputMin">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPinputMax">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPcontrast">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPcontrastPivot">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPbias">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPgain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPoutputMin">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPoutputMax">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPclampEnable">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPthreshold">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPclampMin">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPclampMax">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="color1">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="color2">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="1"/>
+          <number_parameter name="i1" value="1"/>
+          <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="smoothChips">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="randomChips">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="chipColor1">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0.383"/>
+          <number_parameter name="i1" value="0.318"/>
+          <number_parameter name="i2" value="0.252"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="chipProb1">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="chipColor2">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0.383"/>
+          <number_parameter name="i1" value="0.191"/>
+          <number_parameter name="i2" value="0.01"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="chipProb2">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="chipColor3">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0.635"/>
+          <number_parameter name="i1" value="0.612"/>
+          <number_parameter name="i2" value="0.5629999999999999"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="chipProb3">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="chipColor4">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0.509"/>
+          <number_parameter name="i1" value="0.361"/>
+          <number_parameter name="i2" value="0.213"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="chipProb4">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="chipColor5">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0.593"/>
+          <number_parameter name="i1" value="0.472"/>
+          <number_parameter name="i2" value="0.248"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="chipProb5">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="P">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>

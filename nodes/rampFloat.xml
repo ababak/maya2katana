@@ -1,0 +1,61 @@
+<node baseType="ArnoldShadingNode" edited="true" name="ramp_float" selected="true" type="ArnoldShadingNode">
+  <port name="type" type="in"/>
+  <port name="input" type="in"/>
+  <port name="position" type="in"/>
+  <port name="value" type="in"/>
+  <port name="interpolation" type="in"/>
+  <port name="out" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="ramp_float">
+    <string_parameter name="name" value="ramp_float"/>
+    <string_parameter name="nodeType" value="ramp_float"/>
+    <string_parameter name="__lastValue" value="jrbjrz34dnaroavj44h5go375usjlu22mu6z62gmff237pzcmp4yFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="type">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="custom"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="input">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="position">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="isDynamicArray" value="1"/>
+        <numberarray_parameter name="value" size="2" tupleSize="1">
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="value">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="isDynamicArray" value="1"/>
+        <numberarray_parameter name="value" size="2" tupleSize="1">
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="interpolation">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="isDynamicArray" value="1"/>
+        <numberarray_parameter name="value" size="2" tupleSize="1">
+        </numberarray_parameter>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>

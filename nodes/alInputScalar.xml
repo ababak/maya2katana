@@ -1,0 +1,177 @@
+<node baseType="ArnoldShadingNode" edited="true" name="alInputScalar" selected="true" type="ArnoldShadingNode">
+  <port name="input" type="in">
+    <metadata>
+      <entry key="label" value="Input"/>
+    </metadata>
+  </port>
+  <port name="userName" type="in">
+    <metadata>
+      <entry key="label" value="User name"/>
+    </metadata>
+  </port>
+  <port name="RMPinputMin" type="in">
+    <metadata>
+      <entry key="page" value="Remap"/>
+      <entry key="label" value="Input min"/>
+    </metadata>
+  </port>
+  <port name="RMPinputMax" type="in">
+    <metadata>
+      <entry key="page" value="Remap"/>
+      <entry key="label" value="Input max"/>
+    </metadata>
+  </port>
+  <port name="RMPcontrast" type="in">
+    <metadata>
+      <entry key="page" value="Remap.Contrast"/>
+      <entry key="label" value="Contrast"/>
+    </metadata>
+  </port>
+  <port name="RMPcontrastPivot" type="in">
+    <metadata>
+      <entry key="page" value="Remap.Contrast"/>
+      <entry key="label" value="Pivot"/>
+    </metadata>
+  </port>
+  <port name="RMPbias" type="in">
+    <metadata>
+      <entry key="page" value="Remap.Bias and gain"/>
+      <entry key="label" value="Bias"/>
+    </metadata>
+  </port>
+  <port name="RMPgain" type="in">
+    <metadata>
+      <entry key="page" value="Remap.Bias and gain"/>
+      <entry key="label" value="Gain"/>
+    </metadata>
+  </port>
+  <port name="RMPoutputMin" type="in">
+    <metadata>
+      <entry key="page" value="Remap"/>
+      <entry key="label" value="Output min"/>
+    </metadata>
+  </port>
+  <port name="RMPoutputMax" type="in">
+    <metadata>
+      <entry key="page" value="Remap"/>
+      <entry key="label" value="Output max"/>
+    </metadata>
+  </port>
+  <port name="RMPclampEnable" type="in">
+    <metadata>
+      <entry key="page" value="Remap.Clamp"/>
+      <entry key="label" value="Enable"/>
+    </metadata>
+  </port>
+  <port name="RMPthreshold" type="in">
+    <metadata>
+      <entry key="page" value="Remap.Clamp"/>
+      <entry key="label" value="Expand"/>
+    </metadata>
+  </port>
+  <port name="RMPclampMin" type="in">
+    <metadata>
+      <entry key="page" value="Remap.Clamp"/>
+      <entry key="label" value="Min"/>
+    </metadata>
+  </port>
+  <port name="RMPclampMax" type="in">
+    <metadata>
+      <entry key="page" value="Remap.Clamp"/>
+      <entry key="label" value="Max"/>
+    </metadata>
+  </port>
+  <port name="out" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="alInputScalar">
+    <string_parameter name="name" value="alInputScalar"/>
+    <string_parameter name="nodeType" value="alInputScalar"/>
+    <string_parameter name="__lastValue" value="mrvd7itcjv2akgz2xlj7wc27s4mk3lttcijkdmcmxk26bivnr2smFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="input">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="facing-ratio"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="userName">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPinputMin">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPinputMax">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPcontrast">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPcontrastPivot">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPbias">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPgain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPoutputMin">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPoutputMax">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPclampEnable">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPthreshold">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPclampMin">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="RMPclampMax">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>

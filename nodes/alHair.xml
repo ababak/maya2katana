@@ -1,0 +1,1207 @@
+<node baseType="ArnoldShadingNode" edited="true" name="alHair" selected="true" type="ArnoldShadingNode">
+  <port name="dyeColor" type="in">
+    <metadata>
+      <entry key="page" value="Fibre properties"/>
+      <entry key="label" value="Dye color"/>
+    </metadata>
+  </port>
+  <port name="dyeColor.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="dyeColor.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="dyeColor.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="melanin" type="in">
+    <metadata>
+      <entry key="page" value="Fibre properties"/>
+      <entry key="label" value="Melanin"/>
+    </metadata>
+  </port>
+  <port name="specularShift" type="in">
+    <metadata>
+      <entry key="page" value="Fibre properties"/>
+      <entry key="label" value="Highlight shift"/>
+    </metadata>
+  </port>
+  <port name="specularWidth" type="in">
+    <metadata>
+      <entry key="page" value="Fibre properties"/>
+      <entry key="label" value="Highlight width"/>
+    </metadata>
+  </port>
+  <port name="extraSamplesDiffuse" type="in">
+    <metadata>
+      <entry key="page" value="Advanced"/>
+      <entry key="label" value="Diffuse extra samples"/>
+    </metadata>
+  </port>
+  <port name="extraSamplesGlossy" type="in">
+    <metadata>
+      <entry key="page" value="Advanced"/>
+      <entry key="label" value="Glossy extra samples"/>
+    </metadata>
+  </port>
+  <port name="diffuseStrength" type="in">
+    <metadata>
+      <entry key="page" value="Diffuse"/>
+      <entry key="label" value="Strength"/>
+    </metadata>
+  </port>
+  <port name="diffuseColor" type="in">
+    <metadata>
+      <entry key="page" value="Diffuse"/>
+      <entry key="label" value="Tint"/>
+    </metadata>
+  </port>
+  <port name="diffuseColor.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="diffuseColor.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="diffuseColor.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="diffuseScatteringMode" type="in">
+    <metadata>
+      <entry key="page" value="Diffuse"/>
+      <entry key="label" value="Scattering mode"/>
+    </metadata>
+  </port>
+  <port name="specular1Strength" type="in">
+    <metadata>
+      <entry key="page" value="Specular 1"/>
+      <entry key="label" value="Strength"/>
+    </metadata>
+  </port>
+  <port name="specular1Color" type="in">
+    <metadata>
+      <entry key="page" value="Specular 1"/>
+      <entry key="label" value="Tint"/>
+    </metadata>
+  </port>
+  <port name="specular1Color.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="specular1Color.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="specular1Color.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="specular2Strength" type="in">
+    <metadata>
+      <entry key="page" value="Specular 2"/>
+      <entry key="label" value="Strength"/>
+    </metadata>
+  </port>
+  <port name="specular2Color" type="in">
+    <metadata>
+      <entry key="page" value="Specular 2"/>
+      <entry key="label" value="Tint"/>
+    </metadata>
+  </port>
+  <port name="specular2Color.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="specular2Color.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="specular2Color.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="glintStrength" type="in">
+    <metadata>
+      <entry key="page" value="Specular 2"/>
+      <entry key="label" value="Glint strength"/>
+    </metadata>
+  </port>
+  <port name="glintRolloff" type="in">
+    <metadata>
+      <entry key="page" value="Fibre properties.Advanced"/>
+      <entry key="label" value="Glint rolloff"/>
+    </metadata>
+  </port>
+  <port name="transmissionStrength" type="in">
+    <metadata>
+      <entry key="page" value="Transmission"/>
+      <entry key="label" value="Strength"/>
+    </metadata>
+  </port>
+  <port name="transmissionColor" type="in">
+    <metadata>
+      <entry key="page" value="Transmission"/>
+      <entry key="label" value="Tint"/>
+    </metadata>
+  </port>
+  <port name="transmissionColor.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="transmissionColor.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="transmissionColor.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="transmissionRolloff" type="in">
+    <metadata>
+      <entry key="page" value="Fibre properties.Advanced"/>
+      <entry key="label" value="Transmission rolloff"/>
+    </metadata>
+  </port>
+  <port name="opacity" type="in">
+    <metadata>
+      <entry key="page" value="Fibre properties"/>
+      <entry key="label" value="Opacity"/>
+    </metadata>
+  </port>
+  <port name="opacity.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="opacity.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="opacity.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="dualDepth" type="in">
+    <metadata>
+      <entry key="page" value="Advanced"/>
+      <entry key="label" value="Brute force bounces"/>
+    </metadata>
+  </port>
+  <port name="diffuseForward" type="in">
+    <metadata>
+      <entry key="page" value="Diffuse"/>
+      <entry key="label" value="Forward scattering"/>
+    </metadata>
+  </port>
+  <port name="diffuseBack" type="in">
+    <metadata>
+      <entry key="page" value="Diffuse"/>
+      <entry key="label" value="Back scattering"/>
+    </metadata>
+  </port>
+  <port name="specular1WidthScale" type="in">
+    <metadata>
+      <entry key="page" value="Specular 1"/>
+      <entry key="label" value="Width scale"/>
+    </metadata>
+  </port>
+  <port name="specular2WidthScale" type="in">
+    <metadata>
+      <entry key="page" value="Specular 2"/>
+      <entry key="label" value="Width scale"/>
+    </metadata>
+  </port>
+  <port name="transmissionWidthScale" type="in">
+    <metadata>
+      <entry key="page" value="Transmission"/>
+      <entry key="label" value="Width scale"/>
+    </metadata>
+  </port>
+  <port name="specular1Shift" type="in">
+    <metadata>
+      <entry key="page" value="Specular 1"/>
+      <entry key="label" value="Shift offset"/>
+    </metadata>
+  </port>
+  <port name="specular2Shift" type="in">
+    <metadata>
+      <entry key="page" value="Specular 2"/>
+      <entry key="label" value="Shift offset"/>
+    </metadata>
+  </port>
+  <port name="transmissionShift" type="in">
+    <metadata>
+      <entry key="page" value="Transmission"/>
+      <entry key="label" value="Shift offset"/>
+    </metadata>
+  </port>
+  <port name="diffuseIndirectStrength" type="in">
+    <metadata>
+      <entry key="page" value="Advanced"/>
+      <entry key="label" value="Diffuse indirect strength"/>
+    </metadata>
+  </port>
+  <port name="glossyIndirectStrength" type="in">
+    <metadata>
+      <entry key="page" value="Advanced"/>
+      <entry key="label" value="Glossy indirect strength"/>
+    </metadata>
+  </port>
+  <port name="randomTangent" type="in">
+    <metadata>
+      <entry key="page" value="Fibre properties.Randomize"/>
+      <entry key="label" value="Tangent"/>
+    </metadata>
+  </port>
+  <port name="randomHue" type="in">
+    <metadata>
+      <entry key="page" value="Fibre properties.Randomize"/>
+      <entry key="label" value="Dye hue"/>
+    </metadata>
+  </port>
+  <port name="randomSaturation" type="in">
+    <metadata>
+      <entry key="page" value="Fibre properties.Randomize"/>
+      <entry key="label" value="Dye saturation"/>
+    </metadata>
+  </port>
+  <port name="randomMelanin" type="in">
+    <metadata>
+      <entry key="page" value="Fibre properties.Randomize"/>
+      <entry key="label" value="Melanin"/>
+    </metadata>
+  </port>
+  <port name="uparam" type="in">
+    <metadata>
+      <entry key="page" value="Advanced"/>
+      <entry key="label" value="U param"/>
+    </metadata>
+  </port>
+  <port name="vparam" type="in">
+    <metadata>
+      <entry key="page" value="Advanced"/>
+      <entry key="label" value="V param"/>
+    </metadata>
+  </port>
+  <port name="id1" type="in">
+    <metadata>
+      <entry key="page" value="IDs"/>
+      <entry key="label" value="id1"/>
+    </metadata>
+  </port>
+  <port name="id1.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id1.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id1.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id2" type="in">
+    <metadata>
+      <entry key="page" value="IDs"/>
+      <entry key="label" value="id2"/>
+    </metadata>
+  </port>
+  <port name="id2.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id2.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id2.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id3" type="in">
+    <metadata>
+      <entry key="page" value="IDs"/>
+      <entry key="label" value="id3"/>
+    </metadata>
+  </port>
+  <port name="id3.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id3.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id3.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id4" type="in">
+    <metadata>
+      <entry key="page" value="IDs"/>
+      <entry key="label" value="id4"/>
+    </metadata>
+  </port>
+  <port name="id4.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id4.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id4.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id5" type="in">
+    <metadata>
+      <entry key="page" value="IDs"/>
+      <entry key="label" value="id5"/>
+    </metadata>
+  </port>
+  <port name="id5.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id5.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id5.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id6" type="in">
+    <metadata>
+      <entry key="page" value="IDs"/>
+      <entry key="label" value="id6"/>
+    </metadata>
+  </port>
+  <port name="id6.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id6.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id6.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id7" type="in">
+    <metadata>
+      <entry key="page" value="IDs"/>
+      <entry key="label" value="id7"/>
+    </metadata>
+  </port>
+  <port name="id7.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id7.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id7.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id8" type="in">
+    <metadata>
+      <entry key="page" value="IDs"/>
+      <entry key="label" value="id8"/>
+    </metadata>
+  </port>
+  <port name="id8.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id8.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="id8.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="aov_diffuse_color" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Diffuse color"/>
+    </metadata>
+  </port>
+  <port name="aov_direct_diffuse" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Direct diffuse"/>
+    </metadata>
+  </port>
+  <port name="aov_indirect_diffuse" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Indirect diffuse"/>
+    </metadata>
+  </port>
+  <port name="aov_direct_local" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Direct local"/>
+    </metadata>
+  </port>
+  <port name="aov_indirect_local" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Indirect local"/>
+    </metadata>
+  </port>
+  <port name="aov_direct_global" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Direct global"/>
+    </metadata>
+  </port>
+  <port name="aov_indirect_global" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Indirect global"/>
+    </metadata>
+  </port>
+  <port name="aov_direct_specular" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Direct specular"/>
+    </metadata>
+  </port>
+  <port name="aov_indirect_specular" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Indirect specular"/>
+    </metadata>
+  </port>
+  <port name="aov_direct_specular_2" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Direct specular 2"/>
+    </metadata>
+  </port>
+  <port name="aov_indirect_specular_2" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Indirect specular 2"/>
+    </metadata>
+  </port>
+  <port name="aov_direct_glint" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Direct glint"/>
+    </metadata>
+  </port>
+  <port name="aov_indirect_glint" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Indirect glint"/>
+    </metadata>
+  </port>
+  <port name="aov_direct_transmission" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Direct transmission"/>
+    </metadata>
+  </port>
+  <port name="aov_indirect_transmission" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Indirect transmission"/>
+    </metadata>
+  </port>
+  <port name="aov_depth" type="in">
+    <tags>
+      <tag name="string"/>
+    </tags>
+  </port>
+  <port name="aov_light_group_1" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Light group [1]"/>
+    </metadata>
+  </port>
+  <port name="aov_light_group_2" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Light group [2]"/>
+    </metadata>
+  </port>
+  <port name="aov_light_group_3" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Light group [3]"/>
+    </metadata>
+  </port>
+  <port name="aov_light_group_4" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Light group [4]"/>
+    </metadata>
+  </port>
+  <port name="aov_light_group_5" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Light group [5]"/>
+    </metadata>
+  </port>
+  <port name="aov_light_group_6" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Light group [6]"/>
+    </metadata>
+  </port>
+  <port name="aov_light_group_7" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Light group [7]"/>
+    </metadata>
+  </port>
+  <port name="aov_light_group_8" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Light group [8]"/>
+    </metadata>
+  </port>
+  <port name="aov_id_1" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="ID [1]"/>
+    </metadata>
+  </port>
+  <port name="aov_id_2" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="ID [2]"/>
+    </metadata>
+  </port>
+  <port name="aov_id_3" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="ID [3]"/>
+    </metadata>
+  </port>
+  <port name="aov_id_4" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="ID [4]"/>
+    </metadata>
+  </port>
+  <port name="aov_id_5" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="ID [5]"/>
+    </metadata>
+  </port>
+  <port name="aov_id_6" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="ID [6]"/>
+    </metadata>
+  </port>
+  <port name="aov_id_7" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="ID [7]"/>
+    </metadata>
+  </port>
+  <port name="aov_id_8" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="ID [8]"/>
+    </metadata>
+  </port>
+  <port name="crypto_asset_override" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Crypto asset override"/>
+    </metadata>
+  </port>
+  <port name="crypto_object_override" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Crypto object override"/>
+    </metadata>
+  </port>
+  <port name="crypto_material_override" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Crypto material override"/>
+    </metadata>
+  </port>
+  <port name="aov_crypto_asset" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Crypto Asset"/>
+    </metadata>
+  </port>
+  <port name="aov_crypto_object" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Crypto Object"/>
+    </metadata>
+  </port>
+  <port name="aov_crypto_material" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+      <entry key="label" value="Crypto Material"/>
+    </metadata>
+  </port>
+  <port name="out" type="out">
+    <tags>
+      <tag name="rgb"/>
+    </tags>
+  </port>
+  <port name="out.r" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.g" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.b" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="alHair">
+    <string_parameter name="name" value="alHair"/>
+    <string_parameter name="nodeType" value="alHair"/>
+    <string_parameter name="__lastValue" value="7ktryr4qqopqhaoh2up2iqkwvmjs3itxpawbfe2xl2jwxyzpyvhqFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="melanin">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.15"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="dyeColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="1"/>
+          <number_parameter name="i1" value="1"/>
+          <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="specularWidth">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="3"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="specularShift">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="4"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="opacity">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="1"/>
+          <number_parameter name="i1" value="1"/>
+          <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="randomTangent">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="randomMelanin">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.08"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="randomHue">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="randomSaturation">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="glintRolloff">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="transmissionRolloff">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="10"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="diffuseStrength">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="diffuseColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="1"/>
+          <number_parameter name="i1" value="1"/>
+          <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="diffuseScatteringMode">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="dual-scattering"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="diffuseForward">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.7"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="diffuseBack">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.7"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="specular1Strength">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="specular1Color">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="1"/>
+          <number_parameter name="i1" value="1"/>
+          <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="specular1WidthScale">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="specular1Shift">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="specular2Strength">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="specular2Color">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="1"/>
+          <number_parameter name="i1" value="1"/>
+          <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="specular2WidthScale">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="specular2Shift">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="glintStrength">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="2.5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="transmissionStrength">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="transmissionColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="1"/>
+          <number_parameter name="i1" value="1"/>
+          <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="transmissionWidthScale">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="transmissionShift">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="id1">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="id2">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="id3">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="id4">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="id5">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="id6">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="id7">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="id8">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="crypto_asset_override">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="crypto_object_override">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="crypto_material_override">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_diffuse_color">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="diffuse_color"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_direct_diffuse">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="direct_diffuse"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_indirect_diffuse">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="indirect_diffuse"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_direct_local">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="direct_local"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_indirect_local">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="indirect_local"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_direct_global">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="direct_global"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_indirect_global">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="indirect_global"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_direct_specular">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="direct_specular"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_indirect_specular">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="indirect_specular"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_direct_specular_2">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="direct_specular_2"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_indirect_specular_2">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="indirect_specular_2"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_direct_glint">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="direct_glint"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_indirect_glint">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="indirect_glint"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_direct_transmission">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="direct_transmission"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_indirect_transmission">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="indirect_transmission"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_light_group_1">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="light_group_1"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_light_group_2">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="light_group_2"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_light_group_3">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="light_group_3"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_light_group_4">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="light_group_4"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_light_group_5">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="light_group_5"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_light_group_6">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="light_group_6"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_light_group_7">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="light_group_7"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_light_group_8">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="light_group_8"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_id_1">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="id_1"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_id_2">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="id_2"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_id_3">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="id_3"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_id_4">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="id_4"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_id_5">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="id_5"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_id_6">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="id_6"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_id_7">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="id_7"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_id_8">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="id_8"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_crypto_asset">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="crypto_asset"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_crypto_object">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="crypto_object"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_crypto_material">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="crypto_material"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="dualDepth">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="diffuseIndirectStrength">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="extraSamplesDiffuse">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="glossyIndirectStrength">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="extraSamplesGlossy">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="uparam">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="uparamcoord"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="vparam">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="vparamcoord"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_depth">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="depth"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>

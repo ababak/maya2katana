@@ -1,0 +1,185 @@
+<node baseType="ArnoldShadingNode" edited="true" name="alLayerFloat" selected="true" type="ArnoldShadingNode">
+  <port name="layer1" type="in">
+    <metadata>
+      <entry key="label" value="Layer 1"/>
+    </metadata>
+  </port>
+  <port name="layer1a" type="in">
+    <metadata>
+      <entry key="label" value="Layer 1 Alpha"/>
+    </metadata>
+  </port>
+  <port name="layer2" type="in">
+    <metadata>
+      <entry key="label" value="Layer 2"/>
+    </metadata>
+  </port>
+  <port name="layer2a" type="in">
+    <metadata>
+      <entry key="label" value="Layer 2 Alpha"/>
+    </metadata>
+  </port>
+  <port name="layer3" type="in">
+    <metadata>
+      <entry key="label" value="Layer 3"/>
+    </metadata>
+  </port>
+  <port name="layer3a" type="in">
+    <metadata>
+      <entry key="label" value="Layer 3 Alpha"/>
+    </metadata>
+  </port>
+  <port name="layer4" type="in">
+    <metadata>
+      <entry key="label" value="Layer 4"/>
+    </metadata>
+  </port>
+  <port name="layer4a" type="in">
+    <metadata>
+      <entry key="label" value="Layer 4 Alpha"/>
+    </metadata>
+  </port>
+  <port name="layer5" type="in">
+    <metadata>
+      <entry key="label" value="Layer 5"/>
+    </metadata>
+  </port>
+  <port name="layer5a" type="in">
+    <metadata>
+      <entry key="label" value="Layer 5 Alpha"/>
+    </metadata>
+  </port>
+  <port name="layer6" type="in">
+    <metadata>
+      <entry key="label" value="Layer 6"/>
+    </metadata>
+  </port>
+  <port name="layer6a" type="in">
+    <metadata>
+      <entry key="label" value="Layer 6 Alpha"/>
+    </metadata>
+  </port>
+  <port name="layer7" type="in">
+    <metadata>
+      <entry key="label" value="Layer 7"/>
+    </metadata>
+  </port>
+  <port name="layer7a" type="in">
+    <metadata>
+      <entry key="label" value="Layer 7 Alpha"/>
+    </metadata>
+  </port>
+  <port name="layer8" type="in">
+    <metadata>
+      <entry key="label" value="Layer 8"/>
+    </metadata>
+  </port>
+  <port name="layer8a" type="in">
+    <metadata>
+      <entry key="label" value="Layer 8 Alpha"/>
+    </metadata>
+  </port>
+  <port name="out" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="alLayerFloat">
+    <string_parameter name="name" value="alLayerFloat"/>
+    <string_parameter name="nodeType" value="alLayerFloat"/>
+    <string_parameter name="__lastValue" value="bnn4nv4kgasd6a2ezgupty42fa426fshbrbuj4s5bqx5pla2gmduFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="layer1">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer1a">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer2">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer2a">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer3">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer3a">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer4">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer4a">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer5">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer5a">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer6">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer6a">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer7">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer7a">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer8">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="layer8a">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>
