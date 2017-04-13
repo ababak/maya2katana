@@ -51,5 +51,7 @@ clip.copy()
 
 ### Usage
 1. Select a shading network
+![Maya shading network](https://raw.githubusercontent.com/ababak/maya2katana/master/doc/maya.jpg)
 2. Press the button you've created earlier or execute a script (see installation step)
 3. Switch to Katana and paste the nodes
+![Resulting Katana shading network](https://raw.githubusercontent.com/ababak/maya2katana/master/doc/katana.jpg)
