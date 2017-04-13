@@ -1,7 +1,7 @@
 # maya2katana
 Easily copy shading nodes from Maya to Katana
 
-Currently supported nodes (Arnold with alShaders):
+### Currently supported nodes (Arnold with alShaders):
 - aiAmbientOcclusion
 - aiImage
 - aiNoise
@@ -34,8 +34,17 @@ Currently supported nodes (Arnold with alShaders):
 - ramp
 - samplerInfo
 
-Installation
-We only need a couple of lines of code to run a Python file from Maya but before we attempt this we need to make sure the Python file(s) are in the correct location: a valid Maya Python path. There are ways to set custom Maya Python paths but most users opt for the default paths which are different depending on your OS:
-
-Windows: <drive>:\Documents and Settings\<username>\My Documents\maya\<Version>\scripts
-Linux: ~/maya/<version>/scripts
+### Installation
+1. Quit Maya
+2. Clone maya2katana repository and place it to:
+```
+Windows: \Users\<username>\Documents\maya\scripts
+Linux: ~/maya/scripts
+```
+3. Open Script Editor and paste the following code to Python tab:
+```
+from maya2katana import clip
+reload (clip)
+clip.copy()
+```
+4. To create a shelf button select the code and middle-mouse-drag it to your shelf
