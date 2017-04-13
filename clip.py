@@ -1,7 +1,7 @@
 #!/usr/bin/python
 '''
     maya2katana
-    Copyright (C) 2016, 2017 Andrey Babak
+    Copyright (C) 2016, 2017 Andrey Babak, Animagrad
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
