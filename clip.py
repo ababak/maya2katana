@@ -18,13 +18,13 @@
 
     Author: Andrey Babak
     e-mail: ababak@gmail.com
-    version 2.4.7
+    version 2.4.8
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
 '''
 
-__version__ = '2.4.7'
+__version__ = '2.4.8'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -385,6 +385,10 @@ premap = {
     'alSurface': {'postprocess': postprocessMaterial},
     'alLayer': {'postprocess': postprocessMaterial},
     'alHair': {'postprocess': postprocessMaterial},
+    'aiStandard': {
+        'postprocess': postprocessMaterial,
+        'type': 'standard',
+    },
     'alInputScalar': {},
     'alInputVector': {},
     'luminance': {},
@@ -516,6 +520,63 @@ mappings = {
         'emissionStrength': {
             'emissionColor': None,
         },
+        'opacity': None,
+    },
+
+
+    'standard': {
+        'customColor': (0.2, 0.36, 0.1),
+        'Kd': {
+            'color': 'Kd_color',
+            'diffuseRoughness': 'diffuse_roughness',
+            'Kb': None,
+            'directDiffuse': 'direct_diffuse',
+            'indirectDiffuse': 'indirect_diffuse',
+        },
+        'Ks': {
+            'KsColor': 'Ks_color',
+            'specularRoughness': 'specular_roughness',
+            'specularAnisotropy': 'specular_anisotropy',
+            'specularDistribution': ('specular_distribution', ['beckmann', 'ggx']),
+            'specularRotation': 'specular_rotation',
+            'directSpecular': 'direct_specular',
+            'indirectSpecular': 'indirect_specular',
+            'enableGlossyCaustics': 'enable_glossy_caustics',
+        },
+        'Kr': {
+            'KrColor': 'Kr_color',
+            'reflectionExitColor': 'reflection_exit_color',
+            'reflectionExitUseEnvironment': 'reflection_exit_use_environment',
+            'enableReflectiveCaustics': 'enable_reflective_caustics',
+        },
+        'Kt': {
+            'KtColor': 'Kt_color',
+            'transmittance': None,
+            'refractionRoughness': 'refraction_roughness',
+            'refractionExitColor': 'refraction_exit_color',
+            'refractionExitUseEnvironment': 'refraction_exit_use_environment',
+            'IOR': None,
+            'dispersionAbbe': 'dispersion_abbe',
+            'enableRefractiveCaustics': 'enable_refractive_caustics',
+            'enableInternalReflections': 'enable_internal_reflections',
+        },
+        'Fresnel': {
+            'Krn': None,
+            'specularFresnel': 'specular_Fresnel',
+            'specularFresnel': 'specular_Fresnel',
+            'Ksn': None,
+            'FresnelUseIOR': 'Fresnel_use_IOR',
+            'FresnelAffectDiff': 'Fresnel_affect_diff',
+        },
+        'emission': {
+            'emissionColor': 'emission_color',
+        },
+        'Ksss': {
+            'KsssColor': 'Ksss_color',
+            'sssProfile': ('sss_profile', ['empirical', 'cubic']),
+            'sssRadius': 'sss_radius',
+        },
+        'bounceFactor': 'bounce_factor',
         'opacity': None,
     },
 

@@ -5,6 +5,7 @@ Easily copy shading nodes from Maya to Katana
 - aiAmbientOcclusion
 - aiImage
 - aiNoise
+- aiStandard
 - aiUserDataColor
 - aiUserDataFloat
 - alCellNoise

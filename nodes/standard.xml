@@ -1,0 +1,791 @@
+<node baseType="ArnoldShadingNode" edited="true" name="standard" selected="true" type="ArnoldShadingNode">
+  <port name="Kd" type="in">
+    <metadata>
+      <entry key="page" value="Diffuse"/>
+    </metadata>
+  </port>
+  <port name="Kd_color" type="in">
+    <metadata>
+      <entry key="page" value="Diffuse"/>
+    </metadata>
+  </port>
+  <port name="Kd_color.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="Kd_color.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="Kd_color.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="diffuse_roughness" type="in">
+    <metadata>
+      <entry key="page" value="Diffuse"/>
+    </metadata>
+  </port>
+  <port name="Ks" type="in">
+    <metadata>
+      <entry key="page" value="Glossy_Specular"/>
+    </metadata>
+  </port>
+  <port name="Ks_color" type="in">
+    <metadata>
+      <entry key="page" value="Glossy_Specular"/>
+    </metadata>
+  </port>
+  <port name="Ks_color.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="Ks_color.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="Ks_color.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="specular_roughness" type="in">
+    <metadata>
+      <entry key="page" value="Glossy_Specular"/>
+    </metadata>
+  </port>
+  <port name="specular_anisotropy" type="in">
+    <metadata>
+      <entry key="page" value="Glossy_Specular"/>
+    </metadata>
+  </port>
+  <port name="specular_rotation" type="in">
+    <metadata>
+      <entry key="page" value="Glossy_Specular"/>
+    </metadata>
+  </port>
+  <port name="specular_distribution" type="in">
+    <metadata>
+      <entry key="page" value="Glossy_Specular"/>
+    </metadata>
+  </port>
+  <port name="Kr" type="in">
+    <metadata>
+      <entry key="page" value="Reflection"/>
+    </metadata>
+  </port>
+  <port name="Kr_color" type="in">
+    <metadata>
+      <entry key="page" value="Reflection"/>
+    </metadata>
+  </port>
+  <port name="Kr_color.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="Kr_color.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="Kr_color.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="reflection_exit_color" type="in">
+    <metadata>
+      <entry key="page" value="Reflection"/>
+    </metadata>
+  </port>
+  <port name="reflection_exit_color.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="reflection_exit_color.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="reflection_exit_color.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="reflection_exit_use_environment" type="in">
+    <metadata>
+      <entry key="page" value="Reflection"/>
+    </metadata>
+  </port>
+  <port name="Kt" type="in">
+    <metadata>
+      <entry key="page" value="Refraction"/>
+    </metadata>
+  </port>
+  <port name="Kt_color" type="in">
+    <metadata>
+      <entry key="page" value="Refraction"/>
+    </metadata>
+  </port>
+  <port name="Kt_color.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="Kt_color.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="Kt_color.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="transmittance" type="in">
+    <metadata>
+      <entry key="page" value="Refraction"/>
+    </metadata>
+  </port>
+  <port name="transmittance.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="transmittance.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="transmittance.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="refraction_roughness" type="in">
+    <metadata>
+      <entry key="page" value="Refraction"/>
+    </metadata>
+  </port>
+  <port name="refraction_exit_color" type="in">
+    <metadata>
+      <entry key="page" value="Refraction"/>
+    </metadata>
+  </port>
+  <port name="refraction_exit_color.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="refraction_exit_color.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="refraction_exit_color.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="refraction_exit_use_environment" type="in">
+    <metadata>
+      <entry key="page" value="Refraction"/>
+    </metadata>
+  </port>
+  <port name="IOR" type="in">
+    <metadata>
+      <entry key="page" value="Refraction"/>
+    </metadata>
+  </port>
+  <port name="dispersion_abbe" type="in">
+    <metadata>
+      <entry key="page" value="Refraction"/>
+    </metadata>
+  </port>
+  <port name="Kb" type="in">
+    <metadata>
+      <entry key="page" value="Diffuse"/>
+    </metadata>
+  </port>
+  <port name="Fresnel" type="in">
+    <metadata>
+      <entry key="page" value="Fresnel"/>
+    </metadata>
+  </port>
+  <port name="Krn" type="in">
+    <metadata>
+      <entry key="page" value="Fresnel"/>
+    </metadata>
+  </port>
+  <port name="specular_Fresnel" type="in">
+    <metadata>
+      <entry key="page" value="Fresnel"/>
+    </metadata>
+  </port>
+  <port name="Ksn" type="in">
+    <metadata>
+      <entry key="page" value="Fresnel"/>
+    </metadata>
+  </port>
+  <port name="Fresnel_use_IOR" type="in">
+    <metadata>
+      <entry key="page" value="Fresnel"/>
+    </metadata>
+  </port>
+  <port name="Fresnel_affect_diff" type="in">
+    <metadata>
+      <entry key="page" value="Fresnel"/>
+    </metadata>
+  </port>
+  <port name="emission" type="in">
+    <metadata>
+      <entry key="page" value="Emission"/>
+    </metadata>
+  </port>
+  <port name="emission_color" type="in">
+    <metadata>
+      <entry key="page" value="Emission"/>
+    </metadata>
+  </port>
+  <port name="emission_color.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="emission_color.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="emission_color.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="direct_specular" type="in">
+    <metadata>
+      <entry key="page" value="Glossy_Specular"/>
+    </metadata>
+  </port>
+  <port name="indirect_specular" type="in">
+    <metadata>
+      <entry key="page" value="Glossy_Specular"/>
+    </metadata>
+  </port>
+  <port name="direct_diffuse" type="in">
+    <metadata>
+      <entry key="page" value="Diffuse"/>
+    </metadata>
+  </port>
+  <port name="indirect_diffuse" type="in">
+    <metadata>
+      <entry key="page" value="Diffuse"/>
+    </metadata>
+  </port>
+  <port name="enable_glossy_caustics" type="in">
+    <metadata>
+      <entry key="page" value="Glossy_Specular"/>
+    </metadata>
+  </port>
+  <port name="enable_reflective_caustics" type="in">
+    <metadata>
+      <entry key="page" value="Reflection"/>
+    </metadata>
+  </port>
+  <port name="enable_refractive_caustics" type="in">
+    <metadata>
+      <entry key="page" value="Refraction"/>
+    </metadata>
+  </port>
+  <port name="enable_internal_reflections" type="in">
+    <metadata>
+      <entry key="page" value="Refraction"/>
+    </metadata>
+  </port>
+  <port name="Ksss" type="in">
+    <metadata>
+      <entry key="page" value="Subsurface_Scattering"/>
+    </metadata>
+  </port>
+  <port name="Ksss_color" type="in">
+    <metadata>
+      <entry key="page" value="Subsurface_Scattering"/>
+    </metadata>
+  </port>
+  <port name="Ksss_color.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="Ksss_color.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="Ksss_color.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="sss_radius" type="in">
+    <metadata>
+      <entry key="page" value="Subsurface_Scattering"/>
+    </metadata>
+  </port>
+  <port name="sss_radius.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="sss_radius.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="sss_radius.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="sss_profile" type="in">
+    <metadata>
+      <entry key="page" value="Subsurface_Scattering"/>
+    </metadata>
+  </port>
+  <port name="bounce_factor" type="in"/>
+  <port name="opacity" type="in"/>
+  <port name="opacity.r" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="opacity.g" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="opacity.b" type="in">
+    <tags>
+      <tag name="float or rgb or rgba or vector or point or point2"/>
+    </tags>
+  </port>
+  <port name="aov_emission" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+    </metadata>
+  </port>
+  <port name="aov_direct_diffuse" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+    </metadata>
+  </port>
+  <port name="aov_direct_specular" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+    </metadata>
+  </port>
+  <port name="aov_indirect_diffuse" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+    </metadata>
+  </port>
+  <port name="aov_indirect_specular" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+    </metadata>
+  </port>
+  <port name="aov_reflection" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+    </metadata>
+  </port>
+  <port name="aov_refraction" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+    </metadata>
+  </port>
+  <port name="aov_refraction_opacity" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+    </metadata>
+  </port>
+  <port name="aov_sss" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+    </metadata>
+  </port>
+  <port name="aov_direct_sss" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+    </metadata>
+  </port>
+  <port name="aov_indirect_sss" type="in">
+    <metadata>
+      <entry key="page" value="AOVs"/>
+    </metadata>
+  </port>
+  <port name="out" type="out">
+    <tags>
+      <tag name="rgb"/>
+    </tags>
+  </port>
+  <port name="out.r" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.g" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <port name="out.b" type="out">
+    <tags>
+      <tag name="float"/>
+    </tags>
+  </port>
+  <group_parameter name="standard">
+    <string_parameter name="name" value="standard"/>
+    <string_parameter name="nodeType" value="standard"/>
+    <string_parameter name="__lastValue" value="rh5cl45unvb2g4535unncvrfhi5dahptdcobxz64zvarjqrad5tqFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+      <group_parameter name="Kd">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.7"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="Kd_color">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="1"/>
+          <number_parameter name="i1" value="1"/>
+          <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="diffuse_roughness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="Kb">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="direct_diffuse">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="indirect_diffuse">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="Ks">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="Ks_color">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="1"/>
+          <number_parameter name="i1" value="1"/>
+          <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="specular_roughness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.466905"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="specular_anisotropy">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="specular_distribution">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="ggx"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="specular_rotation">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="direct_specular">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="indirect_specular">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="enable_glossy_caustics">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="Kr">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="Kr_color">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="1"/>
+          <number_parameter name="i1" value="1"/>
+          <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="reflection_exit_color">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="reflection_exit_use_environment">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="enable_reflective_caustics">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="Kt">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="Kt_color">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="1"/>
+          <number_parameter name="i1" value="1"/>
+          <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="transmittance">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="1"/>
+          <number_parameter name="i1" value="1"/>
+          <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="refraction_roughness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="refraction_exit_color">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0"/>
+          <number_parameter name="i1" value="0"/>
+          <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="refraction_exit_use_environment">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="IOR">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="dispersion_abbe">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="enable_refractive_caustics">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="enable_internal_reflections">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="Fresnel">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="Krn">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="specular_Fresnel">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="Ksn">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="Fresnel_use_IOR">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="Fresnel_affect_diff">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+      </group_parameter>
+      <group_parameter name="emission">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="emission_color">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="1"/>
+          <number_parameter name="i1" value="1"/>
+          <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="Ksss">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="Ksss_color">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="1"/>
+          <number_parameter name="i1" value="1"/>
+          <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="sss_profile">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="empirical"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="sss_radius">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="0.1"/>
+          <number_parameter name="i1" value="0.1"/>
+          <number_parameter name="i2" value="0.1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="bounce_factor">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="opacity">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+          <number_parameter name="i0" value="1"/>
+          <number_parameter name="i1" value="1"/>
+          <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_emission">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="emission"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_direct_diffuse">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="direct_diffuse"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_direct_specular">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="direct_specular"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_indirect_diffuse">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="indirect_diffuse"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_indirect_specular">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="indirect_specular"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_reflection">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="reflection"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_refraction">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="refraction"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_refraction_opacity">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="refraction_opacity"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_direct_sss">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="direct_sss"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_indirect_sss">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="indirect_sss"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="aov_sss">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="sss"/>
+        <string_parameter name="type" value="StringAttr"/>
+      </group_parameter>
+      <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+      <string_parameter name="namePrefix" value=""/>
+      <string_parameter name="pagePrefix" value=""/>
+      <string_parameter name="nameRegExFind" value=""/>
+      <string_parameter name="nameRegExReplace" value=""/>
+      <string_parameter name="pageRegExFind" value=""/>
+      <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+  </group_parameter>
+</node>
