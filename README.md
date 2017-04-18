@@ -1,7 +1,7 @@
 # maya2katana
-Easily copy shading nodes from Maya to Katana
+Easily copy shading nodes from [Maya](http://www.autodesk.com/products/maya/overview) to [Katana](https://www.foundry.com/products/katana)
 
-### Currently supported nodes (Arnold with alShaders):
+### Currently supported nodes ([Arnold](https://www.solidangle.com/arnold/) with [alShaders](http://www.anderslanglands.com/alshaders/index.html)):
 - aiAmbientOcclusion
 - aiImage
 - aiNoise
@@ -37,7 +37,7 @@ Easily copy shading nodes from Maya to Katana
 
 ### Installation
 1. Quit Maya
-2. Clone maya2katana repository and place it to:
+2. Clone maya2katana repository (or download zip, extract and rename directory from "maya2katana-master" to "maya2katana") and place it to:
 ```
 Windows: \Users\<username>\Documents\maya\scripts
 Linux: ~/maya/scripts
@@ -52,7 +52,7 @@ clip.copy()
 
 ### Usage
 1. Select a shading network
-![Maya shading network](https://raw.githubusercontent.com/ababak/maya2katana/master/doc/maya.jpg)
+![Maya shading network](doc/maya.jpg)
 2. Press the button you've created earlier or execute a script (see installation step)
 3. Switch to Katana and paste the nodes
-![Resulting Katana shading network](https://raw.githubusercontent.com/ababak/maya2katana/master/doc/katana.jpg)
+![Resulting Katana shading network](doc/katana.jpg)
