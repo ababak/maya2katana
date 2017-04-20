@@ -18,13 +18,13 @@
 
     Author: Andrey Babak
     e-mail: ababak@gmail.com
-    version 2.4.8
+    version 2.4.9
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
 '''
 
-__version__ = '2.4.8'
+__version__ = '2.4.9'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -389,6 +389,7 @@ premap = {
         'postprocess': postprocessMaterial,
         'type': 'standard',
     },
+    'aiVolumeCollector': {'type': 'volume_collector'},
     'alInputScalar': {},
     'alInputVector': {},
     'luminance': {},
@@ -578,6 +579,29 @@ mappings = {
         },
         'bounceFactor': 'bounce_factor',
         'opacity': None,
+    },
+
+
+    'volume_collector': {
+        'scatteringSource': ('scattering_source', ['parameter', 'channel']),
+        'scatteringChannel': 'scattering_channel',
+        'scattering': None,
+        'scatteringColor': 'scattering_color',
+        'scatteringIntensity': 'scattering_intensity',
+        'anisotropy': None,
+        'attenuationSource': ('attenuation_source', ['parameter', 'channel', 'scattering']),
+        'attenuationChannel': 'attenuation_channel',
+        'attenuation': None,
+        'attenuationColor': 'attenuation_color',
+        'attenuationIntensity': 'attenuation_intensity',
+        'attenuationMode': ('attenuation_mode', ['absorption', 'extinction']),
+        'emissionSource': ('emission_source', ['parameter', 'channel']),
+        'emissionChannel': 'emission_channel',
+        'emission': None,
+        'emissionColor': 'emission_color',
+        'emissionIntensity': 'emission_intensity',
+        'positionOffset': 'position_offset',
+        'interpolation': ['closest', 'trilinear', 'tricubic'],
     },
 
 
