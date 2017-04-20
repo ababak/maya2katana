@@ -8,6 +8,7 @@ Easily copy shading nodes from [Maya](http://www.autodesk.com/products/maya/over
 - aiStandard
 - aiUserDataColor
 - aiUserDataFloat
+- aiVolumeCollector
 - alCellNoise
 - alCombineColor
 - alCombineFloat
