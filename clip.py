@@ -18,13 +18,13 @@
 
     Author: Andrey Babak
     e-mail: ababak@gmail.com
-    version 2.4.9
+    version 2.4.11
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
 '''
 
-__version__ = '2.4.9'
+__version__ = '2.4.11'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -389,7 +389,7 @@ premap = {
         'postprocess': postprocessMaterial,
         'type': 'standard',
     },
-    'aiVolumeCollector': {'type': 'volume_collector'},
+    'aiVolumeCollector': {'type': 'volume_collector', 'postprocess': postprocessMaterial},
     'alInputScalar': {},
     'alInputVector': {},
     'luminance': {},
@@ -1507,7 +1507,6 @@ def preprocessNode(nodeName):
                 nodes.update(preprocessResult)
     else:
         nodes[node['name']] = node
-
     return nodes
 
 def processNode(node):
@@ -1660,7 +1659,11 @@ def calcTreePos(branch, x=0):
             pos += leaf['width'] + KATANA_SPACE_WIDTH
 
 def getOutConnection(connection):
-    return connection['node'] + '.out'
+    outPort = [connection['node'], 'out']
+    originalPort = (re.findall('^out(?:Color|Value)([RGBAXYZ])', connection.get('originalPort', '')) or [''])[0].lower()
+    if originalPort:
+        outPort.append(originalPort[0].lower())
+    return '.'.join(outPort)
 
 def hasConnection(node, param):
     return param in node['connections']
@@ -1669,7 +1672,6 @@ def connectXml(nodeXml, dest, source):
     # print dest + ' ' + str(source)
     portNode = nodeXml.find(".//port[@name='{param}']".format(param=dest))
     if portNode is not None:
-        # print 'ok'
         portNode.attrib['source'] = getOutConnection(source)
 
 def establishConnections(nodes, nodesXml):
