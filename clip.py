@@ -1660,9 +1660,7 @@ def calcTreePos(branch, x=0):
 
 def getOutConnection(connection):
     outPort = [connection['node'], 'out']
-    print 'connection', connection
     originalPort = re.findall('^out(?:Color|Value)([RGBAXYZ])', connection.get('originalPort') or '')
-    print 'originalPort', originalPort
     if originalPort:
         outPort.append(originalPort[0].lower())
     return '.'.join(outPort)
