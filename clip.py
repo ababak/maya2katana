@@ -18,13 +18,13 @@
 
     Author: Andrey Babak
     e-mail: ababak@gmail.com
-    version 2.4.13
+    version 2.4.14
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
 '''
 
-__version__ = '2.4.13'
+__version__ = '2.4.14'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -1660,7 +1660,9 @@ def calcTreePos(branch, x=0):
 
 def getOutConnection(connection):
     outPort = [connection['node'], 'out']
-    originalPort = re.findall('^out(?:Color|Value)([RGBAXYZ])', connection.get('originalPort', ''))
+    print 'connection', connection
+    originalPort = re.findall('^out(?:Color|Value)([RGBAXYZ])', connection.get('originalPort') or '')
+    print 'originalPort', originalPort
     if originalPort:
         outPort.append(originalPort[0].lower())
     return '.'.join(outPort)
