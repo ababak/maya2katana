@@ -18,13 +18,13 @@
 
     Author: Andrey Babak
     e-mail: ababak@gmail.com
-    version 2.4.12
+    version 2.4.13
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
 '''
 
-__version__ = '2.4.12'
+__version__ = '2.4.13'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -1279,7 +1279,7 @@ mappings = {
     'alFractal': {
         'mode': ['scalar', 'vector'],
         'space': ['world', 'object', 'Pref', 'UV'],
-        'vector': None,
+        'scale': None,
         'frequency': None,
         'time': None,
         'octaves': None,
