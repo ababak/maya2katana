@@ -18,13 +18,13 @@
 
     Author: Andrey Babak
     e-mail: ababak@gmail.com
-    version 2.4.14
+    version 2.5.1
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
 '''
 
-__version__ = '2.4.14'
+__version__ = '2.5.1'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -1692,6 +1692,14 @@ def renameConnections(nodes):
         # for p, s in node.items():
         #   print '   ' + p, s
 
+def getAllShadingNodes(node):
+    nodes = []
+    discoveredNodes = [node]
+    while discoveredNodes:
+        nodes += discoveredNodes
+        discoveredNodes = cmds.listConnections(discoveredNodes, source=True, destination=False)
+    return nodes
+
 def copy():
     '''
     Main node copy routine, called from shelf/menu
@@ -1711,6 +1719,10 @@ def copy():
 
     successList = []
     nodeNames = cmds.ls(selection=True)
+
+    # Collect the whole network if shadingEngine node is selected alone
+    if len(nodeNames) == 1 and cmds.nodeType(nodeNames[0]) == 'shadingEngine':
+        nodeNames = getAllShadingNodes(nodeNames[0])
 
     # Collect the list of used node names to get unique names
     usedNames += nodeNames
