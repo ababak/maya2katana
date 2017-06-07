@@ -18,13 +18,13 @@
 
     Author: Andrey Babak
     e-mail: ababak@gmail.com
-    version 2.6.1
+    version 2.6.2
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
 '''
 
-__version__ = '2.6.1'
+__version__ = '2.6.2'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -84,33 +84,6 @@ def replaceTx(key, filepath):
     '''
     filepath = filepath[:filepath.rfind('.')].replace('\\', '/') + '.tx'
     return filepath
-
-def postprocessMaterial(node, allNodes):
-    '''
-    Create a NetworkMaterial node
-    '''
-    nodes = {}
-    nodeName = node['name']
-    nodeType = node['type']
-    matName = getUniqueName(nodeType)
-    connections = {
-        'arnoldSurface': {'node': matName, 'originalPort': None},
-    }
-    nodeConnections = node['connections']
-    bump = nodeConnections.get('normalCamera')
-    if bump:
-        connections['arnoldBump'] = bump
-    networkMaterial = {
-        'name': nodeName,
-        'type': 'networkMaterial',
-        'attributes': {},
-        'connections': connections,
-        'renamings': {},
-    }
-    nodes[nodeName] = networkMaterial
-    node['name'] = matName
-    nodes[matName] = node
-    return nodes
 
 def preprocessSampler(node):
     '''
