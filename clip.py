@@ -18,13 +18,13 @@
 
     Author: Andrey Babak
     e-mail: ababak@gmail.com
-    version 2.5.1
+    version 2.6.1
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
 '''
 
-__version__ = '2.5.1'
+__version__ = '2.6.1'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -56,21 +56,11 @@ def getNodeAttributes(node):
     attr['nodeType'] = cmds.nodeType(node)
     for attribute in attributes:
         try:
-            val = cmds.getAttr(node + '.' + attribute)
+            val = cmds.getAttr(node + '.' + attribute, silent=True)
         except Exception as e:
             continue
         attr[attribute] = val
     return attr
-
-def getSelected():
-    '''
-    Get attributes of selected node
-    Not used currently
-    '''
-    node = cmds.ls(selection=True, tail=1)
-    if node:
-        node = node[0]
-    return getNodeAttributes(node)
 
 def getUniqueName(name):
     '''
@@ -95,7 +85,7 @@ def replaceTx(key, filepath):
     filepath = filepath[:filepath.rfind('.')].replace('\\', '/') + '.tx'
     return filepath
 
-def postprocessMaterial(node):
+def postprocessMaterial(node, allNodes):
     '''
     Create a NetworkMaterial node
     '''
@@ -117,12 +107,9 @@ def postprocessMaterial(node):
         'connections': connections,
         'renamings': {},
     }
-
     nodes[nodeName] = networkMaterial
-
     node['name'] = matName
     nodes[matName] = node
-
     return nodes
 
 def preprocessSampler(node):
@@ -149,7 +136,7 @@ def preprocessSampler(node):
                 'attributes': {},
                 'connections': {},
                 'renamings': {
-                    nodeName: utilityName,
+                    nodeName: {'name': utilityName},
                 },
             }
             nodes[utilityName] = samplerInfo
@@ -164,7 +151,7 @@ def preprocessSampler(node):
                 },
                 'connections': {},
                 'renamings': {
-                    nodeName: utilityName,
+                    nodeName: {'name': utilityName},
                 },
             }
             nodes[utilityName] = samplerInfo
@@ -224,7 +211,7 @@ def preprocessRamp(node):
             emptyNode = {
                 'connections': {},
                 'renamings': {
-                    nodeName: sourceConnection['node'],
+                    nodeName: {'name': sourceConnection['node']},
                 },
             }
             nodes[emptyName] = emptyNode
@@ -254,7 +241,7 @@ def preprocessRamp(node):
             'attributes': attributes,
             'connections': connections,
             'renamings': {
-                nodeName: mixName,
+                nodeName: {'name': mixName},
             },
         }
         # print 'colorEntryListSize', node, colorEntryListSize
@@ -265,11 +252,61 @@ def preprocessRamp(node):
     nodes[nodeName] = node
     return nodes
 
+def preprocessNetworkMaterial(node):
+    '''
+    Preprocess shadingEngine node and remap correct attributes
+    '''
+    nodes = {}
+    nodeName = node['name']
+    connections = node['connections']
+    newConnections = {}
+    for i in ['aiSurfaceShader', 'surfaceShader', 'aiVolumeShader', 'volumeShader']:
+        connection = connections.get(i)
+        if connection:
+            newConnections['arnoldSurface'] = connection
+            break
+    displacementConnection = connections.get('displacementShader')
+    if displacementConnection:
+        newConnections['arnoldDisplacement'] = displacementConnection
+    nodes[nodeName] = node
+    node['connections'] = newConnections
+    return nodes
+
+def postprocessNetworkMaterial(node, allNodes):
+    '''
+    Rename the networkMaterial node and connect bump
+    '''
+    nodes = {}
+    arnoldSurface = node['connections'].get('arnoldSurface')
+    if arnoldSurface:
+        shaderNode = allNodes.get(arnoldSurface['node'])
+        if shaderNode:
+            shaderNodeName = shaderNode['name']
+            # Remove the output node to reinsert it back with the new name
+            allNodes.pop(shaderNodeName, None)
+            materialName = shaderNodeName
+            shaderNodeName += '_out'
+            shaderNode['name'] = shaderNodeName
+            nodes[shaderNodeName] = shaderNode
+            node['name'] = materialName
+            node['renamings'] = {
+                materialName: {'name': shaderNodeName},
+            }
+            bump = shaderNode['connections'].get('normalCamera')
+            if bump:
+                node['connections']['arnoldBump'] = bump
+                del shaderNode['connections']['normalCamera']
+            nodes[materialName] = node
+    return nodes
+
 def processNetworkMaterial(xmlGroup, node):
     '''
-    No special processing implemented yet
+    Process NetworkMaterial to remove extra input ports
     '''
-    return
+    for i in ['arnoldSurface', 'arnoldBump', 'arnoldDisplacement']:
+        if i not in node['connections']:
+            parameter = xmlGroup.find("./port[@name='{param}']".format(param=i))
+            xmlGroup.remove(parameter)
 
 def processRamp(xmlGroup, node):
     '''
@@ -349,6 +386,24 @@ def processRamp(xmlGroup, node):
                 subValue.attrib['name'] = 'i' + str(i * tupleSize + j)
                 subValue.attrib['value'] = str(value[j] if tupleSize > 1 else value)
 
+def preprocessDisplacement(node):
+    '''
+    Remove the displacement node as there is no counterpart in Katana
+    but levae the connections
+    '''
+    nodes = {}
+    nodeName = node['name']
+    node['weight'] = 20
+
+    node['type'] = 'range'
+    connection = node.get('connections').get('displacement', {})
+    rename = connection.get('node')
+    node['connections'] = {
+        'input': {'node': rename, 'originalPort': getOutConnection(connection)},
+    }
+    nodes[nodeName] = node
+    return nodes
+
 def overrideClampParams(key, value):
     '''
     Maya has an RGB clamp but Katana uses float value so we need to convert
@@ -382,14 +437,19 @@ def overrideMaterialParams(key, value):
 # - postprocess (postprocess at level 0)
 # - type (override type)
 premap = {
-    'alSurface': {'postprocess': postprocessMaterial},
-    'alLayer': {'postprocess': postprocessMaterial},
-    'alHair': {'postprocess': postprocessMaterial},
-    'aiStandard': {
-        'postprocess': postprocessMaterial,
-        'type': 'standard',
+    'shadingEngine': {
+        'type': 'networkMaterial',
+        'preprocess': preprocessNetworkMaterial,
+        'postprocess': postprocessNetworkMaterial,
     },
-    'aiVolumeCollector': {'type': 'volume_collector', 'postprocess': postprocessMaterial},
+    'displacementShader': {
+        'preprocess': preprocessDisplacement,
+    },
+    'alSurface': {},
+    'alLayer': {},
+    'alHair': {},
+    'aiStandard': {'type': 'standard'},
+    'aiVolumeCollector': {'type': 'volume_collector'},
     'alInputScalar': {},
     'alInputVector': {},
     'luminance': {},
@@ -1321,6 +1381,16 @@ mappings = {
     },
 
 
+    'range': {
+        'input': None,
+        'input_min': None,
+        'input_max': None,
+        'output_min': None,
+        'output_max': None,
+        'smoothstep': None,
+    },
+
+
     'user_data_rgb': {
         'colorAttrName': 'attribute',
         'defaultValue': 'default',
@@ -1492,9 +1562,18 @@ def preprocessNode(nodeName):
             connTo = nodeConnections[i * 2]
             connTo = connTo[connTo.find('.') + 1:]
             connFrom = nodeConnections[i * 2 + 1]
-            connections[connTo] = {'node': connFrom[:connFrom.find('.')], 'originalPort': connFrom[connFrom.find('.') + 1:]}
+            connections[connTo] = {
+                'node': connFrom[:connFrom.find('.')],
+                'originalPort': connFrom[connFrom.find('.') + 1:]
+            }
 
-    node = {'name': nodeName, 'type': nodeType, 'attributes': attributes, 'connections': connections, 'renamings': {}}
+    node = {
+        'name': nodeName,
+        'type': nodeType,
+        'attributes': attributes,
+        'connections': connections,
+        'renamings': {}
+    }
     premapSettings = premap[nodeType]
     for attr in ['type', 'postprocess']:
         if premapSettings.get(attr):
@@ -1686,26 +1765,23 @@ def renameConnections(nodes):
     for nodeName, node in nodes.items():
         for dest, source in node['connections'].items():
             if source['node'] in renamings:
-                if nodeName != renamings[source['node']]:
-                    source['node'] = renamings[source['node']]
-        # print nodeName
-        # for p, s in node.items():
-        #   print '   ' + p, s
+                renaming = renamings[source['node']]
+                if nodeName != renaming['name']:
+                    # print 'Renaming {} to {} ({})'.format(source['node'], renaming['name'], renaming['originalPort'])
+                    source['node'] = renaming['name']
+                    if renaming.get('originalPort'):
+                        source['originalPort'] = renaming['originalPort']
 
-def getAllShadingNodes(node):
-    nodes = []
-    discoveredNodes = [node]
-    while discoveredNodes:
-        nodes += discoveredNodes
-        discoveredNodes = cmds.listConnections(discoveredNodes, source=True, destination=False)
-    return nodes
+def getAllShadingNodes(nodes):
+    if not isinstance(nodes, list):
+        nodes = [nodes]
+    resultNodes = []
+    while nodes:
+        resultNodes += nodes
+        nodes = cmds.listConnections(nodes, source=True, destination=False)
+    return resultNodes
 
-def copy():
-    '''
-    Main node copy routine, called from shelf/menu
-    Usage: Select the shading nodes to copy and call clip.copy()
-    Then paste to Katana
-    '''
+def generateXML(nodeNames):
     global usedNames
     usedNames = []
 
@@ -1718,11 +1794,26 @@ def copy():
     xmlExportedNodes.attrib['type'] = 'Group'
 
     successList = []
-    nodeNames = cmds.ls(selection=True)
 
     # Collect the whole network if shadingEngine node is selected alone
     if len(nodeNames) == 1 and cmds.nodeType(nodeNames[0]) == 'shadingEngine':
-        nodeNames = getAllShadingNodes(nodeNames[0])
+        shadingGroup = nodeNames[0]
+        nodeNames = []
+        shader = cmds.listConnections(shadingGroup + '.aiSurfaceShader')
+        if not shader:
+            shader = cmds.listConnections(shadingGroup + '.surfaceShader')
+        if shader:
+            nodeNames += shader
+        shader = cmds.listConnections(shadingGroup + '.aiVolumeShader')
+        if not shader:
+            shader = cmds.listConnections(shadingGroup + '.volumeShader')
+        if shader:
+            nodeNames += shader
+        shader = cmds.listConnections(shadingGroup + '.displacementShader')
+        if shader:
+            nodeNames += shader
+        nodeNames = getAllShadingNodes(nodeNames)
+        nodeNames.append(shadingGroup)
 
     # Collect the list of used node names to get unique names
     usedNames += nodeNames
@@ -1745,11 +1836,12 @@ def copy():
             # Remove the affected node and reinsert its postprocessed replacement
             preprocessedNodes.pop(nodeName, None)
             postprocessFunc = node['postprocess']
-            postprocessedNode = postprocessFunc(node)
+            postprocessedNode = postprocessFunc(node, preprocessedNodes)
             preprocessedNodes.update(postprocessedNode)
             shouldUpdateTree = True
 
     if shouldUpdateTree:
+        renameConnections(preprocessedNodes)
         graphTree = buildTree(preprocessedNodes)
 
     nodesXml = {}
@@ -1765,7 +1857,20 @@ def copy():
         xmlExportedNodes.append(xmlNode)
 
     if successList:
-        clipboard.setText(ET.tostring(xmlRoot))
-        log.info('Successfully copied ' + ', '.join(successList) + ' to clipboard. You can paste to Katana now.')
+        return ET.tostring(xmlRoot)
+    else:
+        return ''
+
+def copy():
+    '''
+    Main node copy routine, called from shelf/menu
+    Usage: Select the shading nodes to copy and call clip.copy()
+    Then paste to Katana
+    '''
+    nodeNames = cmds.ls(selection=True)
+    xml = generateXML(nodeNames)
+    if xml:
+        clipboard.setText(xml)
+        log.info('Successfully copied nodes to clipboard. You can paste them to Katana now.')
     else:
         log.info('Nothing copied, sorry')

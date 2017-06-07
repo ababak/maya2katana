@@ -1,10 +1,11 @@
-<node baseType="NetworkMaterial" edited="true" name="NetworkMaterial" selected="true" type="NetworkMaterial" x="-1567.477417" y="-1895.901367">
+<node baseType="NetworkMaterial" edited="true" name="NetworkMaterial" selected="true" type="NetworkMaterial">
   <port name="arnoldSurface" type="in">
     <tags>
       <tag name="float or rgb or rgba or vector or point or point2"/>
     </tags>
   </port>
   <port name="arnoldBump" type="in"/>
+  <port name="arnoldDisplacement" type="in"/>
   <port name="out" type="out"/>
   <group_parameter name="NetworkMaterial">
     <string_parameter name="name" value="NetworkMaterial"/>
