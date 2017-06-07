@@ -52,7 +52,7 @@ clip.copy()
 4. To create a shelf button select the code and middle-mouse-drag it to your shelf
 
 ### Usage
-1. Select a shading network
+1. Select a shading network or a single shadingEngine (Shading Group) node
 ![Maya shading network](doc/maya.jpg)
 2. Press the button you've created earlier or execute a script (see installation step)
 3. Switch to Katana and paste the nodes
