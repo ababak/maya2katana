@@ -18,13 +18,13 @@
 
     Author: Andrey Babak
     e-mail: ababak@gmail.com
-    version 2.6.6
+    version 2.6.7
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
 '''
 
-__version__ = '2.6.6'
+__version__ = '2.6.7'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -253,6 +253,10 @@ def postprocessNetworkMaterial(node, allNodes):
     arnoldSurface = node['connections'].get('arnoldSurface')
     if arnoldSurface:
         shaderNode = allNodes.get(arnoldSurface['node'])
+        while shaderNode.get('type') in ['aov_write_rgb', 'aov_write_float']:
+            passthrough = shaderNode['connections'].get('beauty')
+            if passthrough:
+                shaderNode = allNodes.get(passthrough.get('node'))
         if shaderNode:
             shaderNodeName = shaderNode['name']
             # Remove the output node to reinsert it back with the new name
