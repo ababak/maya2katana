@@ -18,13 +18,13 @@
 
     Author: Andrey Babak
     e-mail: ababak@gmail.com
-    version 2.6.3
+    version 2.6.4
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
 '''
 
-__version__ = '2.6.3'
+__version__ = '2.6.4'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -1792,6 +1792,7 @@ def generateXML(nodeNames):
         nodeNames.append(shadingGroup)
 
     # Collect the list of used node names to get unique names
+    nodeNames = list(set(nodeNames))
     usedNames += nodeNames
 
     preprocessedNodes = {}
@@ -1819,6 +1820,11 @@ def generateXML(nodeNames):
     if shouldUpdateTree:
         renameConnections(preprocessedNodes)
         graphTree = buildTree(preprocessedNodes)
+
+    print 'preprocessedNodes'
+    for i, j in preprocessedNodes.items():
+        print i, '=', j
+        print '-' * 20
 
     nodesXml = {}
     for nodeName, node in preprocessedNodes.items():
