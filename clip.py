@@ -18,13 +18,13 @@
 
     Author: Andrey Babak
     e-mail: ababak@gmail.com
-    version 2.6.5
+    version 2.6.6
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
 '''
 
-__version__ = '2.6.5'
+__version__ = '2.6.6'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -233,7 +233,7 @@ def preprocessNetworkMaterial(node):
     nodeName = node['name']
     connections = node['connections']
     newConnections = {}
-    for i in ['surfaceShader', 'volumeShader']:
+    for i in ['aiSurfaceShader', 'surfaceShader', 'aiVolumeShader', 'volumeShader']:
         connection = connections.get(i)
         if connection:
             newConnections['arnoldSurface'] = connection
@@ -450,6 +450,8 @@ premap = {
     'alFractal': {},
     'aiUserDataFloat': {'type': 'user_data_float'},
     'aiUserDataColor': {'type': 'user_data_rgb'},
+    'aiWriteFloat': {'type': 'aov_write_float'},
+    'aiWriteColor': {'type': 'aov_write_rgb'},
     'blendColors': {'type': 'mix'},
 }
 
@@ -1373,6 +1375,21 @@ mappings = {
     'user_data_float': {
         'floatAttrName': 'attribute',
         'defaultValue': 'default',
+    },
+
+
+    'aov_write_rgb': {
+        'beauty': 'passthrough',
+        'input': 'aov_input',
+        'aovName': 'aov_name',
+        'blend': 'blend_opacity',
+    },
+
+
+    'aov_write_float': {
+        'beauty': 'passthrough',
+        'input': 'aov_input',
+        'aovName': 'aov_name',
     },
 
 
