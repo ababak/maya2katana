@@ -18,13 +18,13 @@
 
     Author: Andrey Babak
     e-mail: ababak@gmail.com
-    version 2.6.7
+    version 2.6.8
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
 '''
 
-__version__ = '2.6.7'
+__version__ = '2.6.8'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -297,6 +297,7 @@ def processRamp(xmlGroup, node):
     if not nodeType:
         return
     connections = node['connections']
+    ramp_input = ''
     if str(attributes['type']) == '0':
         ramp_type = 'v'
         ramp_input = attributes.get('vCoord', '0')
@@ -304,13 +305,19 @@ def processRamp(xmlGroup, node):
             ramp_type = 'custom'
             connections['input'] = connections['vCoord']
             del(connections['vCoord'])
-    else:
+    elif str(attributes['type']) == '1':
         ramp_type = 'u'
         ramp_input = attributes.get('uCoord', '0')
         if connections.get('uCoord'):
             ramp_type = 'custom'
             connections['input'] = connections['uCoord']
             del(connections['uCoord'])
+    elif str(attributes['type']) == '2':
+        ramp_type = 'diagonal'
+    elif str(attributes['type']) == '3':
+        ramp_type = 'radial'
+    elif str(attributes['type']) == '4':
+        ramp_type = 'circular'
 
     keyValue = 'color' if nodeType == 'ramp' else 'value'
 
