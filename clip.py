@@ -18,13 +18,13 @@
 
     Author: Andrey Babak
     e-mail: ababak@gmail.com
-    version 2.6.2
+    version 2.6.3
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
 '''
 
-__version__ = '2.6.2'
+__version__ = '2.6.3'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -1757,6 +1757,9 @@ def getAllShadingNodes(nodes):
 def generateXML(nodeNames):
     global usedNames
     usedNames = []
+
+    if not isinstance(nodeNames, list):
+        nodeNames = [nodeNames]
 
     # Let's prepare the katana frame to enclose our nodes
     xmlRoot = ET.Element('katana')
