@@ -18,13 +18,13 @@
 
     Author: Andrey Babak
     e-mail: ababak@gmail.com
-    version 2.6.4
+    version 2.6.5
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
 '''
 
-__version__ = '2.6.4'
+__version__ = '2.6.5'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -233,7 +233,7 @@ def preprocessNetworkMaterial(node):
     nodeName = node['name']
     connections = node['connections']
     newConnections = {}
-    for i in ['aiSurfaceShader', 'surfaceShader', 'aiVolumeShader', 'volumeShader']:
+    for i in ['surfaceShader', 'volumeShader']:
         connection = connections.get(i)
         if connection:
             newConnections['arnoldSurface'] = connection
@@ -1820,11 +1820,6 @@ def generateXML(nodeNames):
     if shouldUpdateTree:
         renameConnections(preprocessedNodes)
         graphTree = buildTree(preprocessedNodes)
-
-    print 'preprocessedNodes'
-    for i, j in preprocessedNodes.items():
-        print i, '=', j
-        print '-' * 20
 
     nodesXml = {}
     for nodeName, node in preprocessedNodes.items():
