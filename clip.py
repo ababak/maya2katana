@@ -18,13 +18,13 @@
 
     Author: Andrey Babak
     e-mail: ababak@gmail.com
-    version 2.6.8
+    version 2.6.10
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
 '''
 
-__version__ = '2.6.8'
+__version__ = '2.6.10'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -253,7 +253,7 @@ def postprocessNetworkMaterial(node, allNodes):
     arnoldSurface = node['connections'].get('arnoldSurface')
     if arnoldSurface:
         shaderNode = allNodes.get(arnoldSurface['node'])
-        while shaderNode.get('type') in ['aov_write_rgb', 'aov_write_float']:
+        while shaderNode and shaderNode.get('type') in ['aov_write_rgb', 'aov_write_float']:
             passthrough = shaderNode['connections'].get('beauty')
             if passthrough:
                 shaderNode = allNodes.get(passthrough.get('node'))
@@ -1797,8 +1797,6 @@ def generateXML(nodeNames):
     xmlExportedNodes.attrib['name'] = '__SAVE_exportedNodes'
     xmlExportedNodes.attrib['type'] = 'Group'
 
-    successList = []
-
     # Collect the whole network if shadingEngine node is selected alone
     if len(nodeNames) == 1 and cmds.nodeType(nodeNames[0]) == 'shadingEngine':
         shadingGroup = nodeNames[0]
@@ -1827,7 +1825,6 @@ def generateXML(nodeNames):
     for nodeName in nodeNames:
         preprocessedNode = preprocessNode(nodeName)
         if preprocessedNode:
-            successList.append(nodeName)
             preprocessedNodes.update(preprocessedNode)
 
     renameConnections(preprocessedNodes)
@@ -1861,7 +1858,7 @@ def generateXML(nodeNames):
     for xmlNode in allXmlNodes:
         xmlExportedNodes.append(xmlNode)
 
-    if successList:
+    if nodesXml:
         return ET.tostring(xmlRoot)
     else:
         return ''
