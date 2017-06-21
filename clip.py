@@ -18,13 +18,13 @@
 
     Author: Andrey Babak
     e-mail: ababak@gmail.com
-    version 2.6.10
+    version 2.6.11
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
 '''
 
-__version__ = '2.6.10'
+__version__ = '2.6.11'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -55,9 +55,11 @@ def getNodeAttributes(node):
     attr['nodeName'] = node
     attr['nodeType'] = cmds.nodeType(node)
     for attribute in attributes:
+        if '.' in attribute:
+            continue
         try:
-            val = cmds.getAttr(node + '.' + attribute, silent=True)
-        except Exception as e:
+            val = cmds.getAttr(node + '.' + attribute)
+        except RuntimeError:
             continue
         attr[attribute] = val
     return attr
