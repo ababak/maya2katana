@@ -18,13 +18,13 @@
 
     Author: Andrey Babak
     e-mail: ababak@gmail.com
-    version 2.6.11
+    version 2.6.12
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
 '''
 
-__version__ = '2.6.11'
+__version__ = '2.6.12'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -58,7 +58,7 @@ def getNodeAttributes(node):
         if '.' in attribute:
             continue
         try:
-            val = cmds.getAttr(node + '.' + attribute)
+            val = cmds.getAttr(node + '.' + attribute, silent=True)
         except RuntimeError:
             continue
         attr[attribute] = val
@@ -320,6 +320,9 @@ def processRamp(xmlGroup, node):
         ramp_type = 'radial'
     elif str(attributes['type']) == '4':
         ramp_type = 'circular'
+    else:
+        log.warning('Can\'t translate ramp type for node "{name}"'.format(name=nodeName))
+        ramp_type = 'custom'
 
     keyValue = 'color' if nodeType == 'ramp' else 'value'
 
