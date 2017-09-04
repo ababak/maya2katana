@@ -18,13 +18,12 @@
 
     Author: Andrey Babak
     e-mail: ababak@gmail.com
-    version 2.6.12
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
 '''
 
-__version__ = '2.6.12'
+__version__ = '2.6.14'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -58,7 +57,7 @@ def getNodeAttributes(node):
         if '.' in attribute:
             continue
         try:
-            val = cmds.getAttr(node + '.' + attribute, silent=True)
+            val = cmds.getAttr(node + '.' + attribute)
         except RuntimeError:
             continue
         attr[attribute] = val
@@ -442,6 +441,7 @@ premap = {
     'alInputScalar': {},
     'alInputVector': {},
     'luminance': {},
+    'image': {},
     'aiImage': {'type': 'image'},
     'alCombineColor': {},
     'alCombineFloat': {},
