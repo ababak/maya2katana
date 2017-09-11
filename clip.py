@@ -23,7 +23,7 @@
     ------------------------------
 '''
 
-__version__ = '2.6.14'
+__version__ = '2.6.16'
 
 import maya.cmds as cmds
 import xml.etree.ElementTree as ET
@@ -438,10 +438,11 @@ premap = {
     'alHair': {},
     'aiStandard': {'type': 'standard'},
     'aiVolumeCollector': {'type': 'volume_collector'},
+    'aiVolumeSampleFloat': {'type': 'volume_sample_float'},
+    'aiVolumeSampleRgb': {'type': 'volume_sample_rgb'},
     'alInputScalar': {},
     'alInputVector': {},
     'luminance': {},
-    'image': {},
     'aiImage': {'type': 'image'},
     'alCombineColor': {},
     'alCombineFloat': {},
@@ -653,6 +654,38 @@ mappings = {
         'emissionIntensity': 'emission_intensity',
         'positionOffset': 'position_offset',
         'interpolation': ['closest', 'trilinear', 'tricubic'],
+    },
+
+
+    'volume_sample_float': {
+        'channel': None,
+        'positionOffset': 'position_offset',
+        'interpolation': ['closest', 'trilinear', 'tricubic'],
+        'inputMin': 'input_min',
+        'inputMax': 'input_max',
+        'contrast': None,
+        'contrastPivot': 'contrast_pivot',
+        'bias': None,
+        'gain': None,
+        'outputMin': 'output_min',
+        'outputMax': 'output_max',
+        'clampMin': 'clamp_min',
+        'clampMax': 'clamp_max',
+    },
+
+
+    'volume_sample_rgb': {
+        'channel': None,
+        'positionOffset': 'position_offset',
+        'interpolation': ['closest', 'trilinear', 'tricubic'],
+        'gamma': None,
+        'hueShift': 'hue_shift',
+        'saturation': None,
+        'contrast': None,
+        'contrastPivot': 'contrast_pivot',
+        'exposure': None,
+        'multiply': None,
+        'add': None,
     },
 
 
