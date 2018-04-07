@@ -350,7 +350,7 @@ def processRamp(xmlGroup, node):
 def preprocessDisplacement(node):
     '''
     Remove the displacement node as there is no counterpart in Katana
-    but levae the connections
+    but leave the connections
     '''
     nodes = {}
     nodeName = node['name']
