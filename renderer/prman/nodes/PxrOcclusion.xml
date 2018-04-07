@@ -1,0 +1,55 @@
+<node baseType="PrmanShadingNode" name="PxrOcclusion" selected="true" type="PrmanShadingNode">
+    <port name="out" type="out">
+    <tags>
+        <tag name="integrator"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrOcclusion">
+    <string_parameter name="name" value="PxrOcclusion"/>
+    <string_parameter name="nodeType" value="PxrOcclusion"/>
+    <string_parameter name="__lastValue" value="tvh7vjrsyzas6pjihskf24vmral2uehskpqp3bfshpoffhcslmdqFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="numSamples">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="4"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="distribution">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="cosineSpread">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="falloff">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="maxDistance">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="useAlbedo">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

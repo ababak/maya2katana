@@ -1,0 +1,162 @@
+<node baseType="PrmanShadingNode" name="PxrDistantLight" selected="true" type="PrmanShadingNode">
+    <port name="notes" type="in">
+    <metadata>
+        <entry key="page" value="Notes"/>
+    </metadata>
+    </port>
+    <port name="out" type="out">
+    <tags>
+        <tag name="light"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrDistantLight">
+    <string_parameter name="name" value="PxrDistantLight"/>
+    <string_parameter name="nodeType" value="PxrDistantLight"/>
+    <string_parameter name="__lastValue" value="dpxvx6qxxcizqnfueqc6yezmxaaoemmmlgfeyrxxs2nbb6xfgxxyFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="notes">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="intensity">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="50000"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="exposure">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="angleExtent">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.53"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="lightColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="1"/>
+            <number_parameter name="i1" value="1"/>
+            <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="enableTemperature">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="temperature">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="6500"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="emissionFocus">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="emissionFocusTint">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="specular">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="diffuse">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="enableShadows">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="shadowColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="shadowDistance">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="-1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="shadowFalloff">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="-1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="shadowFalloffGamma">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="shadowSubset">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="shadowExcludeSubset">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="areaNormalize">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="traceLightPaths">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="thinShadow">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="fixedSampleCount">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="lightGroup">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="importanceMultiplier">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

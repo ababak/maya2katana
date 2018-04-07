@@ -1,0 +1,89 @@
+<node baseType="PrmanShadingNode" name="PxrTangentField" selected="true" type="PrmanShadingNode">
+    <port name="inputRotation" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Parameters"/>
+        <entry key="label" value="Input Rotation"/>
+    </metadata>
+    </port>
+    <port name="inputVector" type="in">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Parameters"/>
+        <entry key="label" value="Input Vector"/>
+    </metadata>
+    </port>
+    <port name="resultXYZ" type="out">
+    <tags>
+        <tag name="normal"/>
+        <tag name="point"/>
+        <tag name="vector"/>
+    </tags>
+    </port>
+    <port name="resultX" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultY" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultZ" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrTangentField">
+    <string_parameter name="name" value="PxrTangentField"/>
+    <string_parameter name="nodeType" value="PxrTangentField"/>
+    <string_parameter name="__lastValue" value="sgoihrjeszachs7xthq2rkhg6q3xnuk62ydc545jmqonvxjvnb5iFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="inputRotation">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="inputVector">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="rotationOffset">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="rotationRange">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="centeredVectors">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

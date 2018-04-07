@@ -30,6 +30,7 @@ import xml.etree.ElementTree as ET
 import maya.cmds as cmds
 
 from . import utils
+reload(utils)
 
 try:
     import PySide
@@ -57,6 +58,10 @@ def equalAttributes(a, b):
     elif isinstance(a, float) or isinstance(b, float):
         return abs(float(a) - float(b)) < delta
     elif isinstance(a, bool) or isinstance(b, bool):
+        if isinstance(a, tuple):
+            a = bool(a)
+        if isinstance(b, tuple):
+            b = bool(b)
         if not isinstance(a, bool):
             a = (a == 'True') or int(a) == 1
         if not isinstance(b, bool):
@@ -72,6 +77,11 @@ def iterateMappingRecursive(mappingDict, xmlGroup, node):
     The most complicated part that maps Maya parameters to Katana XML parameters
     '''
     attributes = node['attributes']
+    if not mappingDict:
+        # If we know that the node has identical attributes in both Maya and Katana,
+        # then we don't need the mapping dictionary, we can build it on-the-fly
+        # from Maya node attributes
+        mappingDict = dict.fromkeys(attributes)
     for paramKey, paramChildren in mappingDict.items():
         options = None
         processField = None
@@ -153,6 +163,14 @@ def iterateMappingRecursive(mappingDict, xmlGroup, node):
                     # print(paramKey + ' = ' + str(value))
                     # print('\tnew value = ' + str(mayaValue))
                     if tuples:
+                        # # HACK START
+                        # # A hack to avoid RenderMan bug
+                        # # with not working PxrMultiTexture.optimizeIndirect
+                        # if isinstance(mayaValue, bool):
+                        #     mayaValue = tuple(mayaValue)
+                        # # HACK END
+                        # In the end I've changed the PxrMultiTexture.xml
+                        # file to fix the affected checkbox
                         for i, val in enumerate(mayaValue):
                             subValueNode = valueNode.find("*[@name='i{index}']".format(index=i))
                             subValueNode.attrib['value'] = str(val)
@@ -370,10 +388,11 @@ def calcTreePos(branch, x=0):
             pos += leaf['width'] + KATANA_SPACE_WIDTH
 
 def connectXml(nodeXml, dest, source):
-    # print dest + ' ' + str(source)
     portNode = nodeXml.find(".//port[@name='{param}']".format(param=dest))
     if portNode is not None:
         portNode.attrib['source'] = utils.getOutConnection(source)
+        return True
+    return False
 
 def getAllShadingNodes(nodes):
     if not isinstance(nodes, list):
@@ -387,19 +406,28 @@ def getAllShadingNodes(nodes):
 def establishConnections(nodes, nodesXml):
     for nodeName, nodeXml in nodesXml.items():
         for dest, source in nodes[nodeName]['connections'].items():
-            connectXml(nodeXml, dest, source)
+            if not connectXml(nodeXml, dest, source):
+                utils.log.warning(
+                    'Incoming port "{node}.{port}" not found '
+                    'while trying to establish connection from "{source_node}.{source_port}"'
+                    .format(
+                        port=dest,
+                        node=nodes[nodeName]['name'],
+                        source_node=source.get('node'),
+                        source_port=source.get('originalPort')))
 
 def generateXML(nodeNames, renderer=None):
     if not isinstance(nodeNames, list):
         nodeNames = [nodeNames]
     # Let's prepare the katana frame to enclose our nodes
     xmlRoot = ET.Element('katana')
-    xmlRoot.attrib['release'] = '2.5v4'
-    xmlRoot.attrib['version'] = '2.5.1.000001'
+    xmlRoot.attrib['release'] = '2.6v4'
+    xmlRoot.attrib['version'] = '2.6.2.000001'
     xmlExportedNodes = ET.SubElement(xmlRoot, 'node')
     xmlExportedNodes.attrib['name'] = '__SAVE_exportedNodes'
     xmlExportedNodes.attrib['type'] = 'Group'
     # Collect the whole network if shadingEngine node is selected alone
+    probeNode = nodeNames[0]
     if len(nodeNames) == 1 and cmds.nodeType(nodeNames[0]) == 'shadingEngine':
         shadingGroup = nodeNames[0]
         nodeNames = []
@@ -417,21 +445,21 @@ def generateXML(nodeNames, renderer=None):
             volume_shader = cmds.listConnections(shadingGroup + '.volumeShader')
         if volume_shader:
             nodeNames += volume_shader
-        if not renderer:
-            shader = surface_shader or volume_shader
-            shader_type = cmds.nodeType(shader)
-            if shader_type.startswith('Pxr'):
-                renderer = 'prman'
-            elif shader_type.startswith(('ai', 'al')):
-                renderer = 'arnold'
+        probeNode = surface_shader or volume_shader
         displacement_shader = cmds.listConnections(shadingGroup + '.displacementShader')
         if displacement_shader:
             nodeNames += displacement_shader
         nodeNames = getAllShadingNodes(nodeNames)
         nodeNames.append(shadingGroup)
     if not renderer:
-        utils.log.error('No renderer specified')
-        return ''
+        shaderType = cmds.nodeType(probeNode)
+        if shaderType.startswith('Pxr'):
+            renderer = 'prman'
+        elif shaderType.startswith(('ai', 'al')):
+            renderer = 'arnold'
+        else:
+            utils.log.error('No renderer specified')
+            return ''
     # Now we try to import renderer plugin
     try:
         renderer_package = __import__(
@@ -485,14 +513,14 @@ def generateXML(nodeNames, renderer=None):
         return ET.tostring(xmlRoot)
     return ''
 
-def copy():
+def copy(renderer=None):
     '''
     Main node copy routine, called from shelf/menu
     Usage: Select the shading nodes to copy and call clip.copy()
     Then paste to Katana
     '''
     nodeNames = cmds.ls(selection=True)
-    xml = generateXML(nodeNames)
+    xml = generateXML(nodeNames, renderer=renderer)
     if xml:
         clipboard.setText(xml)
         utils.log.info('Successfully copied nodes to clipboard. You can paste them to Katana now.')

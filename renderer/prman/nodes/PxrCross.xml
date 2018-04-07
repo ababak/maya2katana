@@ -1,0 +1,81 @@
+<node baseType="PrmanShadingNode" name="PxrCross" selected="true" type="PrmanShadingNode">
+    <port name="vector1" type="in">
+    <tags>
+        <tag name="vector"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Vector 1"/>
+    </metadata>
+    </port>
+    <port name="vector2" type="in">
+    <tags>
+        <tag name="vector"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Vector 2"/>
+    </metadata>
+    </port>
+    <port name="resultXYZ" type="out">
+    <tags>
+        <tag name="normal"/>
+        <tag name="point"/>
+        <tag name="vector"/>
+    </tags>
+    </port>
+    <port name="resultX" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultY" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultZ" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrCross">
+    <string_parameter name="name" value="PxrCross"/>
+    <string_parameter name="nodeType" value="PxrCross"/>
+    <string_parameter name="__lastValue" value="ghc5l6bnoxgumownvbcjs7tfnm5w6sm73526wlxfm44lrbx3s4l4False"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="vector1">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="vector2">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="normalizeResult">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

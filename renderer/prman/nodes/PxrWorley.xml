@@ -1,0 +1,152 @@
+<node baseType="PrmanShadingNode" name="PxrWorley" selected="true" type="PrmanShadingNode">
+    <port name="frequency" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Frequency"/>
+    </metadata>
+    </port>
+    <port name="jitter" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Jitter"/>
+    </metadata>
+    </port>
+    <port name="c1" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="C1"/>
+    </metadata>
+    </port>
+    <port name="c2" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="C2"/>
+    </metadata>
+    </port>
+    <port name="randomScale" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Random Scale"/>
+    </metadata>
+    </port>
+    <port name="randomScaleCenter" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Random Scale Center"/>
+    </metadata>
+    </port>
+    <port name="manifold" type="in">
+    <tags>
+        <tag name="manifold"/>
+        <tag name="struct"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Manifold"/>
+    </metadata>
+    </port>
+    <port name="resultF" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultRGB" type="out">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrWorley">
+    <string_parameter name="name" value="PxrWorley"/>
+    <string_parameter name="nodeType" value="PxrWorley"/>
+    <string_parameter name="__lastValue" value="zwxwzatjqgys2iyu7xquk7c2zy5en34bcj5ptyqhkhvaeq2a7tpyFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="surfacePosition">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="frequency">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="4"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="distancemetric">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="jitter">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.75"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="c1">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.8"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="c2">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="-0.2"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="minkowskiExponent">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="4"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="shape">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="clamp">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="invert">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="randomScale">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="randomScaleCenter">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="manifold">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

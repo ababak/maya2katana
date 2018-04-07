@@ -1,0 +1,30 @@
+<node baseType="PrmanShadingNode" name="PxrRollingShutter" selected="true" type="PrmanShadingNode">
+    <port name="out" type="out">
+    <tags>
+        <tag name="projection"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrRollingShutter">
+    <string_parameter name="name" value="PxrRollingShutter"/>
+    <string_parameter name="nodeType" value="PxrRollingShutter"/>
+    <string_parameter name="__lastValue" value="rqg257fgyr7jj4awbvikasdvrqulpizge7fycjsp3y37sanuneleFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="angle">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="180"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

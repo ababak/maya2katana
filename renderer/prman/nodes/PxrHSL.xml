@@ -1,0 +1,99 @@
+<node baseType="PrmanShadingNode" name="PxrHSL" selected="true" type="PrmanShadingNode">
+    <port name="inputRGB" type="in">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Input Color"/>
+    </metadata>
+    </port>
+    <port name="hue" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Hue"/>
+    </metadata>
+    </port>
+    <port name="saturation" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Saturation"/>
+    </metadata>
+    </port>
+    <port name="luminance" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Luminance"/>
+    </metadata>
+    </port>
+    <port name="resultRGB" type="out">
+    <tags>
+        <tag name="color"/>
+        <tag name="normal"/>
+        <tag name="point"/>
+        <tag name="vector"/>
+    </tags>
+    </port>
+    <port name="resultR" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultG" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultB" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrHSL">
+    <string_parameter name="name" value="PxrHSL"/>
+    <string_parameter name="nodeType" value="PxrHSL"/>
+    <string_parameter name="__lastValue" value="ceo4qvqnudb63wnoo254j6ls5i7dsmk5uk2v3bqvculotdh6ts4mFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="inputRGB">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="hue">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="saturation">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="luminance">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

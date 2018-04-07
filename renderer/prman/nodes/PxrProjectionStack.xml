@@ -1,0 +1,202 @@
+<node baseType="PrmanShadingNode" name="PxrProjectionStack" selected="true" type="PrmanShadingNode">
+    <port name="layersRGB" type="in">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Layers RGB"/>
+    </metadata>
+    </port>
+    <port name="layersA" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Layers A"/>
+    </metadata>
+    </port>
+    <port name="layersNumChannels" type="in">
+    <tags>
+        <tag name="int"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Num Channels"/>
+    </metadata>
+    </port>
+    <port name="layersChannelsRGB" type="in">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Channels RGB"/>
+    </metadata>
+    </port>
+    <port name="resultRGB" type="out">
+    <tags>
+        <tag name="color"/>
+        <tag name="normal"/>
+        <tag name="point"/>
+        <tag name="vector"/>
+    </tags>
+    </port>
+    <port name="resultR" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultG" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultB" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultA" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="channelOut0" type="out">
+    <tags>
+        <tag name="color"/>
+        <tag name="normal"/>
+        <tag name="point"/>
+        <tag name="vector"/>
+    </tags>
+    </port>
+    <port name="channelOut1" type="out">
+    <tags>
+        <tag name="color"/>
+        <tag name="normal"/>
+        <tag name="point"/>
+        <tag name="vector"/>
+    </tags>
+    </port>
+    <port name="channelOut2" type="out">
+    <tags>
+        <tag name="color"/>
+        <tag name="normal"/>
+        <tag name="point"/>
+        <tag name="vector"/>
+    </tags>
+    </port>
+    <port name="channelOut3" type="out">
+    <tags>
+        <tag name="color"/>
+        <tag name="normal"/>
+        <tag name="point"/>
+        <tag name="vector"/>
+    </tags>
+    </port>
+    <port name="channelOut4" type="out">
+    <tags>
+        <tag name="color"/>
+        <tag name="normal"/>
+        <tag name="point"/>
+        <tag name="vector"/>
+    </tags>
+    </port>
+    <port name="channelOut5" type="out">
+    <tags>
+        <tag name="color"/>
+        <tag name="normal"/>
+        <tag name="point"/>
+        <tag name="vector"/>
+    </tags>
+    </port>
+    <port name="channelOut6" type="out">
+    <tags>
+        <tag name="color"/>
+        <tag name="normal"/>
+        <tag name="point"/>
+        <tag name="vector"/>
+    </tags>
+    </port>
+    <port name="channelOut7" type="out">
+    <tags>
+        <tag name="color"/>
+        <tag name="normal"/>
+        <tag name="point"/>
+        <tag name="vector"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrProjectionStack">
+    <string_parameter name="name" value="PxrProjectionStack"/>
+    <string_parameter name="nodeType" value="PxrProjectionStack"/>
+    <string_parameter name="__lastValue" value="hzioala6ulkk5bjxwbx4bviwkm4wx5pvvx2d5bglosqxugggfi4qFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="layersMode">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="isDynamicArray" value="1"/>
+        <numberarray_parameter name="value" size="1" tupleSize="1">
+            <number_parameter name="i0" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="layersRGB">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="isDynamicArray" value="1"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0.5"/>
+            <number_parameter name="i1" value="0.5"/>
+            <number_parameter name="i2" value="0.5"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="layersA">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="isDynamicArray" value="1"/>
+        <numberarray_parameter name="value" size="1" tupleSize="1">
+            <number_parameter name="i0" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="layersNumChannels">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="isDynamicArray" value="1"/>
+        <numberarray_parameter name="value" size="1" tupleSize="1">
+            <number_parameter name="i0" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="layersChannelsRGB">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="isDynamicArray" value="1"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="channelsAovNames">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="isDynamicArray" value="1"/>
+        <stringarray_parameter name="value" size="0" tupleSize="1"/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="outputChanIdx">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="isDynamicArray" value="1"/>
+        <numberarray_parameter name="value" size="1" tupleSize="1">
+            <number_parameter name="i0" value="-1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

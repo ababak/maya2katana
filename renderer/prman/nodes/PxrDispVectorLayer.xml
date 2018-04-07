@@ -1,0 +1,314 @@
+<node baseType="PrmanShadingNode" name="PxrDispVectorLayer" selected="true" type="PrmanShadingNode">
+    <port name="overallAmount" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Overall Gain"/>
+    </metadata>
+    </port>
+    <port name="baseLayerAmount" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Base Layer"/>
+        <entry key="label" value="Base Layer Gain"/>
+    </metadata>
+    </port>
+    <port name="baseLayerDispVector" type="in">
+    <tags>
+        <tag name="vector"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Base Layer"/>
+        <entry key="label" value="Base Layer Vector"/>
+    </metadata>
+    </port>
+    <port name="layer1Amount" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Layer 1"/>
+        <entry key="label" value="Layer 1 Gain"/>
+    </metadata>
+    </port>
+    <port name="layer1DispVector" type="in">
+    <tags>
+        <tag name="vector"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Layer 1"/>
+        <entry key="label" value="Layer 1 Vector"/>
+    </metadata>
+    </port>
+    <port name="layer1Mask" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Layer 1"/>
+        <entry key="label" value="Layer 1 Mask"/>
+    </metadata>
+    </port>
+    <port name="layer2Amount" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Layer 2"/>
+        <entry key="label" value="Layer 2 Gain"/>
+    </metadata>
+    </port>
+    <port name="layer2DispVector" type="in">
+    <tags>
+        <tag name="vector"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Layer 2"/>
+        <entry key="label" value="Layer 2 Vector"/>
+    </metadata>
+    </port>
+    <port name="layer2Mask" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Layer 2"/>
+        <entry key="label" value="Layer 2 Mask"/>
+    </metadata>
+    </port>
+    <port name="layer3Amount" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Layer 3"/>
+        <entry key="label" value="Layer 3 Gain"/>
+    </metadata>
+    </port>
+    <port name="layer3DispVector" type="in">
+    <tags>
+        <tag name="vector"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Layer 3"/>
+        <entry key="label" value="Layer 3 Vector"/>
+    </metadata>
+    </port>
+    <port name="layer3Mask" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Layer 3"/>
+        <entry key="label" value="Layer 3 Mask"/>
+    </metadata>
+    </port>
+    <port name="layer4Amount" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Layer 4"/>
+        <entry key="label" value="Layer 4 Gain"/>
+    </metadata>
+    </port>
+    <port name="layer4DispVector" type="in">
+    <tags>
+        <tag name="vector"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Layer 4"/>
+        <entry key="label" value="Layer 4 Vector"/>
+    </metadata>
+    </port>
+    <port name="layer4Mask" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Layer 4"/>
+        <entry key="label" value="Layer 4 Mask"/>
+    </metadata>
+    </port>
+    <port name="resultXYZ" type="out">
+    <tags>
+        <tag name="vector"/>
+    </tags>
+    </port>
+    <port name="resultX" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultY" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultZ" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrDispVectorLayer">
+    <string_parameter name="name" value="PxrDispVectorLayer"/>
+    <string_parameter name="nodeType" value="PxrDispVectorLayer"/>
+    <string_parameter name="__lastValue" value="enlvh3rt6qmiduthwbexwaj4gm3sdcgha4aeuzxkab4j3rgpbgjiFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="overallAmount">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="baseLayerEnabled">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="baseLayerAmount">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="baseLayerDispVector">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="layer1Enabled">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="layer1Amount">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="layer1DispVector">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="layer1Mask">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="layer1Comp">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="layer2Enabled">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="layer2Amount">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="layer2DispVector">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="layer2Mask">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="layer2Comp">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="layer3Enabled">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="layer3Amount">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="layer3DispVector">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="layer3Mask">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="layer3Comp">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="layer4Enabled">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="layer4Amount">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="layer4DispVector">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="layer4Mask">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="layer4Comp">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

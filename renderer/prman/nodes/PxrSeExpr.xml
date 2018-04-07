@@ -1,0 +1,149 @@
+<node baseType="PrmanShadingNode" name="PxrSeExpr" selected="true" type="PrmanShadingNode">
+    <port name="colorInput1" type="in">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    </port>
+    <port name="colorInput2" type="in">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    </port>
+    <port name="colorInput3" type="in">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    </port>
+    <port name="colorInput4" type="in">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    </port>
+    <port name="floatInput1" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="floatInput2" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="floatInput3" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="floatInput4" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultRGB" type="out">
+    <tags>
+        <tag name="color"/>
+        <tag name="normal"/>
+        <tag name="point"/>
+        <tag name="vector"/>
+    </tags>
+    </port>
+    <port name="resultR" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultG" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultB" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultF" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrSeExpr">
+    <string_parameter name="name" value="PxrSeExpr"/>
+    <string_parameter name="nodeType" value="PxrSeExpr"/>
+    <string_parameter name="__lastValue" value="iscsyrgt7qd5mc37tbascwgahm3cmczasuuhjroafwcig5m42b2eFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="colorInput1">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="colorInput2">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="colorInput3">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="colorInput4">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="floatInput1">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="floatInput2">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="floatInput3">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="floatInput4">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="expression">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

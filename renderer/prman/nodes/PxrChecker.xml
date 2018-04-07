@@ -1,0 +1,85 @@
+<node baseType="PrmanShadingNode" name="PxrChecker" selected="true" type="PrmanShadingNode">
+    <port name="colorA" type="in">
+    <metadata>
+        <entry key="label" value="Color A"/>
+    </metadata>
+    </port>
+    <port name="colorB" type="in">
+    <metadata>
+        <entry key="label" value="Color B"/>
+    </metadata>
+    </port>
+    <port name="manifold" type="in">
+    <tags>
+        <tag name="manifold"/>
+        <tag name="struct"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Manifold"/>
+    </metadata>
+    </port>
+    <port name="resultRGB" type="out">
+    <tags>
+        <tag name="color"/>
+        <tag name="normal"/>
+        <tag name="point"/>
+        <tag name="vector"/>
+    </tags>
+    </port>
+    <port name="resultR" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultG" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultB" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrChecker">
+    <string_parameter name="name" value="PxrChecker"/>
+    <string_parameter name="nodeType" value="PxrChecker"/>
+    <string_parameter name="__lastValue" value="paud4inzoo3tt4an24yrylqteipaoznjb6lypvrc7cifpwv7mhsqFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="colorA">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="1"/>
+            <number_parameter name="i1" value="1"/>
+            <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="colorB">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="manifold">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

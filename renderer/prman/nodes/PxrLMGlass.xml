@@ -1,0 +1,165 @@
+<node baseType="PrmanShadingNode" name="PxrLMGlass" selected="true" type="PrmanShadingNode">
+    <port name="lmlayer" type="in">
+    <tags>
+        <tag name="struct and pxrlmlayer"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Overlay"/>
+    </metadata>
+    </port>
+    <port name="reflectionColor" type="in">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Reflection Color"/>
+    </metadata>
+    </port>
+    <port name="refractionColor" type="in">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Refraction Color"/>
+    </metadata>
+    </port>
+    <port name="roughness" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Roughness"/>
+    </metadata>
+    </port>
+    <port name="absorption" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Absorption"/>
+    </metadata>
+    </port>
+    <port name="bumpNormal" type="in">
+    <tags>
+        <tag name="normal"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Bump"/>
+    </metadata>
+    </port>
+    <port name="presence" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Presence"/>
+    </metadata>
+    </port>
+    <port name="inputAOV" type="in">
+    <tags>
+        <tag name="int"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Input AOV"/>
+    </metadata>
+    </port>
+    <port name="out" type="out">
+    <tags>
+        <tag name="bxdf"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrLMGlass">
+    <string_parameter name="name" value="PxrLMGlass"/>
+    <string_parameter name="nodeType" value="PxrLMGlass"/>
+    <string_parameter name="__lastValue" value="usq63ypova57zxq7bepbpk7p5mxvjick6rhq4rpigoliz3llafnmFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="lmlayer">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="thin">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="eta">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1.5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="reflectionColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="1"/>
+            <number_parameter name="i1" value="1"/>
+            <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="refractionColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0.8"/>
+            <number_parameter name="i1" value="0.8"/>
+            <number_parameter name="i2" value="0.8"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="roughness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.01"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="absorption">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="transmissionColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0.5"/>
+            <number_parameter name="i1" value="0.5"/>
+            <number_parameter name="i2" value="0.5"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="shadows">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="bumpNormal">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="presence">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="inputAOV">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

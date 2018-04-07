@@ -35,8 +35,11 @@ def replaceTx(key, filepath):
     '''
     Replace all texture paths with their .tx counterparts
     '''
-    filepath = filepath[:filepath.rfind('.')].replace('\\', '/') + '.tx'
-    return filepath
+    root, ext = os.path.splitext(filepath)
+    if ext:
+        ext = '.tx'
+    root = root.replace('\\', '/')
+    return root + ext
 
 
 def preprocessSampler(node):

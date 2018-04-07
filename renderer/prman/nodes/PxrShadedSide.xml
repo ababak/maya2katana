@@ -1,0 +1,31 @@
+<node baseType="PrmanShadingNode" name="PxrShadedSide" selected="true" type="PrmanShadingNode">
+    <port name="resultF" type="out"/>
+    <group_parameter name="PxrShadedSide">
+    <string_parameter name="name" value="PxrShadedSide"/>
+    <string_parameter name="nodeType" value="PxrShadedSide"/>
+    <string_parameter name="__lastValue" value="n5akergpakxsutzfguldkfmalaxyjyj36qxauu5ptnecpxxpg654False"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="invert">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="resultF">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

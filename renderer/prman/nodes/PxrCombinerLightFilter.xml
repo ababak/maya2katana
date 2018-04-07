@@ -1,0 +1,89 @@
+<node baseType="PrmanShadingNode" name="PxrCombinerLightFilter" selected="true" type="PrmanShadingNode">
+    <port name="mult" type="in">
+    <tags>
+        <tag name="lightfilter"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Mult"/>
+    </metadata>
+    </port>
+    <port name="max" type="in">
+    <tags>
+        <tag name="lightfilter"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Max"/>
+    </metadata>
+    </port>
+    <port name="min" type="in">
+    <tags>
+        <tag name="lightfilter"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Min"/>
+    </metadata>
+    </port>
+    <port name="screen" type="in">
+    <tags>
+        <tag name="lightfilter"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Screen"/>
+    </metadata>
+    </port>
+    <port name="out" type="out">
+    <tags>
+        <tag name="lightfilter"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrCombinerLightFilter">
+    <string_parameter name="name" value="PxrCombinerLightFilter"/>
+    <string_parameter name="nodeType" value="PxrCombinerLightFilter"/>
+    <string_parameter name="__lastValue" value="ibc4efu3hhoxb3y5hpdgazfwraqvmix5dlu2oaajfza6jx7bz4cmFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="mult">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="isDynamicArray" value="1"/>
+        <stringarray_parameter name="value" size="1" tupleSize="1">
+            <string_parameter name="i0" value=""/>
+        </stringarray_parameter>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="max">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="isDynamicArray" value="1"/>
+        <stringarray_parameter name="value" size="1" tupleSize="1">
+            <string_parameter name="i0" value=""/>
+        </stringarray_parameter>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="min">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="isDynamicArray" value="1"/>
+        <stringarray_parameter name="value" size="1" tupleSize="1">
+            <string_parameter name="i0" value=""/>
+        </stringarray_parameter>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="screen">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="isDynamicArray" value="1"/>
+        <stringarray_parameter name="value" size="1" tupleSize="1">
+            <string_parameter name="i0" value=""/>
+        </stringarray_parameter>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

@@ -1,0 +1,90 @@
+<node baseType="PrmanShadingNode" name="PxrDisplace" selected="true" type="PrmanShadingNode">
+    <port name="dispAmount" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Gain"/>
+    </metadata>
+    </port>
+    <port name="dispScalar" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Scalar Displacement"/>
+    </metadata>
+    </port>
+    <port name="dispVector" type="in">
+    <tags>
+        <tag name="vector"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Vector Displacement"/>
+    </metadata>
+    </port>
+    <port name="modelDispVector" type="in">
+    <tags>
+        <tag name="vector"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Model Displacement"/>
+    </metadata>
+    </port>
+    <port name="out" type="out">
+    <tags>
+        <tag name="displacement"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrDisplace">
+    <string_parameter name="name" value="PxrDisplace"/>
+    <string_parameter name="nodeType" value="PxrDisplace"/>
+    <string_parameter name="__lastValue" value="2av2c56l2twxvelmlnhmhbmzwixvoxagppvt34s4hg62m62m7bqqFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="enabled">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="dispAmount">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="dispScalar">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="dispVector">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="modelDispVector">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

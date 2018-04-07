@@ -1,0 +1,140 @@
+<node baseType="PrmanShadingNode" name="PxrFractal" selected="true" type="PrmanShadingNode">
+    <port name="layers" type="in">
+    <tags>
+        <tag name="int"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Layers"/>
+    </metadata>
+    </port>
+    <port name="frequency" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Frequency"/>
+    </metadata>
+    </port>
+    <port name="lacunarity" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Lacunarity"/>
+    </metadata>
+    </port>
+    <port name="dimension" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Dimension"/>
+    </metadata>
+    </port>
+    <port name="erosion" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Erosion"/>
+    </metadata>
+    </port>
+    <port name="variation" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Variation"/>
+    </metadata>
+    </port>
+    <port name="turbulent" type="in">
+    <tags>
+        <tag name="int"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Turbulent"/>
+    </metadata>
+    </port>
+    <port name="manifold" type="in">
+    <tags>
+        <tag name="manifold"/>
+        <tag name="struct"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Manifold"/>
+    </metadata>
+    </port>
+    <port name="resultF" type="out">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    </port>
+    <port name="resultRGB" type="out">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrFractal">
+    <string_parameter name="name" value="PxrFractal"/>
+    <string_parameter name="nodeType" value="PxrFractal"/>
+    <string_parameter name="__lastValue" value="lhpjz5qwhnabfxzvhgpjwc4w2mdcuemo2s7wc4dflt4prwsstznmFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="surfacePosition">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="layers">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="6"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="frequency">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="lacunarity">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="2"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="dimension">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="erosion">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="variation">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="turbulent">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="manifold">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

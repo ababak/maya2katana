@@ -1,0 +1,104 @@
+<node baseType="PrmanShadingNode" name="PxrLMMixer" selected="true" type="PrmanShadingNode">
+    <port name="input0" type="in">
+    <tags>
+        <tag name="struct and pxrlmlayer"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Input 0"/>
+    </metadata>
+    </port>
+    <port name="input1" type="in">
+    <tags>
+        <tag name="struct and pxrlmlayer"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Input 1"/>
+    </metadata>
+    </port>
+    <port name="input2" type="in">
+    <tags>
+        <tag name="struct and pxrlmlayer"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Input 2"/>
+    </metadata>
+    </port>
+    <port name="input3" type="in">
+    <tags>
+        <tag name="struct and pxrlmlayer"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Input 3"/>
+    </metadata>
+    </port>
+    <port name="input4" type="in">
+    <tags>
+        <tag name="struct and pxrlmlayer"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Input 4"/>
+    </metadata>
+    </port>
+    <port name="input5" type="in">
+    <tags>
+        <tag name="struct and pxrlmlayer"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Input 5"/>
+    </metadata>
+    </port>
+    <port name="result" type="out">
+    <tags>
+        <tag name="pxrlmlayer"/>
+        <tag name="struct"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrLMMixer">
+    <string_parameter name="name" value="PxrLMMixer"/>
+    <string_parameter name="nodeType" value="PxrLMMixer"/>
+    <string_parameter name="__lastValue" value="5b6nboktvnbh4gk7puthbneydqvdqpan5nl77myf4wbjqh44qsnmFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="input0">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="input1">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="input2">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="input3">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="input4">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="input5">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

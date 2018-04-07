@@ -1,0 +1,34 @@
+<node baseType="PrmanShadingNode" name="PxrBackgroundDisplayFilter" selected="true" type="PrmanShadingNode">
+    <port name="out" type="out">
+    <tags>
+        <tag name="displayfilter"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrBackgroundDisplayFilter">
+    <string_parameter name="name" value="PxrBackgroundDisplayFilter"/>
+    <string_parameter name="nodeType" value="PxrBackgroundDisplayFilter"/>
+    <string_parameter name="__lastValue" value="3zn555fdyo3bh5ockmourfsus4ku2tr4p2i6exqxq4ogez2ah56aFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="backgroundColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

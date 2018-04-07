@@ -1,0 +1,184 @@
+<node baseType="PrmanShadingNode" name="PxrBump" selected="true" type="PrmanShadingNode">
+    <port name="scale" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Scale"/>
+    </metadata>
+    </port>
+    <port name="inputBump" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Pattern"/>
+        <entry key="label" value="Input Bump"/>
+    </metadata>
+    </port>
+    <port name="blur" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Texture"/>
+        <entry key="label" value="Blur"/>
+    </metadata>
+    </port>
+    <port name="manifold" type="in">
+    <tags>
+        <tag name="pxrbumpmanifold2d"/>
+        <tag name="struct"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Texture"/>
+        <entry key="label" value="Bump Manifold"/>
+    </metadata>
+    </port>
+    <port name="mipBias" type="in">
+    <metadata>
+        <entry key="page" value="Texture.Advanced Texture Settings"/>
+        <entry key="label" value="MIP bias"/>
+    </metadata>
+    </port>
+    <port name="maxResolution" type="in">
+    <metadata>
+        <entry key="page" value="Texture.Advanced Texture Settings"/>
+        <entry key="label" value="Max Resolution"/>
+    </metadata>
+    </port>
+    <port name="inputN" type="in">
+    <tags>
+        <tag name="normal"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Advanced"/>
+        <entry key="label" value="Input Normal"/>
+    </metadata>
+    </port>
+    <port name="adjustAmount" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Advanced"/>
+        <entry key="label" value="Adjust Amount"/>
+    </metadata>
+    </port>
+    <port name="surfaceNormalMix" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Advanced"/>
+        <entry key="label" value="Surface Normal Mix"/>
+    </metadata>
+    </port>
+    <port name="resultN" type="out">
+    <tags>
+        <tag name="normal"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrBump">
+    <string_parameter name="name" value="PxrBump"/>
+    <string_parameter name="nodeType" value="PxrBump"/>
+    <string_parameter name="__lastValue" value="vnues4p3g7o6x72uidhqqp4wkm6ikh32xkvd6rzzaso7usyqhcr4False"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="scale">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="disable">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="inputBump">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="filename">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="firstChannel">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="atlasStyle">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="invertT">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="blur">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="lerp">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="manifold">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="mipBias">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="maxResolution">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="inputN">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="1"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="reverse">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="adjustAmount">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="surfaceNormalMix">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

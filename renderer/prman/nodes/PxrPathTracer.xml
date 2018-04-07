@@ -1,0 +1,110 @@
+<node baseType="PrmanShadingNode" name="PxrPathTracer" selected="true" type="PrmanShadingNode">
+    <port name="out" type="out">
+    <tags>
+        <tag name="integrator"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrPathTracer">
+    <string_parameter name="name" value="PxrPathTracer"/>
+    <string_parameter name="nodeType" value="PxrPathTracer"/>
+    <string_parameter name="__lastValue" value="pmygsvbdxfzmr3lpkt2fj4sbg4t2dhxaul6vvjrht5k4rwehbbjyFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="maxPathLength">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="10"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="maxContinuationLength">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="-1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="sampleMode">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="bxdf"/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="numLightSamples">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="numBxdfSamples">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="numIndirectSamples">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="numDiffuseSamples">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="numSpecularSamples">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="numSubsurfaceSamples">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="numRefractionSamples">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="allowCaustics">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="accumOpacity">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="rouletteDepth">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="4"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="rouletteThreshold">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.2"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="clampDepth">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="2"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="clampLuminance">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="10"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="imagePlaneSubset">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="rman__imageplane"/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

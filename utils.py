@@ -68,7 +68,13 @@ def uniqueName(name=None, reset=False):
     return name
 
 def getOutConnection(connection):
-    outPort = [connection['node'], 'out']
+    outPort = [connection['node']]
+    if connection.get('originalPort').startswith(('outDisplacement', 'outEigenvalue')):
+        outPort.append(connection.get('originalPort'))
+    elif connection.get('originalPort').startswith('out'):
+        outPort.append('out')
+    else:
+        outPort.append(connection.get('originalPort'))
     originalPort = re.findall(
         r'^out(?:Color|Value)([RGBAXYZ])',
         connection.get('originalPort') or '')

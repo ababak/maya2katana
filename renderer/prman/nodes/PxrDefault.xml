@@ -1,0 +1,25 @@
+<node baseType="PrmanShadingNode" name="PxrDefault" selected="true" type="PrmanShadingNode">
+    <port name="out" type="out">
+    <tags>
+        <tag name="integrator"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrDefault">
+    <string_parameter name="name" value="PxrDefault"/>
+    <string_parameter name="nodeType" value="PxrDefault"/>
+    <string_parameter name="__lastValue" value="jnizakz2yvp6rzzbo2bj3x6r6iFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

@@ -1,6 +1,6 @@
 #!/usr/bin/python
 '''
-    maya2katana - Pixar Renderman plugin
+    maya2katana - RenderMan plugin
     Copyright (C) 2016-2018 Andrey Babak, Animagrad
 
     This program is free software: you can redistribute it and/or modify
@@ -23,12 +23,24 @@
     ------------------------------
 '''
 
+import os
 import re
 import xml.etree.ElementTree as ET
 
 import maya.cmds as cmds
 
 from ... import utils
+
+def replaceTex(key, filepath):
+    '''
+    Replace all texture paths with their .tex counterparts
+    '''
+    root, ext = os.path.splitext(filepath)
+    if ext:
+        ext = '.tex'
+    root = root.replace('\\', '/')
+    return root + ext
+
 
 def preprocessNetworkMaterial(node):
     '''
@@ -79,7 +91,18 @@ def processNetworkMaterial(xmlGroup, node):
     '''
     Process NetworkMaterial to remove extra input ports
     '''
-    for i in ['prmanBxdf', 'prmanDisplacement']:
+    for i in [
+            'prmanBxdf',
+            'prmanDisplacement',
+            'prmanDisplayfilter',
+            'prmanIntegrator',
+            'prmanLight',
+            'prmanLightfilter',
+            'prmanPattern',
+            'prmanProjection',
+            'prmanSamplefilter',
+            'prmanCoshaders.coshader',
+        ]:
         if i not in node['connections']:
             parameter = xmlGroup.find(
                 "./port[@name='{param}']".format(param=i))
@@ -88,21 +111,59 @@ def processNetworkMaterial(xmlGroup, node):
 
 def preprocessDisplacement(node):
     '''
-    Remove the displacement node as there is no counterpart in Katana
-    but levae the connections
+    Change the weight to move the displacement subtree to the right
     '''
     nodes = {}
     nodeName = node['name']
     node['weight'] = 20
-
-    node['type'] = 'range'
-    connection = node.get('connections').get('displacement', {})
-    rename = connection.get('node')
-    node['connections'] = {
-        'input': {'node': rename, 'originalPort': utils.getOutConnection(connection)},
-    }
     nodes[nodeName] = node
     return nodes
+
+
+def processRamp(xmlGroup, node):
+    '''
+    Process PxrRamp
+    '''
+    attributes = node['attributes']
+    nodeName = node['name']
+    if not nodeName:
+        return
+    nodeType = node['type']
+    if not nodeType:
+        return
+    colorEntryListSize = cmds.getAttr(
+        '{node}.positions'.format(node=nodeName), size=True)
+    colorEntryList = []
+    hasConnections = False
+    colorEntryListIndices = sorted(cmds.getAttr(
+        '{node}.positions'.format(node=nodeName), multiIndices=True))
+    index = 0
+    for i in colorEntryListIndices:
+        valuePosition = cmds.getAttr('{node}.positions[{index}]'.format(
+            node=nodeName, index=i))
+        valueColor = cmds.getAttr('{node}.colors[{index}]'.format(
+            node=nodeName, index=i))
+        valueColor = valueColor[0]
+        colorEntryList.append(
+            {'colors': valueColor, 'positions': valuePosition})
+    sortedColorEntryList = sorted(colorEntryList, key=lambda x: x['positions'])
+    for destKey in ['positions', 'colors']:
+        parameter = xmlGroup.find(
+            ".//group_parameter[@name='{param}']".format(param=destKey))
+        if parameter is None:
+            continue
+        enableNode = parameter.find("*[@name='enable']")
+        valueNode = parameter.find("*[@name='value']")
+        enableNode.attrib['value'] = '1'
+        tupleSize = int(valueNode.get('tupleSize', '0'))
+        valueNode.attrib['size'] = str(tupleSize * colorEntryListSize)
+        for i in range(colorEntryListSize):
+            value = sortedColorEntryList[i][destKey]
+            for j in range(tupleSize):
+                subValue = ET.SubElement(valueNode, 'number_parameter')
+                subValue.attrib['name'] = 'i' + str(i * tupleSize + j)
+                subValue.attrib['value'] = str(
+                    value[j] if tupleSize > 1 else value)
 
 
 # Preprocess keywords:
@@ -110,14 +171,141 @@ def preprocessDisplacement(node):
 # - postprocess (postprocess at level 0)
 # - type (override type)
 premap = {
+    # Maya shading engine node
     'shadingEngine': {
         'type': 'networkMaterial',
         'preprocess': preprocessNetworkMaterial,
         'postprocess': postprocessNetworkMaterial,
     },
-    'displacementShader': {
+    # RenderMan nodes in an alphabetical order
+    'aaOceanPrmanShader': {},
+    'PxrAdjustNormal': {},
+    'PxrAovLight': {},
+    'PxrAttribute': {},
+    'PxrBackgroundDisplayFilter': {},
+    'PxrBackgroundSampleFilter': {},
+    'PxrBakePointCloud': {},
+    'PxrBakeTexture': {},
+    'PxrBarnLightFilter': {},
+    'PxrBlack': {},
+    'PxrBlackBody': {},
+    'PxrBlend': {},
+    'PxrBlockerLightFilter': {},
+    'PxrBump': {},
+    'PxrBumpManifold2D': {},
+    'PxrCamera': {},
+    'PxrChecker': {},
+    'PxrClamp': {},
+    'PxrColorCorrect': {},
+    'PxrCombinerLightFilter': {},
+    'PxrConstant': {},
+    'PxrCookieLightFilter': {},
+    'PxrCopyAOVDisplayFilter': {},
+    'PxrCopyAOVSampleFilter': {},
+    'PxrCross': {},
+    'PxrCryptomatte': {},
+    'PxrDebugShadingContext': {},
+    'PxrDefault': {},
+    'PxrDiffuse': {},
+    'PxrDirectLighting': {},
+    'PxrDirt': {},
+    'PxrDiskLight': {},
+    'PxrDisney': {},
+    'PxrDisplace': {
         'preprocess': preprocessDisplacement,
     },
+    'PxrDispScalarLayer': {},
+    'PxrDispTransform': {},
+    'PxrDispVectorLayer': {},
+    'PxrDisplayFilterCombiner': {},
+    'PxrDistantLight': {},
+    'PxrDomeLight': {},
+    'PxrDot': {},
+    'PxrEdgeDetect': {},
+    'PxrEnvDayLight': {},
+    'PxrExposure': {},
+    'PxrFacingRatio': {},
+    'PxrFilmicTonemapperDisplayFilter': {},
+    'PxrFilmicTonemapperSampleFilter': {},
+    'PxrFlakes': {},
+    'PxrFractal': {},
+    'PxrFractalize': {},
+    'PxrGamma': {},
+    'PxrGeometricAOVs': {},
+    'PxrGlass': {},
+    'PxrGoboLightFilter': {},
+    'PxrGradeDisplayFilter': {},
+    'PxrGradeSampleFilter': {},
+    'PxrHSL': {},
+    'PxrHair': {},
+    'PxrHairColor': {},
+    'PxrHalfBufferErrorFilter': {},
+    'PxrImageDisplayFilter': {},
+    'PxrImagePlaneFilter': {},
+    'PxrIntMultLightFilter': {},
+    'PxrInvert': {},
+    'PxrLMDiffuse': {},
+    'PxrLMGlass': {},
+    'PxrLMLayer': {},
+    'PxrLMMetal': {},
+    'PxrLMMixer': {},
+    'PxrLMPlastic': {},
+    'PxrLMSubsurface': {},
+    'PxrLayer': {},
+    'PxrLayerMixer': {},
+    'PxrLayerSurface': {},
+    'PxrLayeredBlend': {},
+    'PxrLayeredTexture': {},
+    'PxrLightEmission': {},
+    'PxrLightProbe': {},
+    'PxrLightSaturation': {},
+    'PxrManifold2D': {},
+    'PxrManifold3D': {},
+    'PxrManifold3DN': {},
+    'PxrMarschnerHair': {},
+    'PxrMatteID': {},
+    'PxrMeshLight': {},
+    'PxrMix': {},
+    'PxrMultiTexture': {},
+    'PxrNormalMap': {},
+    'PxrOcclusion': {},
+    'PxrPathTracer': {},
+    'PxrPortalLight': {},
+    'PxrPrimvar': {},
+    'PxrProjectionLayer': {},
+    'PxrProjectionStack': {},
+    'PxrProjector': {},
+    'PxrPtexture': {},
+    'PxrRamp': {},
+    'PxrRampLightFilter': {},
+    'PxrRandomTextureManifold': {},
+    'PxrRectLight': {},
+    'PxrRemap': {},
+    'PxrRodLightFilter': {},
+    'PxrRollingShutter': {},
+    'PxrRoundCube': {},
+    'PxrSeExpr': {},
+    'PxrShadedSide': {},
+    'PxrShadowDisplayFilter': {},
+    'PxrShadowFilter': {},
+    'PxrSkin': {},
+    'PxrSphereLight': {},
+    'PxrSurface': {},
+    'PxrTangentField': {},
+    'PxrTee': {},
+    'PxrTexture': {},
+    'PxrThinFilm': {},
+    'PxrThreshold': {},
+    'PxrTileManifold': {},
+    'PxrToFloat': {},
+    'PxrToFloat3': {},
+    'PxrVariable': {},
+    'PxrVary': {},
+    'PxrVolume': {},
+    'PxrVoronoise': {},
+    'PxrWhitePointDisplayFilter': {},
+    'PxrWhitePointSampleFilter': {},
+    'PxrWorley': {},
 }
 
 # Mappings keywords:
@@ -128,4 +316,166 @@ mappings = {
         'customColor': (0.4, 0.35, 0.2),
         'customProcess': processNetworkMaterial,
     },
+    'aaOceanPrmanShader': {},
+    'PxrAdjustNormal': {},
+    'PxrAovLight': {},
+    'PxrAttribute': {},
+    'PxrBackgroundDisplayFilter': {},
+    'PxrBackgroundSampleFilter': {},
+    'PxrBakePointCloud': {},
+    'PxrBakeTexture': {},
+    'PxrBarnLightFilter': {},
+    'PxrBlack': {},
+    'PxrBlackBody': {},
+    'PxrBlend': {},
+    'PxrBlockerLightFilter': {},
+    'PxrBump': {},
+    'PxrBumpManifold2D': {},
+    'PxrCamera': {},
+    'PxrChecker': {},
+    'PxrClamp': {},
+    'PxrColorCorrect': {},
+    'PxrCombinerLightFilter': {},
+    'PxrConstant': {},
+    'PxrCookieLightFilter': {},
+    'PxrCopyAOVDisplayFilter': {},
+    'PxrCopyAOVSampleFilter': {},
+    'PxrCross': {},
+    'PxrCryptomatte': {},
+    'PxrDebugShadingContext': {},
+    'PxrDefault': {},
+    'PxrDiffuse': {},
+    'PxrDirectLighting': {},
+    'PxrDirt': {},
+    'PxrDiskLight': {},
+    'PxrDisney': {},
+    'PxrDisplace': {},
+    'PxrDispScalarLayer': {},
+    'PxrDispTransform': {},
+    'PxrDispVectorLayer': {},
+    'PxrDisplayFilterCombiner': {},
+    'PxrDistantLight': {},
+    'PxrDomeLight': {},
+    'PxrDot': {},
+    'PxrEdgeDetect': {},
+    'PxrEnvDayLight': {},
+    'PxrExposure': {},
+    'PxrFacingRatio': {},
+    'PxrFilmicTonemapperDisplayFilter': {},
+    'PxrFilmicTonemapperSampleFilter': {},
+    'PxrFlakes': {},
+    'PxrFractal': {},
+    'PxrFractalize': {},
+    'PxrGamma': {},
+    'PxrGeometricAOVs': {},
+    'PxrGlass': {},
+    'PxrGoboLightFilter': {},
+    'PxrGradeDisplayFilter': {},
+    'PxrGradeSampleFilter': {},
+    'PxrHSL': {},
+    'PxrHair': {},
+    'PxrHairColor': {},
+    'PxrHalfBufferErrorFilter': {},
+    'PxrImageDisplayFilter': {},
+    'PxrImagePlaneFilter': {},
+    'PxrIntMultLightFilter': {},
+    'PxrInvert': {},
+    'PxrLMDiffuse': {},
+    'PxrLMGlass': {},
+    'PxrLMLayer': {},
+    'PxrLMMetal': {},
+    'PxrLMMixer': {},
+    'PxrLMPlastic': {},
+    'PxrLMSubsurface': {},
+    'PxrLayer': {
+        'customColor': (0.2, 0.36, 0.1),
+    },
+    'PxrLayerMixer': {},
+    'PxrLayerSurface': {
+        'customColor': (0.2, 0.36, 0.1),
+    },
+    'PxrLayeredBlend': {},
+    'PxrLayeredTexture': {
+        'customColor': (0.36, 0.25, 0.38),
+        'filename': replaceTex,
+    },
+    'PxrLightEmission': {},
+    'PxrLightProbe': {},
+    'PxrLightSaturation': {},
+    'PxrManifold2D': {},
+    'PxrManifold3D': {},
+    'PxrManifold3DN': {},
+    'PxrMarschnerHair': {},
+    'PxrMatteID': {},
+    'PxrMeshLight': {},
+    'PxrMix': {},
+    'PxrMultiTexture': {
+        'customColor': (0.36, 0.25, 0.38),
+        'filename0': replaceTex,
+        'filename1': replaceTex,
+        'filename2': replaceTex,
+        'filename3': replaceTex,
+        'filename4': replaceTex,
+        'filename5': replaceTex,
+        'filename6': replaceTex,
+        'filename7': replaceTex,
+        'filename8': replaceTex,
+        'filename9': replaceTex,
+    },
+    'PxrNormalMap': {},
+    'PxrOcclusion': {},
+    'PxrPathTracer': {},
+    'PxrPortalLight': {},
+    'PxrPrimvar': {},
+    'PxrProjectionLayer': {},
+    'PxrProjectionStack': {},
+    'PxrProjector': {},
+    'PxrPtexture': {
+        'customColor': (0.36, 0.25, 0.38),
+    },
+    'PxrRamp': {
+        'customProcess': processRamp,
+        'rampType': None,
+        'tile': None,
+        'reverse': None,
+        'basis': None,
+        'splineMap': None,
+        'randomSource': None,
+        'randomSeed': None,
+        'manifold': None,
+    },
+    'PxrRampLightFilter': {},
+    'PxrRandomTextureManifold': {},
+    'PxrRectLight': {},
+    'PxrRemap': {},
+    'PxrRodLightFilter': {},
+    'PxrRollingShutter': {},
+    'PxrRoundCube': {},
+    'PxrSeExpr': {},
+    'PxrShadedSide': {},
+    'PxrShadowDisplayFilter': {},
+    'PxrShadowFilter': {},
+    'PxrSkin': {},
+    'PxrSphereLight': {},
+    'PxrSurface': {
+        'customColor': (0.2, 0.36, 0.1),
+    },
+    'PxrTangentField': {},
+    'PxrTee': {},
+    'PxrTexture': {
+        'customColor': (0.36, 0.25, 0.38),
+        'filename': replaceTex,
+    },
+    'PxrThinFilm': {},
+    'PxrThreshold': {},
+    'PxrTileManifold': {},
+    'PxrToFloat': {},
+    'PxrToFloat3': {},
+    'PxrVariable': {},
+    'PxrVary': {},
+    'PxrVolume': {},
+    'PxrVoronoise': {},
+    'PxrWhitePointDisplayFilter': {},
+    'PxrWhitePointSampleFilter': {},
+    'PxrWorley': {},
 }

@@ -1,0 +1,258 @@
+<node baseType="PrmanShadingNode" name="PxrVolume" selected="true" type="PrmanShadingNode">
+    <port name="diffuseColor" type="in">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Diffuse Color"/>
+    </metadata>
+    </port>
+    <port name="emitColor" type="in">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Emit Color"/>
+    </metadata>
+    </port>
+    <port name="velocity" type="in">
+    <tags>
+        <tag name="vector"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="Velocity"/>
+    </metadata>
+    </port>
+    <port name="velocityMultiplier" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="VelocityMultiplier"/>
+    </metadata>
+    </port>
+    <port name="densityFloatPrimVar" type="in">
+    <tags>
+        <tag name="string"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Density"/>
+        <entry key="label" value="Density Float PrimVar"/>
+    </metadata>
+    </port>
+    <port name="densityFloat" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Density"/>
+        <entry key="label" value="Density Float"/>
+    </metadata>
+    </port>
+    <port name="densityColorPrimVar" type="in">
+    <tags>
+        <tag name="string"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Density"/>
+        <entry key="label" value="Density Color PrimVar"/>
+    </metadata>
+    </port>
+    <port name="densityColor" type="in">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Density"/>
+        <entry key="label" value="Density Color"/>
+    </metadata>
+    </port>
+    <port name="anisotropy" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Anisotropy"/>
+        <entry key="label" value="Primary Anisotropy"/>
+    </metadata>
+    </port>
+    <port name="anisotropy2" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Anisotropy"/>
+        <entry key="label" value="Secondary Anisotropy"/>
+    </metadata>
+    </port>
+    <port name="blendFactor" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Anisotropy"/>
+        <entry key="label" value="Lobe Blend Factor"/>
+    </metadata>
+    </port>
+    <port name="multiScatterOpt" type="in">
+    <tags>
+        <tag name="int"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="MultiScatter Optimization"/>
+        <entry key="label" value="MultiScatter Optimization"/>
+    </metadata>
+    </port>
+    <port name="extinctionMultiplier" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="MultiScatter Optimization"/>
+        <entry key="label" value="Extinction Multiplier"/>
+    </metadata>
+    </port>
+    <port name="contributionMultiplier" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="MultiScatter Optimization"/>
+        <entry key="label" value="Contribution Multiplier"/>
+    </metadata>
+    </port>
+    <port name="out" type="out">
+    <tags>
+        <tag name="bxdf"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrVolume">
+    <string_parameter name="name" value="PxrVolume"/>
+    <string_parameter name="nodeType" value="PxrVolume"/>
+    <string_parameter name="__lastValue" value="7wlwtcnvuo5b4txp7m4fhewkvqkbxvuwtipzn3ivy6dc6aiyl53qFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="diffuseColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="1"/>
+            <number_parameter name="i1" value="1"/>
+            <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="emitColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="multiScatter">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="velocity">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="velocityMultiplier">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="densityFloatPrimVar">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="densityFloat">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="densityColorPrimVar">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="densityColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="1"/>
+            <number_parameter name="i1" value="1"/>
+            <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="maxDensity">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="-1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="anisotropy">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="anisotropy2">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="blendFactor">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="equiangularWeight">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="samples">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="4"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="stepSize">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="multiScatterOpt">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="extinctionMultiplier">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="contributionMultiplier">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

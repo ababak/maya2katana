@@ -1,0 +1,352 @@
+<node baseType="PrmanShadingNode" name="PxrRodLightFilter" selected="true" type="PrmanShadingNode">
+    <port name="notes" type="in">
+    <metadata>
+        <entry key="page" value="Notes"/>
+    </metadata>
+    </port>
+    <port name="falloff_Knots" type="in">
+    <metadata>
+        <entry key="page" value="Falloff"/>
+    </metadata>
+    </port>
+    <port name="falloff_Floats" type="in">
+    <metadata>
+        <entry key="page" value="Falloff"/>
+    </metadata>
+    </port>
+    <port name="falloff_Interpolation" type="in">
+    <metadata>
+        <entry key="page" value="Falloff"/>
+    </metadata>
+    </port>
+    <port name="colorRamp" type="in">
+    <metadata>
+        <entry key="page" value="Color Ramp"/>
+        <entry key="label" value=""/>
+    </metadata>
+    </port>
+    <port name="colorRamp_Knots" type="in">
+    <metadata>
+        <entry key="page" value="Color Ramp"/>
+    </metadata>
+    </port>
+    <port name="colorRamp_Colors" type="in">
+    <metadata>
+        <entry key="page" value="Color Ramp"/>
+    </metadata>
+    </port>
+    <port name="colorRamp_Interpolation" type="in">
+    <metadata>
+        <entry key="page" value="Color Ramp"/>
+    </metadata>
+    </port>
+    <port name="coordsys" type="in"/>
+    <port name="out" type="out">
+    <tags>
+        <tag name="lightfilter"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrRodLightFilter">
+    <string_parameter name="name" value="PxrRodLightFilter"/>
+    <string_parameter name="nodeType" value="PxrRodLightFilter"/>
+    <string_parameter name="__lastValue" value="7y7yl766txvqbr2bzz3aqtwbgirpkac3fn4graxbjsfcgcvpjetiFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="notes">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="width">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="height">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="depth">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="radius">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="edge">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.25"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="scaleWidth">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="scaleHeight">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="scaleDepth">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="left">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="right">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="bottom">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="top">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="back">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="front">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="leftEdge">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="rightEdge">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="bottomEdge">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="topEdge">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="backEdge">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="frontEdge">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="density">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="invert">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="intensity">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="diffuse">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="specular">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="saturation">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="falloff">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="6"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="falloff_Knots">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="16" tupleSize="1">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0.3"/>
+            <number_parameter name="i3" value="0.7"/>
+            <number_parameter name="i4" value="1"/>
+            <number_parameter name="i5" value="1"/>
+            <number_parameter name="i6" value="1"/>
+            <number_parameter name="i7" value="1"/>
+            <number_parameter name="i8" value="1"/>
+            <number_parameter name="i9" value="1"/>
+            <number_parameter name="i10" value="1"/>
+            <number_parameter name="i11" value="1"/>
+            <number_parameter name="i12" value="1"/>
+            <number_parameter name="i13" value="1"/>
+            <number_parameter name="i14" value="1"/>
+            <number_parameter name="i15" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="falloff_Floats">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="16" tupleSize="1">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0.2"/>
+            <number_parameter name="i3" value="0.8"/>
+            <number_parameter name="i4" value="1"/>
+            <number_parameter name="i5" value="1"/>
+            <number_parameter name="i6" value="1"/>
+            <number_parameter name="i7" value="1"/>
+            <number_parameter name="i8" value="1"/>
+            <number_parameter name="i9" value="1"/>
+            <number_parameter name="i10" value="1"/>
+            <number_parameter name="i11" value="1"/>
+            <number_parameter name="i12" value="1"/>
+            <number_parameter name="i13" value="1"/>
+            <number_parameter name="i14" value="1"/>
+            <number_parameter name="i15" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="falloff_Interpolation">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="bspline"/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="colorRamp">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="4"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="colorRamp_Knots">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="16" tupleSize="1">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="1"/>
+            <number_parameter name="i3" value="1"/>
+            <number_parameter name="i4" value="1"/>
+            <number_parameter name="i5" value="1"/>
+            <number_parameter name="i6" value="1"/>
+            <number_parameter name="i7" value="1"/>
+            <number_parameter name="i8" value="1"/>
+            <number_parameter name="i9" value="1"/>
+            <number_parameter name="i10" value="1"/>
+            <number_parameter name="i11" value="1"/>
+            <number_parameter name="i12" value="1"/>
+            <number_parameter name="i13" value="1"/>
+            <number_parameter name="i14" value="1"/>
+            <number_parameter name="i15" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="colorRamp_Colors">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="48" tupleSize="3">
+            <number_parameter name="i0" value="1"/>
+            <number_parameter name="i1" value="1"/>
+            <number_parameter name="i2" value="1"/>
+            <number_parameter name="i3" value="1"/>
+            <number_parameter name="i4" value="1"/>
+            <number_parameter name="i5" value="1"/>
+            <number_parameter name="i6" value="1"/>
+            <number_parameter name="i7" value="1"/>
+            <number_parameter name="i8" value="1"/>
+            <number_parameter name="i9" value="1"/>
+            <number_parameter name="i10" value="1"/>
+            <number_parameter name="i11" value="1"/>
+            <number_parameter name="i12" value="1"/>
+            <number_parameter name="i13" value="1"/>
+            <number_parameter name="i14" value="1"/>
+            <number_parameter name="i15" value="1"/>
+            <number_parameter name="i16" value="1"/>
+            <number_parameter name="i17" value="1"/>
+            <number_parameter name="i18" value="1"/>
+            <number_parameter name="i19" value="1"/>
+            <number_parameter name="i20" value="1"/>
+            <number_parameter name="i21" value="1"/>
+            <number_parameter name="i22" value="1"/>
+            <number_parameter name="i23" value="1"/>
+            <number_parameter name="i24" value="1"/>
+            <number_parameter name="i25" value="1"/>
+            <number_parameter name="i26" value="1"/>
+            <number_parameter name="i27" value="1"/>
+            <number_parameter name="i28" value="1"/>
+            <number_parameter name="i29" value="1"/>
+            <number_parameter name="i30" value="1"/>
+            <number_parameter name="i31" value="1"/>
+            <number_parameter name="i32" value="1"/>
+            <number_parameter name="i33" value="1"/>
+            <number_parameter name="i34" value="1"/>
+            <number_parameter name="i35" value="1"/>
+            <number_parameter name="i36" value="1"/>
+            <number_parameter name="i37" value="1"/>
+            <number_parameter name="i38" value="1"/>
+            <number_parameter name="i39" value="1"/>
+            <number_parameter name="i40" value="1"/>
+            <number_parameter name="i41" value="1"/>
+            <number_parameter name="i42" value="1"/>
+            <number_parameter name="i43" value="1"/>
+            <number_parameter name="i44" value="1"/>
+            <number_parameter name="i45" value="1"/>
+            <number_parameter name="i46" value="1"/>
+            <number_parameter name="i47" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="colorRamp_Interpolation">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="linear"/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="combineMode">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="mult"/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="coordsys">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

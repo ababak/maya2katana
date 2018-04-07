@@ -1,0 +1,30 @@
+<node baseType="PrmanShadingNode" name="PxrEdgeDetect" selected="true" type="PrmanShadingNode">
+    <port name="out" type="out">
+    <tags>
+        <tag name="displayfilter"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrEdgeDetect">
+    <string_parameter name="name" value="PxrEdgeDetect"/>
+    <string_parameter name="nodeType" value="PxrEdgeDetect"/>
+    <string_parameter name="__lastValue" value="6be3zjat5ulxanxsn7tr7ym4g47fcgefnnvf5eepe6tyyxeo5mz4False"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="aov">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value="Ci"/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

@@ -1,0 +1,299 @@
+<node baseType="PrmanShadingNode" name="PxrHairColor" selected="true" type="PrmanShadingNode">
+    <port name="melanin" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Hair Color"/>
+        <entry key="label" value="Melanin"/>
+    </metadata>
+    </port>
+    <port name="color" type="in">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Hair Color"/>
+        <entry key="label" value="Color"/>
+    </metadata>
+    </port>
+    <port name="randomMelanin" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Hair Color"/>
+        <entry key="label" value="Melanin Randomize"/>
+    </metadata>
+    </port>
+    <port name="randomColor" type="in">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Hair Color"/>
+        <entry key="label" value="Color Randomize"/>
+    </metadata>
+    </port>
+    <port name="darkenRoots" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Hair Color"/>
+        <entry key="label" value="Darken Roots"/>
+    </metadata>
+    </port>
+    <port name="darkenSlope" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Hair Color"/>
+        <entry key="label" value="Darken Slope"/>
+    </metadata>
+    </port>
+    <port name="darkenEndPosition" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Hair Color"/>
+        <entry key="label" value="Darken End Position"/>
+    </metadata>
+    </port>
+    <port name="strayDensity" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Stray Hair Color"/>
+        <entry key="label" value="Stray Density"/>
+    </metadata>
+    </port>
+    <port name="strayMelanin" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Stray Hair Color"/>
+        <entry key="label" value="Stray Melanin"/>
+    </metadata>
+    </port>
+    <port name="strayColor" type="in">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Stray Hair Color"/>
+        <entry key="label" value="Stray Color"/>
+    </metadata>
+    </port>
+    <port name="strayRandomMelanin" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Stray Hair Color"/>
+        <entry key="label" value="Stray Random Melanin"/>
+    </metadata>
+    </port>
+    <port name="strayRandomColor" type="in">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Stray Hair Color"/>
+        <entry key="label" value="Stray Random Color"/>
+    </metadata>
+    </port>
+    <port name="dye" type="in">
+    <tags>
+        <tag name="color"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Dye Color"/>
+        <entry key="label" value="Dye"/>
+    </metadata>
+    </port>
+    <port name="randomDyeHue" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Dye Color"/>
+        <entry key="label" value="Dye Random Hue"/>
+    </metadata>
+    </port>
+    <port name="randomDyeSaturation" type="in">
+    <tags>
+        <tag name="float"/>
+    </tags>
+    <metadata>
+        <entry key="page" value="Dye Color"/>
+        <entry key="label" value="Dye Random Saturation"/>
+    </metadata>
+    </port>
+    <port name="resultDiff" type="out">
+    <tags>
+        <tag name="color"/>
+        <tag name="normal"/>
+        <tag name="point"/>
+        <tag name="vector"/>
+    </tags>
+    </port>
+    <port name="resultTT" type="out">
+    <tags>
+        <tag name="color"/>
+        <tag name="normal"/>
+        <tag name="point"/>
+        <tag name="vector"/>
+    </tags>
+    </port>
+    <port name="resultTRT" type="out">
+    <tags>
+        <tag name="color"/>
+        <tag name="normal"/>
+        <tag name="point"/>
+        <tag name="vector"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrHairColor">
+    <string_parameter name="name" value="PxrHairColor"/>
+    <string_parameter name="nodeType" value="PxrHairColor"/>
+    <string_parameter name="__lastValue" value="ghli23vr6qxcx2e6ds4a3oh2yashvs2ps6spihcdqdpqftjmf3qqFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="mode">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="melanin">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.2"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="color">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0.3"/>
+            <number_parameter name="i2" value="0.1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="randomMelanin">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.05"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="randomColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0.05"/>
+            <number_parameter name="i1" value="0.05"/>
+            <number_parameter name="i2" value="0.05"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="darkenRoots">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="darkenSlope">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="darkenEndPosition">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="strayDensity">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="strayMelanin">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.05"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="strayColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0.05"/>
+            <number_parameter name="i1" value="0.05"/>
+            <number_parameter name="i2" value="0.05"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="strayRandomMelanin">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="strayRandomColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="dye">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="1"/>
+            <number_parameter name="i1" value="1"/>
+            <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="randomDyeHue">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="randomDyeSaturation">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="hairIndexPrimvar">
+        <number_parameter name="enable" value="0"/>
+        <string_parameter name="value" value=""/>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="randPivot">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="randSeed">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="viewIndexRandom">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

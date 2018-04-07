@@ -1,0 +1,1542 @@
+<node baseType="PrmanShadingNode" name="PxrLayer" selected="true" type="PrmanShadingNode">
+    <port name="diffuseGain" type="in">
+    <metadata>
+        <entry key="page" value="Diffuse"/>
+        <entry key="label" value="Gain"/>
+    </metadata>
+    </port>
+    <port name="diffuseColor" type="in">
+    <metadata>
+        <entry key="page" value="Diffuse"/>
+        <entry key="label" value="Color"/>
+    </metadata>
+    </port>
+    <port name="diffuseRoughness" type="in">
+    <metadata>
+        <entry key="page" value="Diffuse"/>
+        <entry key="label" value="Roughness"/>
+    </metadata>
+    </port>
+    <port name="diffuseBumpNormal" type="in">
+    <metadata>
+        <entry key="page" value="Diffuse.Advanced"/>
+        <entry key="label" value="Bump"/>
+    </metadata>
+    </port>
+    <port name="diffuseBackColor" type="in">
+    <metadata>
+        <entry key="page" value="Diffuse.Advanced"/>
+        <entry key="label" value="Back Color"/>
+    </metadata>
+    </port>
+    <port name="diffuseTransmitGain" type="in">
+    <metadata>
+        <entry key="page" value="Diffuse.Advanced"/>
+        <entry key="label" value="Transmit Gain"/>
+    </metadata>
+    </port>
+    <port name="diffuseTransmitColor" type="in">
+    <metadata>
+        <entry key="page" value="Diffuse.Advanced"/>
+        <entry key="label" value="Transmit Color"/>
+    </metadata>
+    </port>
+    <port name="specularGain" type="in">
+    <metadata>
+        <entry key="page" value="Primary Specular"/>
+        <entry key="label" value="Gain"/>
+    </metadata>
+    </port>
+    <port name="specularFaceColor" type="in">
+    <metadata>
+        <entry key="page" value="Primary Specular"/>
+        <entry key="label" value="Face Color"/>
+    </metadata>
+    </port>
+    <port name="specularEdgeColor" type="in">
+    <metadata>
+        <entry key="page" value="Primary Specular"/>
+        <entry key="label" value="Edge Color"/>
+    </metadata>
+    </port>
+    <port name="specularIor" type="in">
+    <metadata>
+        <entry key="page" value="Primary Specular.Physical"/>
+        <entry key="label" value="Refraction Index"/>
+    </metadata>
+    </port>
+    <port name="specularExtinctionCoeff" type="in">
+    <metadata>
+        <entry key="page" value="Primary Specular.Physical"/>
+        <entry key="label" value="Extinction Coefficient"/>
+    </metadata>
+    </port>
+    <port name="specularRoughness" type="in">
+    <metadata>
+        <entry key="page" value="Primary Specular"/>
+        <entry key="label" value="Roughness"/>
+    </metadata>
+    </port>
+    <port name="specularAnisotropy" type="in">
+    <metadata>
+        <entry key="page" value="Primary Specular.Advanced"/>
+        <entry key="label" value="Anisotropy"/>
+    </metadata>
+    </port>
+    <port name="specularBumpNormal" type="in">
+    <metadata>
+        <entry key="page" value="Primary Specular.Advanced"/>
+        <entry key="label" value="Bump"/>
+    </metadata>
+    </port>
+    <port name="roughSpecularGain" type="in">
+    <metadata>
+        <entry key="page" value="Rough Specular"/>
+        <entry key="label" value="Gain"/>
+    </metadata>
+    </port>
+    <port name="roughSpecularFaceColor" type="in">
+    <metadata>
+        <entry key="page" value="Rough Specular"/>
+        <entry key="label" value="Face Color"/>
+    </metadata>
+    </port>
+    <port name="roughSpecularEdgeColor" type="in">
+    <metadata>
+        <entry key="page" value="Rough Specular"/>
+        <entry key="label" value="Edge Color"/>
+    </metadata>
+    </port>
+    <port name="roughSpecularIor" type="in">
+    <metadata>
+        <entry key="page" value="Rough Specular.Physical"/>
+        <entry key="label" value="Refraction Index"/>
+    </metadata>
+    </port>
+    <port name="roughSpecularExtinctionCoeff" type="in">
+    <metadata>
+        <entry key="page" value="Rough Specular.Physical"/>
+        <entry key="label" value="Extinction Coefficient"/>
+    </metadata>
+    </port>
+    <port name="roughSpecularRoughness" type="in">
+    <metadata>
+        <entry key="page" value="Rough Specular"/>
+        <entry key="label" value="Roughness"/>
+    </metadata>
+    </port>
+    <port name="roughSpecularAnisotropy" type="in">
+    <metadata>
+        <entry key="page" value="Rough Specular.Advanced"/>
+        <entry key="label" value="Anisotropy"/>
+    </metadata>
+    </port>
+    <port name="roughSpecularBumpNormal" type="in">
+    <metadata>
+        <entry key="page" value="Rough Specular.Advanced"/>
+        <entry key="label" value="Bump"/>
+    </metadata>
+    </port>
+    <port name="clearcoatGain" type="in">
+    <metadata>
+        <entry key="page" value="Clear Coat"/>
+        <entry key="label" value="Gain"/>
+    </metadata>
+    </port>
+    <port name="clearcoatFaceColor" type="in">
+    <metadata>
+        <entry key="page" value="Clear Coat"/>
+        <entry key="label" value="Face Color"/>
+    </metadata>
+    </port>
+    <port name="clearcoatEdgeColor" type="in">
+    <metadata>
+        <entry key="page" value="Clear Coat"/>
+        <entry key="label" value="Edge Color"/>
+    </metadata>
+    </port>
+    <port name="clearcoatIor" type="in">
+    <metadata>
+        <entry key="page" value="Clear Coat.Physical"/>
+        <entry key="label" value="Refraction Index"/>
+    </metadata>
+    </port>
+    <port name="clearcoatExtinctionCoeff" type="in">
+    <metadata>
+        <entry key="page" value="Clear Coat.Physical"/>
+        <entry key="label" value="Extinction Coefficient"/>
+    </metadata>
+    </port>
+    <port name="clearcoatRoughness" type="in">
+    <metadata>
+        <entry key="page" value="Clear Coat"/>
+        <entry key="label" value="Roughness"/>
+    </metadata>
+    </port>
+    <port name="clearcoatAnisotropy" type="in">
+    <metadata>
+        <entry key="page" value="Clear Coat.Advanced"/>
+        <entry key="label" value="Anisotropy"/>
+    </metadata>
+    </port>
+    <port name="clearcoatBumpNormal" type="in">
+    <metadata>
+        <entry key="page" value="Clear Coat.Advanced"/>
+        <entry key="label" value="Bump"/>
+    </metadata>
+    </port>
+    <port name="clearcoatThickness" type="in">
+    <metadata>
+        <entry key="page" value="Clear Coat.Physical"/>
+        <entry key="label" value="Layer Thickness"/>
+    </metadata>
+    </port>
+    <port name="clearcoatAbsorptionTint" type="in">
+    <metadata>
+        <entry key="page" value="Clear Coat.Physical"/>
+        <entry key="label" value="Absorption Tint"/>
+    </metadata>
+    </port>
+    <port name="iridescenceFaceGain" type="in">
+    <metadata>
+        <entry key="page" value="Iridescence"/>
+        <entry key="label" value="Face Gain"/>
+    </metadata>
+    </port>
+    <port name="iridescenceEdgeGain" type="in">
+    <metadata>
+        <entry key="page" value="Iridescence"/>
+        <entry key="label" value="Edge Gain"/>
+    </metadata>
+    </port>
+    <port name="iridescencePrimaryColor" type="in">
+    <metadata>
+        <entry key="page" value="Iridescence"/>
+        <entry key="label" value="Primary Color"/>
+    </metadata>
+    </port>
+    <port name="iridescenceSecondaryColor" type="in">
+    <metadata>
+        <entry key="page" value="Iridescence"/>
+        <entry key="label" value="Secondary Color"/>
+    </metadata>
+    </port>
+    <port name="iridescenceThickness" type="in">
+    <metadata>
+        <entry key="page" value="Iridescence.Physical"/>
+        <entry key="label" value="Thin Film Thickness"/>
+    </metadata>
+    </port>
+    <port name="iridescenceRoughness" type="in">
+    <metadata>
+        <entry key="page" value="Iridescence"/>
+        <entry key="label" value="Roughness"/>
+    </metadata>
+    </port>
+    <port name="fuzzGain" type="in">
+    <metadata>
+        <entry key="page" value="Fuzz"/>
+        <entry key="label" value="Gain"/>
+    </metadata>
+    </port>
+    <port name="fuzzColor" type="in">
+    <metadata>
+        <entry key="page" value="Fuzz"/>
+        <entry key="label" value="Color"/>
+    </metadata>
+    </port>
+    <port name="fuzzConeAngle" type="in">
+    <metadata>
+        <entry key="page" value="Fuzz"/>
+        <entry key="label" value="Cone Angle"/>
+    </metadata>
+    </port>
+    <port name="fuzzBumpNormal" type="in">
+    <metadata>
+        <entry key="page" value="Fuzz.Advanced"/>
+        <entry key="label" value="Bump"/>
+    </metadata>
+    </port>
+    <port name="subsurfaceGain" type="in">
+    <metadata>
+        <entry key="page" value="Subsurface"/>
+        <entry key="label" value="Gain"/>
+    </metadata>
+    </port>
+    <port name="subsurfaceColor" type="in">
+    <metadata>
+        <entry key="page" value="Subsurface"/>
+        <entry key="label" value="Color"/>
+    </metadata>
+    </port>
+    <port name="subsurfaceDmfp" type="in">
+    <metadata>
+        <entry key="page" value="Subsurface"/>
+        <entry key="label" value="Mean Free Path Distance"/>
+    </metadata>
+    </port>
+    <port name="subsurfaceDmfpColor" type="in">
+    <metadata>
+        <entry key="page" value="Subsurface"/>
+        <entry key="label" value="Mean Free Path Color"/>
+    </metadata>
+    </port>
+    <port name="shortSubsurfaceGain" type="in">
+    <metadata>
+        <entry key="page" value="Subsurface.Multiple Mean Free Paths"/>
+        <entry key="label" value="Short Gain"/>
+    </metadata>
+    </port>
+    <port name="shortSubsurfaceColor" type="in">
+    <metadata>
+        <entry key="page" value="Subsurface.Multiple Mean Free Paths"/>
+        <entry key="label" value="Short Color"/>
+    </metadata>
+    </port>
+    <port name="shortSubsurfaceDmfp" type="in">
+    <metadata>
+        <entry key="page" value="Subsurface.Multiple Mean Free Paths"/>
+        <entry key="label" value="Short MFP Distance"/>
+    </metadata>
+    </port>
+    <port name="longSubsurfaceGain" type="in">
+    <metadata>
+        <entry key="page" value="Subsurface.Multiple Mean Free Paths"/>
+        <entry key="label" value="Long Gain"/>
+    </metadata>
+    </port>
+    <port name="longSubsurfaceColor" type="in">
+    <metadata>
+        <entry key="page" value="Subsurface.Multiple Mean Free Paths"/>
+        <entry key="label" value="Long Color"/>
+    </metadata>
+    </port>
+    <port name="longSubsurfaceDmfp" type="in">
+    <metadata>
+        <entry key="page" value="Subsurface.Multiple Mean Free Paths"/>
+        <entry key="label" value="Long MFP Distance"/>
+    </metadata>
+    </port>
+    <port name="subsurfacePostTint" type="in">
+    <metadata>
+        <entry key="page" value="Subsurface.Advanced"/>
+        <entry key="label" value="Post Tint"/>
+    </metadata>
+    </port>
+    <port name="subsurfaceTransmitGain" type="in">
+    <metadata>
+        <entry key="page" value="Subsurface.Advanced"/>
+        <entry key="label" value="Transmit Gain"/>
+    </metadata>
+    </port>
+    <port name="singlescatterGain" type="in">
+    <metadata>
+        <entry key="page" value="Single Scatter"/>
+        <entry key="label" value="Gain"/>
+    </metadata>
+    </port>
+    <port name="singlescatterColor" type="in">
+    <metadata>
+        <entry key="page" value="Single Scatter"/>
+        <entry key="label" value="Color"/>
+    </metadata>
+    </port>
+    <port name="singlescatterMfp" type="in">
+    <metadata>
+        <entry key="page" value="Single Scatter"/>
+        <entry key="label" value="Mean Free Path"/>
+    </metadata>
+    </port>
+    <port name="singlescatterMfpColor" type="in">
+    <metadata>
+        <entry key="page" value="Single Scatter"/>
+        <entry key="label" value="Mean Free Path Color"/>
+    </metadata>
+    </port>
+    <port name="singlescatterDirectionality" type="in">
+    <metadata>
+        <entry key="page" value="Single Scatter.Advanced"/>
+        <entry key="label" value="Directionality"/>
+    </metadata>
+    </port>
+    <port name="singlescatterIor" type="in">
+    <metadata>
+        <entry key="page" value="Single Scatter.Advanced"/>
+        <entry key="label" value="Refractive Index"/>
+    </metadata>
+    </port>
+    <port name="singlescatterBlur" type="in">
+    <metadata>
+        <entry key="page" value="Single Scatter.Advanced"/>
+        <entry key="label" value="Blur"/>
+    </metadata>
+    </port>
+    <port name="singlescatterDirectGain" type="in">
+    <metadata>
+        <entry key="page" value="Single Scatter.Advanced"/>
+        <entry key="label" value="Backside Direct Illum Gain"/>
+    </metadata>
+    </port>
+    <port name="singlescatterDirectGainTint" type="in">
+    <metadata>
+        <entry key="page" value="Single Scatter.Advanced"/>
+        <entry key="label" value="Direction Tint"/>
+    </metadata>
+    </port>
+    <port name="rrRefractionGain" type="in">
+    <metadata>
+        <entry key="page" value="Glass"/>
+        <entry key="label" value="Refraction Gain"/>
+    </metadata>
+    </port>
+    <port name="rrReflectionGain" type="in">
+    <metadata>
+        <entry key="page" value="Glass"/>
+        <entry key="label" value="Reflection Gain"/>
+    </metadata>
+    </port>
+    <port name="rrRefractionColor" type="in">
+    <metadata>
+        <entry key="page" value="Glass"/>
+        <entry key="label" value="Refraction Color"/>
+    </metadata>
+    </port>
+    <port name="rrRoughness" type="in">
+    <metadata>
+        <entry key="page" value="Glass"/>
+        <entry key="label" value="Roughness"/>
+    </metadata>
+    </port>
+    <port name="rrIor" type="in">
+    <metadata>
+        <entry key="page" value="Glass.Advanced"/>
+        <entry key="label" value="Refractive Index"/>
+    </metadata>
+    </port>
+    <port name="glowGain" type="in">
+    <metadata>
+        <entry key="page" value="Glow"/>
+        <entry key="label" value="Gain"/>
+    </metadata>
+    </port>
+    <port name="glowColor" type="in">
+    <metadata>
+        <entry key="page" value="Glow"/>
+        <entry key="label" value="Color"/>
+    </metadata>
+    </port>
+    <port name="bumpNormal" type="in">
+    <metadata>
+        <entry key="label" value="Global Bump"/>
+    </metadata>
+    </port>
+    <port name="pxrMaterialOut" type="out"/>
+    <group_parameter name="PxrLayer">
+    <string_parameter name="name" value="PxrLayer"/>
+    <string_parameter name="nodeType" value="PxrLayer"/>
+    <string_parameter name="__lastValue" value="dzxzuqpv2jey5qbgvn4tjzsawyeu42qqbz6wh5kf6amtfvyjegjeFalse"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="enableDiffuse">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="diffuseGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="diffuseColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0.18"/>
+            <number_parameter name="i1" value="0.18"/>
+            <number_parameter name="i2" value="0.18"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="diffuseRoughness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="diffuseBumpNormal">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="diffuseBackColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0.18"/>
+            <number_parameter name="i1" value="0.18"/>
+            <number_parameter name="i2" value="0.18"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="diffuseTransmitGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="diffuseTransmitColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0.18"/>
+            <number_parameter name="i1" value="0.18"/>
+            <number_parameter name="i2" value="0.18"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="enableSpecular">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="specularGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="specularFaceColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="specularEdgeColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="specularIor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="1.5"/>
+            <number_parameter name="i1" value="1.5"/>
+            <number_parameter name="i2" value="1.5"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="specularExtinctionCoeff">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="specularRoughness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.2"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="specularAnisotropy">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="specularBumpNormal">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="enableRoughSpecular">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="roughSpecularGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="roughSpecularFaceColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="roughSpecularEdgeColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="roughSpecularIor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="1.5"/>
+            <number_parameter name="i1" value="1.5"/>
+            <number_parameter name="i2" value="1.5"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="roughSpecularExtinctionCoeff">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="roughSpecularRoughness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.6"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="roughSpecularAnisotropy">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="roughSpecularBumpNormal">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="enableClearcoat">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="clearcoatGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="clearcoatFaceColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="clearcoatEdgeColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="clearcoatIor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="1.5"/>
+            <number_parameter name="i1" value="1.5"/>
+            <number_parameter name="i2" value="1.5"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="clearcoatExtinctionCoeff">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="clearcoatRoughness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="clearcoatAnisotropy">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="clearcoatBumpNormal">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="clearcoatThickness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="clearcoatAbsorptionTint">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="enableIridescence">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="iridescenceFaceGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="iridescenceEdgeGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="iridescencePrimaryColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="1"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="iridescenceSecondaryColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="iridescenceThickness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="800"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="iridescenceRoughness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.2"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="enableFuzz">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="fuzzGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="fuzzColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="1"/>
+            <number_parameter name="i1" value="1"/>
+            <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="fuzzConeAngle">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="8"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="fuzzBumpNormal">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="enableSubsurface">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="subsurfaceGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="subsurfaceColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0.83"/>
+            <number_parameter name="i1" value="0.791"/>
+            <number_parameter name="i2" value="0.753"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="subsurfaceDmfp">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="10"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="subsurfaceDmfpColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0.851"/>
+            <number_parameter name="i1" value="0.5570000000000001"/>
+            <number_parameter name="i2" value="0.395"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="shortSubsurfaceGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="shortSubsurfaceColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0.9"/>
+            <number_parameter name="i1" value="0.9"/>
+            <number_parameter name="i2" value="0.9"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="shortSubsurfaceDmfp">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="longSubsurfaceGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="longSubsurfaceColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0.8"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="longSubsurfaceDmfp">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="20"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="subsurfacePostTint">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="1"/>
+            <number_parameter name="i1" value="1"/>
+            <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="subsurfaceTransmitGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="enableSinglescatter">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="singlescatterGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="singlescatterColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0.83"/>
+            <number_parameter name="i1" value="0.791"/>
+            <number_parameter name="i2" value="0.753"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="singlescatterMfp">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="10"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="singlescatterMfpColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0.851"/>
+            <number_parameter name="i1" value="0.5570000000000001"/>
+            <number_parameter name="i2" value="0.395"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="singlescatterDirectionality">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="singlescatterIor">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1.3"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="singlescatterBlur">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="singlescatterDirectGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="singlescatterDirectGainTint">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="1"/>
+            <number_parameter name="i1" value="1"/>
+            <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="enableRR">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="rrRefractionGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="rrReflectionGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="rrRefractionColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="1"/>
+            <number_parameter name="i1" value="1"/>
+            <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="rrRoughness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="rrIor">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1.5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="enableGlow">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="glowGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="glowColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="1"/>
+            <number_parameter name="i1" value="1"/>
+            <number_parameter name="i2" value="1"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="bumpNormal">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_bumpNormal">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_enableDiffuse">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_diffuseGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_diffuseColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_diffuseRoughness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_diffuseBumpNormal">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_diffuseBackColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_diffuseTransmitGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_diffuseTransmitColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_enableSpecular">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_specularFaceColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_specularEdgeColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_specularIor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_specularExtinctionCoeff">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_specularRoughness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.2"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_specularAnisotropy">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_specularBumpNormal">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_enableRoughSpecular">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_roughSpecularFaceColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_roughSpecularEdgeColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_roughSpecularIor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_roughSpecularExtinctionCoeff">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_roughSpecularRoughness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.6"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_roughSpecularAnisotropy">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_roughSpecularBumpNormal">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_enableClearcoat">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_clearcoatFaceColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_clearcoatEdgeColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_clearcoatIor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_clearcoatExtinctionCoeff">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_clearcoatRoughness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_clearcoatAnisotropy">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_clearcoatBumpNormal">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_clearcoatThickness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_clearcoatAbsorptionTint">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_enableIridescence">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_iridescenceFaceGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_iridescenceEdgeGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_iridescencePrimaryColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_iridescenceSecondaryColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_iridescenceThickness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_iridescenceRoughness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.2"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_enableFuzz">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_fuzzGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_fuzzColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_fuzzConeAngle">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_fuzzBumpNormal">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_enableRR">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_refractionGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_refractionColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_reflectionGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_glassRoughness">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0.1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_glassIor">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1.5"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_enableSubsurface">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_subsurfaceGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_subsurfaceColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_subsurfaceDmfp">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_subsurfaceDmfpColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_shortSubsurfaceGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_shortSubsurfaceColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_shortSubsurfaceDmfp">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_longSubsurfaceGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_longSubsurfaceColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_longSubsurfaceDmfp">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_subsurfacePostTint">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_subsurfaceTransmitGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_enableSinglescatter">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_singlescatterGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_singlescatterColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_singlescatterMfp">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_singlescatterMfpColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_singlescatterDirectionality">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_singlescatterIor">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1.3"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_singlescatterBlur">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_singlescatterDirectGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_singlescatterDirectGainTint">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_enableGlow">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_glowGain">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="0"/>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="pxrMaterialOut_glowColor">
+        <number_parameter name="enable" value="0"/>
+        <numberarray_parameter name="value" size="3" tupleSize="3">
+            <number_parameter name="i0" value="0"/>
+            <number_parameter name="i1" value="0"/>
+            <number_parameter name="i2" value="0"/>
+        </numberarray_parameter>
+        <string_parameter name="type" value="FloatAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>

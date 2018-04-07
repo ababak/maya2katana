@@ -1,0 +1,41 @@
+<node baseType="PrmanShadingNode" name="PxrDisplayFilterCombiner" selected="true" type="PrmanShadingNode">
+    <port name="filter" type="in">
+    <tags>
+        <tag name="displayfilter"/>
+    </tags>
+    <metadata>
+        <entry key="label" value="filter"/>
+    </metadata>
+    </port>
+    <port name="out" type="out">
+    <tags>
+        <tag name="displayfilter"/>
+    </tags>
+    </port>
+    <group_parameter name="PxrDisplayFilterCombiner">
+    <string_parameter name="name" value="PxrDisplayFilterCombiner"/>
+    <string_parameter name="nodeType" value="PxrDisplayFilterCombiner"/>
+    <string_parameter name="__lastValue" value="igf77uwep2cqvnxjtivoj4vfaik2rzepsuszm5pn4vwe7c45akn4False"/>
+    <string_parameter name="__showHiddenParams" value="False"/>
+    <group_parameter name="parameters">
+        <group_parameter name="filter">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="isDynamicArray" value="1"/>
+        <stringarray_parameter name="value" size="1" tupleSize="1">
+            <string_parameter name="i0" value=""/>
+        </stringarray_parameter>
+        <string_parameter name="type" value="StringAttr"/>
+        </group_parameter>
+        <group_parameter name="__unused"/>
+    </group_parameter>
+    <group_parameter name="publicInterface">
+        <string_parameter name="namePrefix" value=""/>
+        <string_parameter name="pagePrefix" value=""/>
+        <string_parameter name="nameRegExFind" value=""/>
+        <string_parameter name="nameRegExReplace" value=""/>
+        <string_parameter name="pageRegExFind" value=""/>
+        <string_parameter name="pageRegExReplace" value=""/>
+    </group_parameter>
+    <string_parameter name="forceRefresh" value=""/>
+    </group_parameter>
+</node>
