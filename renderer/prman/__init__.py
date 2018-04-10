@@ -311,6 +311,7 @@ premap = {
 # Mappings keywords:
 # - customColor
 # - customProcess
+# - customMapping
 mappings = {
     'networkMaterial': {
         'customColor': (0.4, 0.35, 0.2),
@@ -388,14 +389,17 @@ mappings = {
     'PxrLMPlastic': {},
     'PxrLMSubsurface': {},
     'PxrLayer': {
+        'customMapping': False,
         'customColor': (0.2, 0.36, 0.1),
     },
     'PxrLayerMixer': {},
     'PxrLayerSurface': {
+        'customMapping': False,
         'customColor': (0.2, 0.36, 0.1),
     },
     'PxrLayeredBlend': {},
     'PxrLayeredTexture': {
+        'customMapping': False,
         'customColor': (0.36, 0.25, 0.38),
         'filename': replaceTex,
     },
@@ -410,6 +414,7 @@ mappings = {
     'PxrMeshLight': {},
     'PxrMix': {},
     'PxrMultiTexture': {
+        'customMapping': False,
         'customColor': (0.36, 0.25, 0.38),
         'filename0': replaceTex,
         'filename1': replaceTex,
@@ -431,18 +436,12 @@ mappings = {
     'PxrProjectionStack': {},
     'PxrProjector': {},
     'PxrPtexture': {
+        'customMapping': False,
         'customColor': (0.36, 0.25, 0.38),
     },
     'PxrRamp': {
+        'customMapping': False,
         'customProcess': processRamp,
-        'rampType': None,
-        'tile': None,
-        'reverse': None,
-        'basis': None,
-        'splineMap': None,
-        'randomSource': None,
-        'randomSeed': None,
-        'manifold': None,
     },
     'PxrRampLightFilter': {},
     'PxrRandomTextureManifold': {},
@@ -458,11 +457,13 @@ mappings = {
     'PxrSkin': {},
     'PxrSphereLight': {},
     'PxrSurface': {
+        'customMapping': False,
         'customColor': (0.2, 0.36, 0.1),
     },
     'PxrTangentField': {},
     'PxrTee': {},
     'PxrTexture': {
+        'customMapping': False,
         'customColor': (0.36, 0.25, 0.38),
         'filename': replaceTex,
     },

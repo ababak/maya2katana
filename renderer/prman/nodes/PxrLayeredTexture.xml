@@ -230,7 +230,7 @@
         </group_parameter>
         <group_parameter name="optimizeIndirect">
         <number_parameter name="enable" value="0"/>
-        <numberarray_parameter name="value" size="0" tupleSize="1"/>
+        <number_parameter name="value" value="0"/>
         <string_parameter name="type" value="IntAttr"/>
         </group_parameter>
         <group_parameter name="linearize">

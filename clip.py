@@ -77,11 +77,14 @@ def iterateMappingRecursive(mappingDict, xmlGroup, node):
     The most complicated part that maps Maya parameters to Katana XML parameters
     '''
     attributes = node['attributes']
-    if not mappingDict:
+    print repr(mappingDict), node
+    if not mappingDict or not mappingDict.get('customMapping', True):
         # If we know that the node has identical attributes in both Maya and Katana,
         # then we don't need the mapping dictionary, we can build it on-the-fly
         # from Maya node attributes
-        mappingDict = dict.fromkeys(attributes)
+        attrDict = dict.fromkeys(attributes)
+        attrDict.update(mappingDict)
+        mappingDict = attrDict
     for paramKey, paramChildren in mappingDict.items():
         options = None
         processField = None
@@ -167,9 +170,10 @@ def iterateMappingRecursive(mappingDict, xmlGroup, node):
                         # # A hack to avoid RenderMan bug
                         # # with not working PxrMultiTexture.optimizeIndirect
                         # if isinstance(mayaValue, bool):
-                        #     mayaValue = tuple(mayaValue)
+                        #     print repr(mayaValue), repr(value), destKey
+                        #     mayaValue = (mayaValue, )
                         # # HACK END
-                        # In the end I've changed the PxrMultiTexture.xml
+                        # In the end I've changed the PxrMultiTexture.xml and PxrNormalMap.xml
                         # file to fix the affected checkbox
                         for i, val in enumerate(mayaValue):
                             subValueNode = valueNode.find("*[@name='i{index}']".format(index=i))
