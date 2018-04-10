@@ -24,6 +24,7 @@
 '''
 
 import re
+import os
 import xml.etree.ElementTree as ET
 
 import maya.cmds as cmds

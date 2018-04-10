@@ -55,6 +55,11 @@ def equalAttributes(a, b):
             if not equalAttributes(val_a, val_b):
                 return False
         return True
+    elif isinstance(a, (str, unicode)) and isinstance(b, (list, tuple)):
+        # Special case for RenderMan inputMaterial different data types in Maya and Katana
+        if not a and not b:
+            return True
+        return False
     elif isinstance(a, float) or isinstance(b, float):
         return abs(float(a) - float(b)) < delta
     elif isinstance(a, bool) or isinstance(b, bool):
@@ -77,7 +82,6 @@ def iterateMappingRecursive(mappingDict, xmlGroup, node):
     The most complicated part that maps Maya parameters to Katana XML parameters
     '''
     attributes = node['attributes']
-    print repr(mappingDict), node
     if not mappingDict or not mappingDict.get('customMapping', True):
         # If we know that the node has identical attributes in both Maya and Katana,
         # then we don't need the mapping dictionary, we can build it on-the-fly
@@ -162,8 +166,8 @@ def iterateMappingRecursive(mappingDict, xmlGroup, node):
                         mayaValue = options[mayaValue]
                 if processField:
                     mayaValue = processField(paramKey, mayaValue)
+                # print(paramKey + ' = ' + str(value))
                 if mayaValue is not None and not equalAttributes(mayaValue, value):
-                    # print(paramKey + ' = ' + str(value))
                     # print('\tnew value = ' + str(mayaValue))
                     if tuples:
                         # # HACK START
