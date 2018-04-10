@@ -64,3 +64,13 @@ maya2katana.copy()
 
 3. Switch to Katana and paste the nodes
 ![Resulting Katana shading network](doc/katana.jpg)
+
+### Integrations
+
+To get the XML from shading network name:
+```
+import maya2katana
+reload (maya2katana)
+node_name = 'materialSG'
+resulting_xml = maya2katana.generateXML(node_name)
+```
