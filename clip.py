@@ -134,7 +134,7 @@ def iterateMappingRecursive(mappingDict, xmlGroup, node):
             tuples = None
             if valueNode is not None:
                 value = valueNode.get('value')
-                print(paramKey, value)
+                # print(paramKey, value)
                 if not value:
                     tuples = valueNode.get('size')
                     if tuples:
