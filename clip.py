@@ -89,21 +89,20 @@ def iterateMappingRecursive(mappingDict, xmlGroup, node):
         attrDict = dict.fromkeys(attributes)
         attrDict.update(mappingDict)
         mappingDict = attrDict
+    # Special case: custom processing (used for ramp, etc.)
+    customOption = mappingDict.pop('customProcess', None)
+    if customOption:
+        customOption(xmlGroup, node)
+    customOption = mappingDict.pop('customColor', None)
+    if customOption:
+        xmlGroup.attrib['ns_colorr'] = str(customOption[0])
+        xmlGroup.attrib['ns_colorg'] = str(customOption[1])
+        xmlGroup.attrib['ns_colorb'] = str(customOption[2])
     for paramKey, paramChildren in mappingDict.items():
         options = None
         processField = None
         forceContinue = False
         destKey = paramKey
-        # Special case: custom processing (used for ramp, etc.)
-        if paramKey == 'customProcess':
-            processField = paramChildren
-            processField(xmlGroup, node)
-            continue
-        elif paramKey == 'customColor':
-            xmlGroup.attrib['ns_colorr'] = str(paramChildren[0])
-            xmlGroup.attrib['ns_colorg'] = str(paramChildren[1])
-            xmlGroup.attrib['ns_colorb'] = str(paramChildren[2])
-            continue
         if isinstance(paramChildren, tuple):
             destKey = paramChildren[0]
             paramChildren = paramChildren[1]
@@ -135,7 +134,7 @@ def iterateMappingRecursive(mappingDict, xmlGroup, node):
             tuples = None
             if valueNode is not None:
                 value = valueNode.get('value')
-                # print(paramKey, value)
+                print(paramKey, value)
                 if not value:
                     tuples = valueNode.get('size')
                     if tuples:
