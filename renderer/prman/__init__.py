@@ -42,6 +42,56 @@ def replaceTex(key, filepath):
     return root + ext
 
 
+def preprocessUtilityPattern(node):
+    '''
+    Preprocess Utility Pattern surface connections
+    '''
+    nodes = {}
+    nodeName = node['name']
+    connections = node['connections']
+    utilityPatterns = {}
+    for i in connections:
+        utilityMatch = re.search(r'^utilityPattern\[(\d+)\]$', i)
+        if not utilityMatch:
+            continue
+        utilityPatterns[int(utilityMatch.group(1))] = connections.get(i)
+    nodes[nodeName] = node
+    if len(utilityPatterns) == 1:
+        connections['utilityPattern'] = utilityPatterns.values()[0]
+        del connections[
+            'utilityPattern[{}]'.format(utilityPatterns.keys()[0])]
+    elif len(utilityPatterns) > 1:
+        # We should create a ShadingNodeArrayConnector
+        connectorName = utils.uniqueName(nodeName + 'Connector')
+        arrayConnections = {}
+        for i in sorted(utilityPatterns):
+            arrayConnections['i' + str(i)] = utilityPatterns.get(i)
+            del connections[
+                'utilityPattern[{}]'.format(i)]
+        connector = {
+            'name': connectorName,
+            'type': 'ShadingNodeArrayConnector',
+            'attributes': {},
+            'connections': arrayConnections,
+            'renamings': {},
+        }
+        connections['utilityPattern'] = {
+            'node': connectorName,
+            'originalPort': 'out',
+        }
+        nodes[connectorName] = connector
+    return nodes
+
+def processUtilityPattern(xmlGroup, node):
+    '''
+    Process Utility Pattern surface connections
+    '''
+    connections = node['connections']
+    for i in sorted(connections):
+        inPort = ET.SubElement(xmlGroup, 'port')
+        inPort.attrib['name'] = i
+        inPort.attrib['type'] = 'in'
+
 def preprocessNetworkMaterial(node):
     '''
     Preprocess shadingEngine node and remap correct attributes
@@ -253,7 +303,9 @@ premap = {
     'PxrLMSubsurface': {},
     'PxrLayer': {},
     'PxrLayerMixer': {},
-    'PxrLayerSurface': {},
+    'PxrLayerSurface': {
+        'preprocess': preprocessUtilityPattern,
+    },
     'PxrLayeredBlend': {},
     'PxrLayeredTexture': {},
     'PxrLightEmission': {},
@@ -290,7 +342,9 @@ premap = {
     'PxrShadowFilter': {},
     'PxrSkin': {},
     'PxrSphereLight': {},
-    'PxrSurface': {},
+    'PxrSurface': {
+        'preprocess': preprocessUtilityPattern,
+    },
     'PxrTangentField': {},
     'PxrTee': {},
     'PxrTexture': {},
@@ -488,4 +542,7 @@ mappings = {
     'PxrWhitePointDisplayFilter': {},
     'PxrWhitePointSampleFilter': {},
     'PxrWorley': {},
+    'ShadingNodeArrayConnector': {
+        'customProcess': processUtilityPattern,
+    },
 }

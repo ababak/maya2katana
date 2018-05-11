@@ -1,0 +1,4 @@
+<node baseType="ShadingNodeArrayConnector" name="ShadingNodeArrayConnector" selected="true" type="ShadingNodeArrayConnector">
+    <port name="out" type="out"/>
+    <group_parameter name="ShadingNodeArrayConnector"/>
+</node>

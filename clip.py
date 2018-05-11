@@ -73,6 +73,10 @@ def equalAttributes(a, b):
             b = (b == 'True') or int(b) == 1
         return a == b
     elif isinstance(a, int) or isinstance(b, int):
+        if isinstance(a, tuple):
+            a = len(a)
+        if isinstance(b, tuple):
+            b = len(b)
         return int(a) == int(b)
     else:
         return a == b
@@ -165,7 +169,8 @@ def iterateMappingRecursive(mappingDict, xmlGroup, node):
                         mayaValue = options[mayaValue]
                 if processField:
                     mayaValue = processField(paramKey, mayaValue)
-                # print(paramKey + ' = ' + str(value))
+                # print('mayaValue = ' + repr(mayaValue))
+                # print(paramKey + ' = ' + repr(value))
                 if mayaValue is not None and not equalAttributes(mayaValue, value):
                     # print('\tnew value = ' + str(mayaValue))
                     if tuples:
