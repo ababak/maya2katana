@@ -86,23 +86,24 @@ def iterateMappingRecursive(mappingDict, xmlGroup, node):
     The most complicated part that maps Maya parameters to Katana XML parameters
     '''
     attributes = node['attributes']
-    if not mappingDict or not mappingDict.get('customMapping', True):
+    mapping = dict(mappingDict)
+    if not mapping or not mapping.get('customMapping', True):
         # If we know that the node has identical attributes in both Maya and Katana,
         # then we don't need the mapping dictionary, we can build it on-the-fly
         # from Maya node attributes
         attrDict = dict.fromkeys(attributes)
-        attrDict.update(mappingDict)
-        mappingDict = attrDict
+        attrDict.update(mapping)
+        mapping = attrDict
     # Special case: custom processing (used for ramp, etc.)
-    customOption = mappingDict.pop('customProcess', None)
+    customOption = mapping.pop('customProcess', None)
     if customOption:
         customOption(xmlGroup, node)
-    customOption = mappingDict.pop('customColor', None)
+    customOption = mapping.pop('customColor', None)
     if customOption:
         xmlGroup.attrib['ns_colorr'] = str(customOption[0])
         xmlGroup.attrib['ns_colorg'] = str(customOption[1])
         xmlGroup.attrib['ns_colorb'] = str(customOption[2])
-    for paramKey, paramChildren in mappingDict.items():
+    for paramKey, paramChildren in mapping.items():
         options = None
         processField = None
         forceContinue = False
