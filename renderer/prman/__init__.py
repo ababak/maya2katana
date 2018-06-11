@@ -216,6 +216,20 @@ def processRamp(xmlGroup, node):
                     value[j] if tupleSize > 1 else value)
 
 
+def overrideManifold2DParams(key, value):
+    '''
+    Special overrides.
+    Katana expects UV Set name instead of 'u_uvSet'
+    '''
+    if key == 'primvarS':
+        if value == 'u_uvSet':
+            value = 'map2'
+    elif key == 'primvarT':
+        if value == 'v_uvSet':
+            value = ''
+    return value
+
+
 # Preprocess keywords:
 # - preprocess
 # - postprocess (postprocess at level 0)
@@ -460,7 +474,11 @@ mappings = {
     'PxrLightEmission': {},
     'PxrLightProbe': {},
     'PxrLightSaturation': {},
-    'PxrManifold2D': {},
+    'PxrManifold2D': {
+        'customMapping': False,
+        'primvarS': overrideManifold2DParams,
+        'primvarT': overrideManifold2DParams,
+    },
     'PxrManifold3D': {},
     'PxrManifold3DN': {},
     'PxrMarschnerHair': {},
