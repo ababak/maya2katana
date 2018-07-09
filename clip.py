@@ -35,9 +35,12 @@ reload(utils)
 try:
     import PySide
     clipboard = PySide.QtGui.QApplication.clipboard()
-except ImportError:
-    import PySide2
-    clipboard = PySide2.QtGui.QGuiApplication.clipboard()
+except (ImportError, AttributeError):
+    try:
+        import PySide2
+        clipboard = PySide2.QtGui.QGuiApplication.clipboard()
+    except (ImportError, AttributeError):
+        clipboard = None
 
 basedir = os.path.dirname(os.path.realpath(__file__))
 
@@ -532,6 +535,9 @@ def copy(renderer=None):
     Usage: Select the shading nodes to copy and call clip.copy()
     Then paste to Katana
     '''
+    if not clipboard:
+        utils.log.info('Clipboard not available, sorry')
+        return
     nodeNames = cmds.ls(selection=True)
     xml = generateXML(nodeNames, renderer=renderer)
     if xml:
