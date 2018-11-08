@@ -59,7 +59,12 @@ def equalAttributes(a, b):
                 return False
         return True
     elif isinstance(a, (str, unicode)) and isinstance(b, (list, tuple)):
-        # Special case for RenderMan inputMaterial different data types in Maya and Katana
+        # Special case for RenderMan 21 inputMaterial different data types in Maya and Katana
+        if not a and not b:
+            return True
+        return False
+    elif isinstance(a, float) and isinstance(b, (list, tuple)):
+        # Special case for RenderMan 22 inputMaterial different data types in Maya and Katana
         if not a and not b:
             return True
         return False
