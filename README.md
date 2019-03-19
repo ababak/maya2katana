@@ -11,7 +11,7 @@ Easily copy shading nodes from [Maya](http://www.autodesk.com/products/maya/over
   alLayerColor, alLayerFloat, alRemapColor, alRemapFloat, alSurface, alSwitchColor, alSwitchFloat,
   alTriplanar, blendColors, bump2d, clamp, luminance, ramp, samplerInfo
 
-- #### [RenderMan 21.7](https://renderman.pixar.com/)
+- #### [RenderMan 21.7+](https://renderman.pixar.com/)
   Supported nodes: aaOceanPrmanShader, PxrAdjustNormal, PxrAovLight, PxrAttribute,
   PxrBackgroundDisplayFilter, PxrBackgroundSampleFilter, PxrBakePointCloud, PxrBakeTexture,
   PxrBarnLightFilter, PxrBlack, PxrBlackBody, PxrBlend, PxrBlockerLightFilter, PxrBump,
