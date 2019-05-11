@@ -1,7 +1,7 @@
 #!/usr/bin/python
 '''
     maya2katana - RenderMan plugin
-    Copyright (C) 2016-2018 Andrey Babak, Animagrad
+    Copyright (C) 2016-2019 Andriy Babak, Animagrad
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    Author: Andrey Babak
+    Author: Andriy Babak
     e-mail: ababak@gmail.com
     ------------------------------
     Copy shader nodes to Katana
