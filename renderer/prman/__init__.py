@@ -31,7 +31,8 @@ import maya.cmds as cmds
 
 from ... import utils
 
-def replaceTex(key, filepath):
+
+def replace_tex(key, filepath):
     '''
     Replace all texture paths with their .tex counterparts
     '''
@@ -42,102 +43,93 @@ def replaceTex(key, filepath):
     return root + ext
 
 
-def preprocessUtilityPattern(node):
+def preprocess_utility_pattern(node):
     '''
     Preprocess Utility Pattern surface connections
     '''
     nodes = {}
-    nodeName = node['name']
+    node_name = node['name']
     connections = node['connections']
-    utilityPatterns = {}
+    utility_patterns = {}
     for i in connections:
-        utilityMatch = re.search(r'^utilityPattern\[(\d+)\]$', i)
-        if not utilityMatch:
+        utility_match = re.search(r'^utilityPattern\[(\d+)\]$', i)
+        if not utility_match:
             continue
-        utilityPatterns[int(utilityMatch.group(1))] = connections.get(i)
-    nodes[nodeName] = node
-    if len(utilityPatterns) == 1:
-        connections['utilityPattern'] = utilityPatterns.values()[0]
+        utility_patterns[int(utility_match.group(1))] = connections.get(i)
+    nodes[node_name] = node
+    if len(utility_patterns) == 1:
+        connections['utilityPattern'] = utility_patterns.values()[0]
         del connections[
-            'utilityPattern[{}]'.format(utilityPatterns.keys()[0])]
-    elif len(utilityPatterns) > 1:
+            'utilityPattern[{}]'.format(utility_patterns.keys()[0])]
+    elif len(utility_patterns) > 1:
         # We should create a ShadingNodeArrayConnector
-        connectorName = utils.uniqueName(nodeName + 'Connector')
-        arrayConnections = {}
-        for i in sorted(utilityPatterns):
-            arrayConnections['i' + str(i)] = utilityPatterns.get(i)
+        connector_name = utils.unique_name(node_name + 'Connector')
+        array_connections = {}
+        for i in sorted(utility_patterns):
+            array_connections['i' + str(i)] = utility_patterns.get(i)
             del connections[
                 'utilityPattern[{}]'.format(i)]
         connector = {
-            'name': connectorName,
+            'name': connector_name,
             'type': 'ShadingNodeArrayConnector',
             'attributes': {},
-            'connections': arrayConnections,
+            'connections': array_connections,
             'renamings': {},
         }
         connections['utilityPattern'] = {
-            'node': connectorName,
-            'originalPort': 'out',
+            'node': connector_name,
+            'original_port': 'out',
         }
-        nodes[connectorName] = connector
+        nodes[connector_name] = connector
     return nodes
 
-def processUtilityPattern(xmlGroup, node):
-    '''
-    Process Utility Pattern surface connections
-    '''
-    connections = node['connections']
-    for i in sorted(connections):
-        inPort = ET.SubElement(xmlGroup, 'port')
-        inPort.attrib['name'] = i
-        inPort.attrib['type'] = 'in'
 
-def preprocessNetworkMaterial(node):
+def preprocess_network_material(node):
     '''
     Preprocess shadingEngine node and remap correct attributes
     '''
     nodes = {}
-    nodeName = node['name']
+    node_name = node['name']
     connections = node['connections']
-    newConnections = {}
+    new_connections = {}
     for i in ['surfaceShader', 'volumeShader']:
         connection = connections.get(i)
         if connection:
-            newConnections['prmanBxdf'] = connection
+            new_connections['prmanBxdf'] = connection
             break
-    displacementConnection = connections.get('displacementShader')
-    if displacementConnection:
-        newConnections['prmanDisplacement'] = displacementConnection
-    nodes[nodeName] = node
-    node['connections'] = newConnections
+    displacement_connection = connections.get('displacementShader')
+    if displacement_connection:
+        new_connections['prmanDisplacement'] = displacement_connection
+    nodes[node_name] = node
+    node['connections'] = new_connections
     return nodes
 
 
-def postprocessNetworkMaterial(node, allNodes):
+def postprocess_network_material(node, all_nodes):
     '''
     Rename the networkMaterial node and connect bump
     '''
     nodes = {}
-    prmanSurface = node['connections'].get('prmanBxdf')
-    if prmanSurface:
-        shaderNode = allNodes.get(prmanSurface['node'])
-        if shaderNode:
-            shaderNodeName = shaderNode['name']
+    prman_surface = node['connections'].get('prmanBxdf')
+    if prman_surface:
+        shader_node = all_nodes.get(prman_surface['node'])
+        if shader_node:
+            shader_node_name = shader_node['name']
             # Remove the output node to reinsert it back with the new name
-            allNodes.pop(shaderNodeName, None)
-            materialName = shaderNodeName
-            shaderNodeName += '_out'
-            shaderNode['name'] = shaderNodeName
-            nodes[shaderNodeName] = shaderNode
-            node['name'] = materialName
+            all_nodes.pop(shader_node_name, None)
+            material_name = shader_node_name
+            shader_node_name += '_out'
+            shader_node['name'] = shader_node_name
+            nodes[shader_node_name] = shader_node
+            node['name'] = material_name
             node['renamings'] = {
-                materialName: {'name': shaderNodeName},
+                material_name: {'name': shader_node_name},
             }
-            nodes[materialName] = node
+            nodes[material_name] = node
     return nodes
 
 
-def processNetworkMaterial(xmlGroup, node):
+def process_network_material(xml_group, node):
     '''
     Process NetworkMaterial to remove extra input ports
     '''
@@ -154,69 +146,134 @@ def processNetworkMaterial(xmlGroup, node):
             'prmanCoshaders.coshader',
         ]:
         if i not in node['connections']:
-            parameter = xmlGroup.find(
+            parameter = xml_group.find(
                 "./port[@name='{param}']".format(param=i))
-            xmlGroup.remove(parameter)
+            xml_group.remove(parameter)
 
 
-def preprocessDisplacement(node):
+def preprocess_displacement(node):
     '''
     Change the weight to move the displacement subtree to the right
     '''
     nodes = {}
-    nodeName = node['name']
+    node_name = node['name']
     node['weight'] = 20
-    nodes[nodeName] = node
+    nodes[node_name] = node
     return nodes
 
 
-def processRamp(xmlGroup, node):
+def preprocess_ramp(node):
+    '''
+    Preprocess ramp
+    Maya allows incoming connections instead of colors.
+    Katana needs the ShadingNodeArrayConnector.
+    '''
+    nodes = {}
+    node_name = node['name']
+    connections = node['connections']
+    attributes = node['attributes']
+    colors = {}
+    color_entry_list_size = cmds.getAttr(
+        '{node}.positions'.format(node=node_name), size=True)
+    for connection_name, connection in connections.items():
+        colors_match = re.search(r'^colors\[(\d+)\]$', connection_name)
+        if not colors_match:
+            continue
+        i = int(colors_match.group(1))
+        connection['weight'] = i
+        colors[i] = connection
+    attributes['useNewRamp'] = 0
+    nodes[node_name] = node
+    if colors:
+        # We should create a ShadingNodeArrayConnector
+        connector_name = utils.unique_name(node_name + 'Connector')
+        array_connections = {}
+        for i in range(color_entry_list_size):
+            connection = colors.get(i)
+            # We need to create a PxrHSL node for color knots
+            if not connection:
+                hsl_name = utils.unique_name(node_name + 'HSL' + str(i))
+                value_color = cmds.getAttr('{node}.colors[{index}]'.format(
+                    node=node_name, index=i))
+                value_color = value_color[0]
+                hsl = {
+                    'name': hsl_name,
+                    'type': 'PxrHSL',
+                    'attributes': {
+                        'inputRGB': value_color,
+                    },
+                    'connections': {},
+                    'renamings': {},
+                    'weight': i,
+                }
+                nodes[hsl_name] = hsl
+                connection = {
+                    'node': hsl_name,
+                    'original_port': 'resultRGB',
+                }
+            array_connections['i' + str(i)] = connection
+            if i in colors:
+                del connections['colors[{}]'.format(i)]
+        connector = {
+            'name': connector_name,
+            'type': 'ShadingNodeArrayConnector',
+            'attributes': {},
+            'connections': array_connections,
+            'renamings': {},
+        }
+        connections['colors'] = {
+            'node': connector_name,
+            'original_port': 'out',
+        }
+        nodes[connector_name] = connector
+    return nodes
+
+
+def process_ramp(xml_group, node):
     '''
     Process PxrRamp
     '''
     attributes = node['attributes']
-    nodeName = node['name']
-    if not nodeName:
+    node_name = node['name']
+    if not node_name:
         return
-    nodeType = node['type']
-    if not nodeType:
+    node_type = node['type']
+    if not node_type:
         return
-    colorEntryListSize = cmds.getAttr(
-        '{node}.positions'.format(node=nodeName), size=True)
-    colorEntryList = []
-    hasConnections = False
-    colorEntryListIndices = sorted(cmds.getAttr(
-        '{node}.positions'.format(node=nodeName), multiIndices=True))
-    index = 0
-    for i in colorEntryListIndices:
-        valuePosition = cmds.getAttr('{node}.positions[{index}]'.format(
-            node=nodeName, index=i))
-        valueColor = cmds.getAttr('{node}.colors[{index}]'.format(
-            node=nodeName, index=i))
-        valueColor = valueColor[0]
-        colorEntryList.append(
-            {'colors': valueColor, 'positions': valuePosition})
-    sortedColorEntryList = sorted(colorEntryList, key=lambda x: x['positions'])
-    for destKey in ['positions', 'colors']:
-        parameter = xmlGroup.find(
-            ".//group_parameter[@name='{param}']".format(param=destKey))
+    color_entry_list_size = cmds.getAttr(
+        '{node}.positions'.format(node=node_name), size=True)
+    color_entry_list = []
+    color_entry_list_indices = sorted(cmds.getAttr(
+        '{node}.positions'.format(node=node_name), multiIndices=True))
+    for i in color_entry_list_indices:
+        value_position = cmds.getAttr('{node}.positions[{index}]'.format(
+            node=node_name, index=i))
+        value_color = cmds.getAttr('{node}.colors[{index}]'.format(
+            node=node_name, index=i))
+        value_color = value_color[0]
+        color_entry_list.append(
+            {'colors': value_color, 'positions': value_position})
+    color_entry_list.sort(key=lambda x: x['positions'])
+    for dest_key in ['positions', 'colors']:
+        parameter = xml_group.find(
+            ".//group_parameter[@name='{param}']".format(param=dest_key))
         if parameter is None:
             continue
-        enableNode = parameter.find("*[@name='enable']")
-        valueNode = parameter.find("*[@name='value']")
-        enableNode.attrib['value'] = '1'
-        tupleSize = int(valueNode.get('tupleSize', '0'))
-        valueNode.attrib['size'] = str(tupleSize * colorEntryListSize)
-        for i in range(colorEntryListSize):
-            value = sortedColorEntryList[i][destKey]
-            for j in range(tupleSize):
-                subValue = ET.SubElement(valueNode, 'number_parameter')
-                subValue.attrib['name'] = 'i' + str(i * tupleSize + j)
-                subValue.attrib['value'] = str(
-                    value[j] if tupleSize > 1 else value)
+        enable_node = parameter.find("*[@name='enable']")
+        value_node = parameter.find("*[@name='value']")
+        enable_node.attrib['value'] = '1'
+        tuple_size = int(value_node.get('tupleSize', '0'))
+        value_node.attrib['size'] = str(tuple_size * color_entry_list_size)
+        for i in range(color_entry_list_size):
+            value = color_entry_list[i][dest_key]
+            for j in range(tuple_size):
+                sub_value = ET.SubElement(value_node, 'number_parameter')
+                sub_value.attrib['name'] = 'i' + str(i * tuple_size + j)
+                sub_value.attrib['value'] = str(
+                    value[j] if tuple_size > 1 else value)
 
 
-def overrideManifold2DParams(key, value):
+def override_manifold_2d_params(key, value):
     '''
     Special overrides.
     Katana expects UV Set name instead of 'u_uvSet'
@@ -230,6 +287,17 @@ def overrideManifold2DParams(key, value):
     return value
 
 
+def process_array_connector(xml_group, node):
+    '''
+    Process ArrayConnector connections
+    '''
+    connections = node['connections']
+    for connection_name in sorted(connections):
+        in_port = ET.SubElement(xml_group, 'port')
+        in_port.attrib['name'] = connection_name
+        in_port.attrib['type'] = 'in'
+
+
 # Preprocess keywords:
 # - preprocess
 # - postprocess (postprocess at level 0)
@@ -238,8 +306,8 @@ premap = {
     # Maya shading engine node
     'shadingEngine': {
         'type': 'networkMaterial',
-        'preprocess': preprocessNetworkMaterial,
-        'postprocess': postprocessNetworkMaterial,
+        'preprocess': preprocess_network_material,
+        'postprocess': postprocess_network_material,
     },
     # RenderMan nodes in an alphabetical order
     'aaOceanPrmanShader': {},
@@ -276,7 +344,7 @@ premap = {
     'PxrDiskLight': {},
     'PxrDisney': {},
     'PxrDisplace': {
-        'preprocess': preprocessDisplacement,
+        'preprocess': preprocess_displacement,
     },
     'PxrDispScalarLayer': {},
     'PxrDispTransform': {},
@@ -318,7 +386,7 @@ premap = {
     'PxrLayer': {},
     'PxrLayerMixer': {},
     'PxrLayerSurface': {
-        'preprocess': preprocessUtilityPattern,
+        'preprocess': preprocess_utility_pattern,
     },
     'PxrLayeredBlend': {},
     'PxrLayeredTexture': {},
@@ -342,7 +410,9 @@ premap = {
     'PxrProjectionStack': {},
     'PxrProjector': {},
     'PxrPtexture': {},
-    'PxrRamp': {},
+    'PxrRamp': {
+        'preprocess': preprocess_ramp,
+    },
     'PxrRampLightFilter': {},
     'PxrRandomTextureManifold': {},
     'PxrRectLight': {},
@@ -357,7 +427,7 @@ premap = {
     'PxrSkin': {},
     'PxrSphereLight': {},
     'PxrSurface': {
-        'preprocess': preprocessUtilityPattern,
+        'preprocess': preprocess_utility_pattern,
     },
     'PxrTangentField': {},
     'PxrTee': {},
@@ -383,7 +453,7 @@ premap = {
 mappings = {
     'networkMaterial': {
         'customColor': (0.4, 0.35, 0.2),
-        'customProcess': processNetworkMaterial,
+        'customProcess': process_network_material,
     },
     'aaOceanPrmanShader': {},
     'PxrAdjustNormal': {},
@@ -469,15 +539,15 @@ mappings = {
     'PxrLayeredTexture': {
         'customMapping': False,
         'customColor': (0.36, 0.25, 0.38),
-        'filename': replaceTex,
+        'filename': replace_tex,
     },
     'PxrLightEmission': {},
     'PxrLightProbe': {},
     'PxrLightSaturation': {},
     'PxrManifold2D': {
         'customMapping': False,
-        'primvarS': overrideManifold2DParams,
-        'primvarT': overrideManifold2DParams,
+        'primvarS': override_manifold_2d_params,
+        'primvarT': override_manifold_2d_params,
     },
     'PxrManifold3D': {},
     'PxrManifold3DN': {},
@@ -488,16 +558,16 @@ mappings = {
     'PxrMultiTexture': {
         'customMapping': False,
         'customColor': (0.36, 0.25, 0.38),
-        'filename0': replaceTex,
-        'filename1': replaceTex,
-        'filename2': replaceTex,
-        'filename3': replaceTex,
-        'filename4': replaceTex,
-        'filename5': replaceTex,
-        'filename6': replaceTex,
-        'filename7': replaceTex,
-        'filename8': replaceTex,
-        'filename9': replaceTex,
+        'filename0': replace_tex,
+        'filename1': replace_tex,
+        'filename2': replace_tex,
+        'filename3': replace_tex,
+        'filename4': replace_tex,
+        'filename5': replace_tex,
+        'filename6': replace_tex,
+        'filename7': replace_tex,
+        'filename8': replace_tex,
+        'filename9': replace_tex,
     },
     'PxrNormalMap': {},
     'PxrOcclusion': {},
@@ -512,8 +582,9 @@ mappings = {
         'customColor': (0.36, 0.25, 0.38),
     },
     'PxrRamp': {
-        'customProcess': processRamp,
+        'customProcess': process_ramp,
         'rampType': None,
+        'useNewRamp': None,
         'tile': None,
         # 'positions': None,
         # 'colors': None,
@@ -546,7 +617,7 @@ mappings = {
     'PxrTexture': {
         'customMapping': False,
         'customColor': (0.36, 0.25, 0.38),
-        'filename': replaceTex,
+        'filename': replace_tex,
     },
     'PxrThinFilm': {},
     'PxrThreshold': {},
@@ -561,6 +632,6 @@ mappings = {
     'PxrWhitePointSampleFilter': {},
     'PxrWorley': {},
     'ShadingNodeArrayConnector': {
-        'customProcess': processUtilityPattern,
+        'customProcess': process_array_connector,
     },
 }

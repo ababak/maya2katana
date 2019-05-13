@@ -28,5 +28,5 @@ __version__ = '3.1.2'
 import clip
 reload(clip)
 copy = clip.copy
-generateXML = clip.generateXML
+generate_xml = clip.generate_xml
 del clip

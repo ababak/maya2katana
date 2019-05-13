@@ -72,5 +72,5 @@ To get the XML from shading network name:
 import maya2katana
 reload (maya2katana)
 node_name = 'materialSG'
-resulting_xml = maya2katana.generateXML(node_name)
+resulting_xml = maya2katana.generate_xml(node_name)
 ```

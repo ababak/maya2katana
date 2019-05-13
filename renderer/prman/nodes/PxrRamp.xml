@@ -71,6 +71,11 @@
         <number_parameter name="value" value="0"/>
         <string_parameter name="type" value="IntAttr"/>
         </group_parameter>
+        <group_parameter name="useNewRamp">
+        <number_parameter name="enable" value="0"/>
+        <number_parameter name="value" value="1"/>
+        <string_parameter name="type" value="IntAttr"/>
+        </group_parameter>
         <group_parameter name="positions">
         <number_parameter name="enable" value="0"/>
         <number_parameter name="isDynamicArray" value="1"/>

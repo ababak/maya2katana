@@ -25,19 +25,19 @@
 
 import re
 import logging
-
 import maya.cmds as cmds
 
 log = logging.getLogger('clip')
 
-def nodeAttributes(node):
+
+def node_attributes(node):
     '''
     Get Maya node attributes
     '''
     attributes = cmds.listAttr(node)
     attr = {}
-    attr['nodeName'] = node
-    attr['nodeType'] = cmds.nodeType(node)
+    attr['node_name'] = node
+    attr['node_type'] = cmds.nodeType(node)
     for attribute in attributes:
         if '.' in attribute:
             continue
@@ -48,59 +48,89 @@ def nodeAttributes(node):
         attr[attribute] = val
     return attr
 
-def uniqueName(name=None, reset=False):
+
+def unique_name(name=None, reset=False):
     '''
     Create a unique node name by appending A-Z letters
     '''
-    if not hasattr(uniqueName, 'usedNames') or reset is True:
-        uniqueName.usedNames = []
+    if not hasattr(unique_name, 'usedNames') or reset is True:
+        unique_name.usedNames = []
     if isinstance(reset, list):
-        uniqueName.usedNames = list(reset)
-    if name in uniqueName.usedNames:
+        unique_name.usedNames = list(reset)
+    if name in unique_name.usedNames:
         if name[-1] > 'Z':
             name = name + 'A'
-        while name in uniqueName.usedNames:
+        while name in unique_name.usedNames:
             c = chr(ord(name[-1]) + 1)
             if c > 'Z':
                 c = 'AA'
             name = name[:-1] + c
-    uniqueName.usedNames.append(name)
+    unique_name.usedNames.append(name)
     return name
 
-def getOutConnection(connection):
-    outPort = [connection['node']]
-    if connection.get('originalPort').startswith(('outDisplacement', 'outEigenvalue')):
-        outPort.append(connection.get('originalPort'))
-    elif connection.get('originalPort').startswith('out'):
-        outPort.append('out')
-    else:
-        outPort.append(connection.get('originalPort'))
-    originalPort = re.findall(
-        r'^out(?:Color|Value)([RGBAXYZ])',
-        connection.get('originalPort') or '')
-    if originalPort:
-        outPort.append(originalPort[0].lower())
-    return '.'.join(outPort)
 
-def renameConnections(nodes):
+def get_out_connection(connection):
+    '''
+    Generate full connection path
+    '''
+    if not connection:
+        return ''
+    out_port = [connection['node']]
+    if connection.get('original_port').startswith(
+            ('outDisplacement', 'outEigenvalue')):
+        out_port.append(connection.get('original_port'))
+    elif connection.get('original_port').startswith('out'):
+        out_port.append('out')
+    else:
+        out_port.append(connection.get('original_port'))
+    original_port = re.findall(
+        r'^out(?:Color|Value)([RGBAXYZ])',
+        connection.get('original_port') or '')
+    if original_port:
+        out_port.append(original_port[0].lower())
+    return '.'.join(out_port)
+
+
+def rename_connections(nodes):
+    '''
+    Perform node renamings
+    '''
     renamings = {}
-    for nodeName, node in nodes.items():
+    for node_name, node in nodes.items():
         renamings.update(node['renamings'])
-    for nodeName, node in nodes.items():
+    for node_name, node in nodes.items():
         for source in node['connections'].values():
-            if source['node'] not in renamings:
+            if source.get('node') not in renamings:
                 continue
             renaming = renamings[source['node']]
-            if nodeName == renaming['name']:
+            if node_name == renaming['name']:
                 continue
             # print 'Renaming "{original}" to "{new}" ({port})'.format(
             #     original=source['node'],
             #     new=renaming['name'],
-            #     port=renaming['originalPort'])
+            #     port=renaming['original_port'])
             source['node'] = renaming['name']
-            originalPort = renaming.get('originalPort')
-            if originalPort:
-                source['originalPort'] = originalPort
+            original_port = renaming.get('original_port')
+            if original_port:
+                source['original_port'] = original_port
 
-def hasConnection(node, param):
+
+def propagate_connection_weights(nodes):
+    '''
+    Connections may include weights so we need to propagate
+    them to respective upstream nodes
+    '''
+    for node in nodes.values():
+        for source in node['connections'].values():
+            weight = source.get('weight')
+            if not weight:
+                continue
+            target_node = nodes[source['node']]
+            target_node['weight'] = target_node.get('weight', 0) + weight
+
+
+def has_connection(node, param):
+    '''
+    Check if node dictionary includes the requested attribute connection
+    '''
     return param in node['connections']

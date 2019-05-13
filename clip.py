@@ -48,23 +48,26 @@ KATANA_NODE_WIDTH = 200
 KATANA_SPACE_WIDTH = 60
 KATANA_ROW_HEIGHT = 100
 
-def equalAttributes(a, b):
+
+def equal_attributes(a, b):
     '''
     Compare two attributes for equality
     '''
     delta = 0.001
     if isinstance(a, (list, tuple)):
         for val_a, val_b in zip(a, b):
-            if not equalAttributes(val_a, val_b):
+            if not equal_attributes(val_a, val_b):
                 return False
         return True
     elif isinstance(a, (str, unicode)) and isinstance(b, (list, tuple)):
-        # Special case for RenderMan 21 inputMaterial different data types in Maya and Katana
+        # Special case for RenderMan 21 inputMaterial
+        # different data types in Maya and Katana
         if not a and not b:
             return True
         return False
     elif isinstance(a, float) and isinstance(b, (list, tuple)):
-        # Special case for RenderMan 22 inputMaterial different data types in Maya and Katana
+        # Special case for RenderMan 22 inputMaterial
+        # different data types in Maya and Katana
         if not a and not b:
             return True
         return False
@@ -89,132 +92,142 @@ def equalAttributes(a, b):
     else:
         return a == b
 
-def iterateMappingRecursive(mappingDict, xmlGroup, node):
+
+def iterate_mapping_recursive(mapping_dict, xml_group, node):
     '''
-    The most complicated part that maps Maya parameters to Katana XML parameters
+    The most complicated part that maps
+    Maya parameters to Katana XML parameters
     '''
     attributes = node['attributes']
-    mapping = dict(mappingDict)
+    mapping = dict(mapping_dict)
     if not mapping or not mapping.get('customMapping', True):
-        # If we know that the node has identical attributes in both Maya and Katana,
-        # then we don't need the mapping dictionary, we can build it on-the-fly
-        # from Maya node attributes
-        attrDict = dict.fromkeys(attributes)
-        attrDict.update(mapping)
-        mapping = attrDict
+        # If we know that the node has identical attributes
+        # in both Maya and Katana, then we don't need the mapping dictionary,
+        # we can build it on-the-fly from Maya node attributes
+        attr_dict = dict.fromkeys(attributes)
+        attr_dict.update(mapping)
+        mapping = attr_dict
     # Special case: custom processing (used for ramp, etc.)
-    customOption = mapping.pop('customProcess', None)
-    if customOption:
-        customOption(xmlGroup, node)
-    customOption = mapping.pop('customColor', None)
-    if customOption:
-        xmlGroup.attrib['ns_colorr'] = str(customOption[0])
-        xmlGroup.attrib['ns_colorg'] = str(customOption[1])
-        xmlGroup.attrib['ns_colorb'] = str(customOption[2])
-    for paramKey, paramChildren in mapping.items():
+    custom_option = mapping.pop('customProcess', None)
+    if custom_option:
+        custom_option(xml_group, node)
+    custom_option = mapping.pop('customColor', None)
+    if custom_option:
+        xml_group.attrib['ns_colorr'] = str(custom_option[0])
+        xml_group.attrib['ns_colorg'] = str(custom_option[1])
+        xml_group.attrib['ns_colorb'] = str(custom_option[2])
+    for param_key, param_children in mapping.items():
         options = None
-        processField = None
-        forceContinue = False
-        destKey = paramKey
-        if isinstance(paramChildren, tuple):
-            destKey = paramChildren[0]
-            paramChildren = paramChildren[1]
-        if isinstance(paramChildren, list):
-            options = paramChildren
-            paramChildren = None
-        if isinstance(paramChildren, str):
-            destKey = paramChildren
-            paramChildren = None
-            for connectionName, connection in node['connections'].items():
-                if connectionName == paramKey:
-                    node['connections'][destKey] = connection
-                    del node['connections'][connectionName]
-        if callable(paramChildren):
-            processField = paramChildren
-            paramChildren = None
-        parameter = xmlGroup.find(
+        process_field = None
+        force_continue = False
+        dest_key = param_key
+        if isinstance(param_children, tuple):
+            dest_key = param_children[0]
+            param_children = param_children[1]
+        if isinstance(param_children, list):
+            options = param_children
+            param_children = None
+        if isinstance(param_children, str):
+            dest_key = param_children
+            param_children = None
+            connections = node['connections']
+            for connection_name, connection in connections.items():
+                if connection_name == param_key:
+                    connections[dest_key] = connection
+                    connections.pop(connection_name)
+                    break
+        if callable(param_children):
+            process_field = param_children
+            param_children = None
+        parameter = xml_group.find(
             ".//group_parameter[@name='parameters']"
-            "//group_parameter[@name='{param}']".format(param=destKey))
-        # print paramKey, destKey, node
+            "//group_parameter[@name='{param}']".format(param=dest_key))
+        # print param_key, dest_key, node
         if parameter is not None:
-            enableNode = parameter.find("*[@name='enable']")
-            typeNode = parameter.find("string_parameter[@name='type']")
-            # print parameter, enableNode, typeNode
-            parameterType = ''
-            if typeNode is not None:
-                parameterType = typeNode.get('value')
-            valueNode = parameter.find("*[@name='value']")
+            enable_node = parameter.find("*[@name='enable']")
+            type_node = parameter.find("string_parameter[@name='type']")
+            # print parameter, enable_node, type_node
+            parameter_type = ''
+            if type_node is not None:
+                parameter_type = type_node.get('value')
+            value_node = parameter.find("*[@name='value']")
             tuples = None
-            if valueNode is not None:
-                value = valueNode.get('value')
-                # print(paramKey, value)
+            if value_node is not None:
+                value = value_node.get('value')
+                # print(param_key, value)
                 if not value:
-                    tuples = valueNode.get('size')
+                    tuples = value_node.get('size')
                     if tuples:
                         value = ()
                         for i in range(int(tuples)):
-                            subValue = valueNode.find(
-                                "*[@name='i{index}']".format(index=i)).get('value')
-                            if parameterType == 'FloatAttr':
-                                subValue = float(subValue)
-                            elif parameterType == 'IntAttr':
-                                subValue = int(subValue)
-                            value += (subValue,)
-                mayaValue = attributes.get(paramKey)
-                if isinstance(mayaValue, list) and len(mayaValue) == 1:
-                    mayaValue = mayaValue[0]
-                if utils.hasConnection(node, destKey):
-                    mayaValue = value
-                    forceContinue = True
-                # if isinstance(mayaValue, dict):
-                #   source = mayaValue['source']
-                #   portNode = xmlGroup.find(".//port[@name='{param}']".format(param=destKey))
-                #   if portNode is not None:
-                #       portNode.attrib['source'] = source
-                #   mayaValue = value
-                #   forceContinue = True
+                            sub_value = value_node.find(
+                                "*[@name='i{index}']".format(index=i)).get(
+                                    'value')
+                            if parameter_type == 'FloatAttr':
+                                sub_value = float(sub_value)
+                            elif parameter_type == 'IntAttr':
+                                sub_value = int(sub_value)
+                            value += (sub_value,)
+                maya_value = attributes.get(param_key)
+                if isinstance(maya_value, list) and len(maya_value) == 1:
+                    maya_value = maya_value[0]
+                if utils.has_connection(node, dest_key):
+                    maya_value = value
+                    force_continue = True
+                # if isinstance(maya_value, dict):
+                #     source = maya_value['source']
+                #     port_node = xml_group.find(
+                #         ".//port[@name='{param}']".format(param=dest_key))
+                #     if port_node is not None:
+                #         port_node.attrib['source'] = source
+                #     maya_value = value
+                #     force_continue = True
                 if options:
-                    if mayaValue is not None:
-                        mayaValue = options[mayaValue]
-                if processField:
-                    mayaValue = processField(paramKey, mayaValue)
-                # print('mayaValue = ' + repr(mayaValue))
-                # print(paramKey + ' = ' + repr(value))
-                if mayaValue is not None and not equalAttributes(mayaValue, value):
-                    # print('\tnew value = ' + str(mayaValue))
+                    if maya_value is not None:
+                        maya_value = options[maya_value]
+                if process_field:
+                    maya_value = process_field(param_key, maya_value)
+                # print('maya_value = ' + repr(maya_value))
+                # print(param_key + ' = ' + repr(value))
+                if maya_value is not None and not equal_attributes(
+                        maya_value,
+                        value):
+                    # print('\tnew value = ' + str(maya_value))
                     if tuples:
                         # # HACK START
                         # # A hack to avoid RenderMan bug
                         # # with not working PxrMultiTexture.optimizeIndirect
-                        # if isinstance(mayaValue, bool):
-                        #     print repr(mayaValue), repr(value), destKey
-                        #     mayaValue = (mayaValue, )
+                        # if isinstance(maya_value, bool):
+                        #     print repr(maya_value), repr(value), dest_key
+                        #     maya_value = (maya_value, )
                         # # HACK END
-                        # In the end I've changed the PxrMultiTexture.xml and PxrNormalMap.xml
-                        # file to fix the affected checkbox
-                        for i, val in enumerate(mayaValue):
-                            subValueNode = valueNode.find("*[@name='i{index}']".format(index=i))
+                        # In the end I've changed the PxrMultiTexture.xml
+                        # and PxrNormalMap.xml file to fix the affected checkbox
+                        for i, val in enumerate(maya_value):
+                            subValueNode = value_node.find(
+                                "*[@name='i{index}']".format(index=i))
                             subValueNode.attrib['value'] = str(val)
                     else:
-                        if isinstance(mayaValue, bool):
-                            mayaValue = int(mayaValue)
-                        # print('\tnew value = ' + str(mayaValue))
-                        valueNode.attrib['value'] = str(mayaValue)
-                    if enableNode is not None:
-                        enableNode.attrib['value'] = '1'
+                        if isinstance(maya_value, bool):
+                            maya_value = int(maya_value)
+                        # print('\tnew value = ' + str(maya_value))
+                        value_node.attrib['value'] = str(maya_value)
+                    if enable_node is not None:
+                        enable_node.attrib['value'] = '1'
                 else:
                     # print('Default value found for "{key}": {value}'.format(
-                    #     key=paramKey,
+                    #     key=param_key,
                     #     value=value))
                     pass
-                if mayaValue == 0 and not forceContinue:
+                if maya_value == 0 and not force_continue:
                     # No need to continue processing
-                    paramChildren = None
-        if paramChildren:
-            # if paramChildren is not None
-            iterateMappingRecursive(paramChildren, xmlGroup, node)
+                    param_children = None
+        if param_children:
+            # if param_children is not None
+            iterate_mapping_recursive(param_children, xml_group, node)
 
-def preprocessNode(nodeName, premap):
+
+def preprocess_node(node_name, premap):
     '''
     Preprocessing a node.
     This is needed as some nodes (like ramp or bump) can be
@@ -222,154 +235,170 @@ def preprocessNode(nodeName, premap):
     We return either one original node or several
     nodes if something was replaced during preprocessing
     '''
-    nodeType = cmds.nodeType(nodeName)
-    if nodeType not in premap:
+    node_type = cmds.nodeType(node_name)
+    if node_type not in premap:
         return None
     nodes = {}
-    attributes = utils.nodeAttributes(nodeName)
+    attributes = utils.node_attributes(node_name)
     connections = {}
-    nodeConnections = cmds.listConnections(
-        nodeName,
+    node_connections = cmds.listConnections(
+        node_name,
         source=True,
         destination=False,
         connections=True,
         plugs=True)
-    if nodeConnections:
-        for i in range(len(nodeConnections) / 2):
-            connTo = nodeConnections[i * 2]
-            connTo = connTo[connTo.find('.') + 1:]
-            connFrom = nodeConnections[i * 2 + 1]
-            connections[connTo] = {
-                'node': connFrom[:connFrom.find('.')],
-                'originalPort': connFrom[connFrom.find('.') + 1:]
+    if node_connections:
+        for i in range(len(node_connections) / 2):
+            conn_to = node_connections[i * 2]
+            conn_to = conn_to[conn_to.find('.') + 1:]
+            conn_from = node_connections[i * 2 + 1]
+            connections[conn_to] = {
+                'node': conn_from[:conn_from.find('.')],
+                'original_port': conn_from[conn_from.find('.') + 1:]
             }
 
     node = {
-        'name': nodeName,
-        'type': nodeType,
+        'name': node_name,
+        'type': node_type,
         'attributes': attributes,
         'connections': connections,
         'renamings': {}
     }
-    premapSettings = premap[nodeType]
+    premap_settings = premap[node_type]
     for attr in ['type', 'postprocess']:
-        if premapSettings.get(attr):
-            node[attr] = premapSettings.get(attr)
-    if premapSettings.get('preprocess'):
-        preprocessFunc = premapSettings.get('preprocess')
-        if preprocessFunc:
-            preprocessResult = preprocessFunc(node)
-            if preprocessResult:
-                nodes.update(preprocessResult)
+        if premap_settings.get(attr):
+            node[attr] = premap_settings.get(attr)
+    if premap_settings.get('preprocess'):
+        preprocess_func = premap_settings.get('preprocess')
+        if preprocess_func:
+            preprocess_result = preprocess_func(node)
+            if preprocess_result:
+                nodes.update(preprocess_result)
     else:
         nodes[node['name']] = node
     return nodes
 
-def processNode(node, renderer, mappings):
+
+def process_node(node, renderer, mappings):
     '''
     Start individual node processing
     '''
     if 'name' not in node:
         return None
-    nodeName = node['name']
-    nodeType = node['type']
-    if nodeType not in mappings:
+    node_name = node['name']
+    node_type = node['type']
+    if node_type not in mappings:
         return None
-    xmlPath = os.path.join(basedir, 'renderer', renderer, 'nodes', nodeType + '.xml')
-    if not os.path.isfile(xmlPath) or mappings.get(nodeType) is None:
+    xml_path = os.path.join(
+        basedir,
+        'renderer',
+        renderer,
+        'nodes',
+        node_type + '.xml')
+    if not os.path.isfile(xml_path) or mappings.get(node_type) is None:
         return None
-    tree = ET.parse(xmlPath)
+    tree = ET.parse(xml_path)
     root = tree.getroot()
-    root.attrib['name'] = nodeName
-    xmlNode = root.find("./group_parameter/string_parameter[@name='name']")
-    if xmlNode is not None:
-        xmlNode.attrib['value'] = nodeName
-    iterateMappingRecursive(mappings[nodeType], root, node)
+    root.attrib['name'] = node_name
+    xml_node = root.find("./group_parameter/string_parameter[@name='name']")
+    if xml_node is not None:
+        xml_node.attrib['value'] = node_name
+    iterate_mapping_recursive(mappings[node_type], root, node)
     return root
 
-def isConnected(source, dest):
+
+def is_connected(source, dest):
     '''
     Test if given nodes have common connections
     '''
     connections = dest.get('connections')
     if connections:
         for connection in connections.values():
-            if source['name'] == connection['node']:
+            if source.get('name') == connection.get('node'):
                 return True
     return False
 
-def checkOrphanedNodes(tree, nodes, node):
+
+def check_orphaned_nodes(tree, nodes, node):
     '''
     Check for orphaned nodes at root level
     '''
     # print('Checking ' + node['name'])
     if nodes[node['name']].get('weight'):
         node['weight'] = nodes[node['name']].get('weight')
-    removeList = []
+    remove_list = []
     for leaf in tree['children']:
-        # leafNode = leaf['name']
-        # print('-- Testing against ' + leafNode)
-        if isConnected(leaf, nodes[node['name']]):
+        # leaf_node = leaf['name']
+        # print('-- Testing against ' + leaf_node)
+        if is_connected(leaf, nodes[node['name']]):
             # print('   Reordering...')
             # print('   Before:' + str(tree))
-            removeList.append(leaf)
+            remove_list.append(leaf)
             node['children'].append(leaf)
             # print('   After:' + str(tree))
-    for leaf in removeList:
+    for leaf in remove_list:
         tree['children'].remove(leaf)
 
-def insertNode(tree, nodes, branch, node, level=0):
+
+def insert_node(tree, nodes, branch, node, level=0):
     '''
     Main processing starts here. The nodes are inserted one by one.
     We build a tree by finding a correct place for each new node dynamically
     Orphaned nodes are inserted at root level
     '''
-    leafNode = branch['name']
-    if leafNode in nodes:
-        if isConnected(node, nodes[leafNode]):
+    leaf_node = branch['name']
+    if leaf_node in nodes:
+        if is_connected(node, nodes[leaf_node]):
             # We have found the right place to add a child
-            checkOrphanedNodes(tree, nodes, node)
+            check_orphaned_nodes(tree, nodes, node)
             branch['children'].append(node)
             return True
     if branch['children']:
         for leaf in branch['children']:
-            if insertNode(tree, nodes, leaf, node, level + 1):
+            if insert_node(tree, nodes, leaf, node, level + 1):
                 return True
     if level > 0:
         return False
     # insert at level 0 (root child)
-    checkOrphanedNodes(tree, nodes, node)
+    check_orphaned_nodes(tree, nodes, node)
     # print('++ Inserting ' + node['name'])
     branch['children'].append(node)
     return True
 
-def buildTree(nodes):
+
+def build_tree(nodes):
     '''
     Build a tree from plain list of nodes
     '''
     tree = {'name': 'root', 'children': []}
     for node in nodes.values():
         if 'name' in node:
-            insertNode(tree, nodes, tree, {'name': node['name'], 'children': []})
-    calcTreeWidth(tree)
-    calcTreePos(tree)
+            insert_node(
+                tree,
+                nodes,
+                tree,
+                {'name': node['name'], 'children': []})
+    calc_tree_width(tree)
+    calc_tree_pos(tree)
     return tree
 
-def exportTree(branch, nodesXml, level=0):
+
+def export_tree(branch, nodes_xml, level=0):
     '''
     Recursively build XML
     '''
     result = []
-    if branch['name'] in nodesXml:
-        nodesXml[branch['name']].attrib['x'] = str(branch['x'])
-        nodesXml[branch['name']].attrib['y'] = str(KATANA_ROW_HEIGHT * level)
-        result.append(nodesXml[branch['name']])
+    if branch['name'] in nodes_xml:
+        nodes_xml[branch['name']].attrib['x'] = str(branch['x'])
+        nodes_xml[branch['name']].attrib['y'] = str(KATANA_ROW_HEIGHT * level)
+        result.append(nodes_xml[branch['name']])
     if branch['children']:
         for leaf in branch['children']:
-            result += exportTree(leaf, nodesXml, level + 1)
+            result += export_tree(leaf, nodes_xml, level + 1)
     return result
 
-def printTree(branch, level=0):
+
+def print_tree(branch, level=0):
     '''
     Debug routine to print the resulting tree
     '''
@@ -377,9 +406,10 @@ def printTree(branch, level=0):
         print '  ' * level + branch['name']
     if branch['children']:
         for leaf in branch['children']:
-            printTree(leaf, level + 1)
+            print_tree(leaf, level + 1)
 
-def calcTreeWidth(branch):
+
+def calc_tree_width(branch):
     '''
     Recursively update branches with their widths
     '''
@@ -387,7 +417,7 @@ def calcTreeWidth(branch):
     count = 0
     if branch['children']:
         for leaf in branch['children']:
-            width += calcTreeWidth(leaf)
+            width += calc_tree_width(leaf)
             count += 1
         width += (count - 1) * KATANA_SPACE_WIDTH
         branch['width'] = width
@@ -396,26 +426,32 @@ def calcTreeWidth(branch):
         branch['width'] = width
     return width
 
-def calcTreePos(branch, x=0):
+
+def calc_tree_pos(branch, x=0):
     '''
     Recursively update nodes with their positions
     '''
     branch['x'] = x
     if branch['children']:
         pos = x - branch['width'] / 2
-        sortedBranch = sorted(branch['children'], key=lambda x: x.get('weight', 0))
-        for leaf in sortedBranch:
-            calcTreePos(leaf, pos + leaf['width'] / 2)
+        for leaf in sorted(
+                branch['children'],
+                key=lambda x: x.get('weight', 0)):
+            calc_tree_pos(leaf, pos + leaf['width'] / 2)
             pos += leaf['width'] + KATANA_SPACE_WIDTH
 
-def connectXml(nodeXml, dest, source):
-    portNode = nodeXml.find(".//port[@name='{param}']".format(param=dest))
-    if portNode is not None:
-        portNode.attrib['source'] = utils.getOutConnection(source)
+
+def connect_xml(node_xml, dest, source):
+    port_node = node_xml.find(".//port[@name='{param}']".format(param=dest))
+    if port_node is not None:
+        connSource = utils.get_out_connection(source)
+        if connSource:
+            port_node.attrib['source'] = connSource
         return True
     return False
 
-def getAllShadingNodes(nodes):
+
+def get_all_shading_nodes(nodes):
     if not isinstance(nodes, list):
         nodes = [nodes]
     resultNodes = []
@@ -424,59 +460,74 @@ def getAllShadingNodes(nodes):
         nodes = cmds.listConnections(nodes, source=True, destination=False)
     return resultNodes
 
-def establishConnections(nodes, nodesXml):
-    for nodeName, nodeXml in nodesXml.items():
-        for dest, source in nodes[nodeName]['connections'].items():
-            if not connectXml(nodeXml, dest, source):
-                utils.log.warning(
-                    'Incoming port "{node}.{port}" not found '
-                    'while trying to establish connection from "{source_node}.{source_port}"'
-                    .format(
-                        port=dest,
-                        node=nodes[nodeName]['name'],
-                        source_node=source.get('node'),
-                        source_port=source.get('originalPort')))
 
-def generateXML(nodeNames, renderer=None):
-    if not isinstance(nodeNames, list):
-        nodeNames = [nodeNames]
+def establish_connections(nodes, nodes_xml):
+    for node_name, node_xml in nodes_xml.items():
+        for dest, source in nodes[node_name]['connections'].items():
+            if connect_xml(node_xml, dest, source):
+                continue
+            utils.log.warning(
+                'Incoming port "{node}.{port}" not found '
+                'while trying to establish connection '
+                'from "{source_node}.{source_port}"'
+                .format(
+                    port=dest,
+                    node=nodes[node_name]['name'],
+                    source_node=source.get('node'),
+                    source_port=source.get('original_port')))
+
+
+def generate_xml(node_names, renderer=None):
+    if not isinstance(node_names, list):
+        node_names = [node_names]
     # Let's prepare the katana frame to enclose our nodes
-    xmlRoot = ET.Element('katana')
-    xmlRoot.attrib['release'] = '2.6v4'
-    xmlRoot.attrib['version'] = '2.6.2.000001'
-    xmlExportedNodes = ET.SubElement(xmlRoot, 'node')
-    xmlExportedNodes.attrib['name'] = '__SAVE_exportedNodes'
-    xmlExportedNodes.attrib['type'] = 'Group'
+    xml_root = ET.Element('katana')
+    xml_root.attrib['release'] = '2.6v4'
+    xml_root.attrib['version'] = '2.6.2.000001'
+    xml_exported_nodes = ET.SubElement(xml_root, 'node')
+    xml_exported_nodes.attrib['name'] = '__SAVE_exportedNodes'
+    xml_exported_nodes.attrib['type'] = 'Group'
     # Collect the whole network if shadingEngine node is selected alone
-    probeNode = nodeNames[0]
-    if len(nodeNames) == 1 and cmds.nodeType(nodeNames[0]) == 'shadingEngine':
-        shadingGroup = nodeNames[0]
-        nodeNames = []
+    probe_node = node_names[0]
+    if len(node_names) == 1 and cmds.nodeType(node_names[0]) == 'shadingEngine':
+        shadingGroup = node_names[0]
+        node_names = []
         surface_shader = ''
-        if cmds.attributeQuery('aiSurfaceShader', node=shadingGroup, exists=True):
-            surface_shader = cmds.listConnections(shadingGroup + '.aiSurfaceShader')
+        if cmds.attributeQuery(
+                'aiSurfaceShader',
+                node=shadingGroup,
+                exists=True):
+            surface_shader = cmds.listConnections(
+                shadingGroup + '.aiSurfaceShader')
         if not surface_shader:
-            surface_shader = cmds.listConnections(shadingGroup + '.surfaceShader')
+            surface_shader = cmds.listConnections(
+                shadingGroup + '.surfaceShader')
         if surface_shader:
-            nodeNames += surface_shader
+            node_names += surface_shader
         volume_shader = ''
-        if cmds.attributeQuery('aiVolumeShader', node=shadingGroup, exists=True):
-            volume_shader = cmds.listConnections(shadingGroup + '.aiVolumeShader')
+        if cmds.attributeQuery(
+                'aiVolumeShader',
+                node=shadingGroup,
+                exists=True):
+            volume_shader = cmds.listConnections(
+                shadingGroup + '.aiVolumeShader')
         if not volume_shader:
-            volume_shader = cmds.listConnections(shadingGroup + '.volumeShader')
+            volume_shader = cmds.listConnections(
+                shadingGroup + '.volumeShader')
         if volume_shader:
-            nodeNames += volume_shader
-        probeNode = surface_shader or volume_shader
-        displacement_shader = cmds.listConnections(shadingGroup + '.displacementShader')
+            node_names += volume_shader
+        probe_node = surface_shader or volume_shader
+        displacement_shader = cmds.listConnections(
+            shadingGroup + '.displacementShader')
         if displacement_shader:
-            nodeNames += displacement_shader
-        nodeNames = getAllShadingNodes(nodeNames)
-        nodeNames.append(shadingGroup)
+            node_names += displacement_shader
+        node_names = get_all_shading_nodes(node_names)
+        node_names.append(shadingGroup)
     if not renderer:
-        shaderType = cmds.nodeType(probeNode)
-        if shaderType.startswith('Pxr'):
+        shader_type = cmds.nodeType(probe_node)
+        if shader_type.startswith('Pxr'):
             renderer = 'prman'
-        elif shaderType.startswith(('ai', 'al')):
+        elif shader_type.startswith(('ai', 'al')):
             renderer = 'arnold'
         else:
             utils.log.error('No renderer specified')
@@ -498,41 +549,49 @@ def generateXML(nodeNames, renderer=None):
             exc=traceback.format_exc()))
         return ''
     # Collect the list of used node names to get unique names
-    nodeNames = list(set(nodeNames))
-    utils.uniqueName(reset=nodeNames)
-    preprocessedNodes = {}
-    for nodeName in nodeNames:
-        preprocessedNode = preprocessNode(nodeName, premap=renderer_module.premap)
-        if preprocessedNode:
-            preprocessedNodes.update(preprocessedNode)
-    utils.renameConnections(preprocessedNodes)
-    graphTree = buildTree(preprocessedNodes)
-    shouldUpdateTree = False
-    for branch in graphTree['children']:
-        nodeName = branch['name']
-        node = preprocessedNodes[nodeName]
+    node_names = list(set(node_names))
+    utils.unique_name(reset=node_names)
+    preprocessed_nodes = {}
+    for node_name in node_names:
+        preprocessed_node = preprocess_node(
+            node_name,
+            premap=renderer_module.premap)
+        if preprocessed_node:
+            preprocessed_nodes.update(preprocessed_node)
+    utils.rename_connections(preprocessed_nodes)
+    utils.propagate_connection_weights(preprocessed_nodes)
+    graph_tree = build_tree(preprocessed_nodes)
+    should_update_tree = False
+    for branch in graph_tree['children']:
+        node_name = branch['name']
+        node = preprocessed_nodes[node_name]
         if node.get('postprocess'):
-            # Remove the affected node and reinsert its postprocessed replacement
-            preprocessedNodes.pop(nodeName, None)
-            postprocessFunc = node['postprocess']
-            postprocessedNode = postprocessFunc(node, preprocessedNodes)
-            preprocessedNodes.update(postprocessedNode)
-            shouldUpdateTree = True
-    if shouldUpdateTree:
-        utils.renameConnections(preprocessedNodes)
-        graphTree = buildTree(preprocessedNodes)
-    nodesXml = {}
-    for nodeName, node in preprocessedNodes.items():
-        nodeXml = processNode(node, renderer=renderer, mappings=renderer_module.mappings)
-        if nodeXml is not None:
-            nodesXml[nodeName] = nodeXml
-    establishConnections(preprocessedNodes, nodesXml)
-    allXmlNodes = exportTree(graphTree, nodesXml)
-    for xmlNode in allXmlNodes:
-        xmlExportedNodes.append(xmlNode)
-    if nodesXml:
-        return ET.tostring(xmlRoot)
+            # Remove the affected node
+            # and reinsert its postprocessed replacement
+            preprocessed_nodes.pop(node_name, None)
+            postprocess_func = node['postprocess']
+            postprocessed_node = postprocess_func(node, preprocessed_nodes)
+            preprocessed_nodes.update(postprocessed_node)
+            should_update_tree = True
+    if should_update_tree:
+        utils.rename_connections(preprocessed_nodes)
+        graph_tree = build_tree(preprocessed_nodes)
+    nodes_xml = {}
+    for node_name, node in preprocessed_nodes.items():
+        node_xml = process_node(
+            node,
+            renderer=renderer,
+            mappings=renderer_module.mappings)
+        if node_xml is not None:
+            nodes_xml[node_name] = node_xml
+    establish_connections(preprocessed_nodes, nodes_xml)
+    all_xml_nodes = export_tree(graph_tree, nodes_xml)
+    for xml_node in all_xml_nodes:
+        xml_exported_nodes.append(xml_node)
+    if nodes_xml:
+        return ET.tostring(xml_root)
     return ''
+
 
 def copy(renderer=None):
     '''
@@ -543,10 +602,16 @@ def copy(renderer=None):
     if not clipboard:
         utils.log.info('Clipboard not available, sorry')
         return
-    nodeNames = cmds.ls(selection=True)
-    xml = generateXML(nodeNames, renderer=renderer)
+    node_names = cmds.ls(selection=True)
+    xml = generate_xml(node_names, renderer=renderer)
     if xml:
         clipboard.setText(xml)
-        utils.log.info('Successfully copied nodes to clipboard. You can paste them to Katana now.')
+        utils.log.info(
+            'Successfully copied nodes to clipboard. '
+            'You can paste them to Katana now.')
     else:
         utils.log.info('Nothing copied, sorry')
+
+
+# FIXME: Remove
+generateXML = generate_xml
