@@ -285,7 +285,7 @@ def process_node(node, renderer, mappings):
     '''
     if 'name' not in node:
         return None
-    node_name = node['name']
+    node_name = utils.strip_namespace(node['name'])
     node_type = node['type']
     if node_type not in mappings:
         return None
@@ -444,9 +444,9 @@ def calc_tree_pos(branch, x=0):
 def connect_xml(node_xml, dest, source):
     port_node = node_xml.find(".//port[@name='{param}']".format(param=dest))
     if port_node is not None:
-        connSource = utils.get_out_connection(source)
-        if connSource:
-            port_node.attrib['source'] = connSource
+        conn_source = utils.get_out_connection(source)
+        if conn_source:
+            port_node.attrib['source'] = conn_source
         return True
     return False
 

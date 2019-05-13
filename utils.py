@@ -75,7 +75,7 @@ def get_out_connection(connection):
     '''
     if not connection:
         return ''
-    out_port = [connection['node']]
+    out_port = [strip_namespace(connection['node'])]
     if connection.get('original_port').startswith(
             ('outDisplacement', 'outEigenvalue')):
         out_port.append(connection.get('original_port'))
@@ -134,3 +134,12 @@ def has_connection(node, param):
     Check if node dictionary includes the requested attribute connection
     '''
     return param in node['connections']
+
+
+def strip_namespace(name):
+    '''
+    Strip all namespaces.
+    Katana imports nodes with namespaces but at least RenderMan
+    refuses to render them
+    '''
+    return name.rsplit(':', 1)[-1]
