@@ -287,6 +287,16 @@ def override_manifold_2d_params(key, value):
     return value
 
 
+def override_primvar_cs(key, value):
+    '''
+    Special overrides.
+    Maya treats colorSet primvar as Cs
+    '''
+    if value == 'Cs':
+        value = 'colorSet'
+    return value
+
+
 def process_array_connector(xml_group, node):
     '''
     Process ArrayConnector connections
@@ -573,7 +583,10 @@ mappings = {
     'PxrOcclusion': {},
     'PxrPathTracer': {},
     'PxrPortalLight': {},
-    'PxrPrimvar': {},
+    'PxrPrimvar': {
+        'customMapping': False,
+        'varname': override_primvar_cs,
+    },
     'PxrProjectionLayer': {},
     'PxrProjectionStack': {},
     'PxrProjector': {},
