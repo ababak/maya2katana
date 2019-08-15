@@ -23,7 +23,12 @@
     ------------------------------
 '''
 
-__version__ = '3.2.1'
+__version__ = '3.2.2'
+
+try:
+    import xml.etree.cElementTree as ET
+except ImportError:
+    import xml.etree.ElementTree as ET
 
 import clip
 reload(clip)

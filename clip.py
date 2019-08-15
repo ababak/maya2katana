@@ -25,20 +25,19 @@
 
 import os
 import traceback
-import xml.etree.ElementTree as ET
 
 import maya.cmds as cmds
 
-from . import utils
+from . import utils, ET
 reload(utils)
 
 try:
-    import PySide
-    clipboard = PySide.QtGui.QApplication.clipboard()
+    import PySide2
+    clipboard = PySide2.QtGui.QGuiApplication.clipboard()
 except (ImportError, AttributeError):
     try:
-        import PySide2
-        clipboard = PySide2.QtGui.QGuiApplication.clipboard()
+        import PySide
+        clipboard = PySide.QtGui.QApplication.clipboard()
     except (ImportError, AttributeError):
         clipboard = None
 

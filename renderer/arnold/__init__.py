@@ -25,11 +25,10 @@
 
 import re
 import os
-import xml.etree.ElementTree as ET
 
 import maya.cmds as cmds
 
-from ... import utils
+from ... import utils, ET
 
 
 def replace_tx(key, filepath):
