@@ -47,7 +47,7 @@ Linux: ~/maya/scripts
 ```
 
 3. Open Script Editor and paste the following code to Python tab:
-```
+```python
 import maya2katana
 reload (maya2katana)
 maya2katana.copy()
@@ -68,9 +68,24 @@ maya2katana.copy()
 ### Integrations
 
 To get the XML from shading network name:
-```
+```python
 import maya2katana
 reload (maya2katana)
 node_name = 'materialSG'
+# Get the xml as string
 resulting_xml = maya2katana.generate_xml(node_name)
+```
+
+You can save the resulting XML to file and bring it into Katana:
+
+```python
+# Now create the Katana shading network
+# Suppose the XML (string) is already loaded
+# to 'resulting_xml' string variable
+from Katana import NodegraphAPI, KatanaFile
+# Create a group for shading network
+group_node = NodegraphAPI.CreateNode(node_name, NodegraphAPI.GetRootNode())
+# Bring the nodes to Katana scene
+# and place them inside the newly created group
+nodes = KatanaFile.Paste(resulting_xml, group_node)
 ```
