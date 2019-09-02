@@ -84,7 +84,8 @@ You can save the resulting XML to file and bring it into Katana:
 # to 'resulting_xml' string variable
 from Katana import NodegraphAPI, KatanaFile
 # Create a group for shading network
-group_node = NodegraphAPI.CreateNode(node_name, NodegraphAPI.GetRootNode())
+group_name = 'materialSG'
+group_node = NodegraphAPI.CreateNode(group_name, NodegraphAPI.GetRootNode())
 # Bring the nodes to Katana scene
 # and place them inside the newly created group
 nodes = KatanaFile.Paste(resulting_xml, group_node)
