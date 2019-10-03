@@ -24,7 +24,6 @@
 '''
 
 import os
-import traceback
 
 import maya.cmds as cmds
 
@@ -33,15 +32,15 @@ reload(utils)
 
 try:
     import PySide2
-    clipboard = PySide2.QtGui.QGuiApplication.clipboard()
+    CLIPBOARD = PySide2.QtGui.QGuiApplication.clipboard()
 except (ImportError, AttributeError):
     try:
         import PySide
-        clipboard = PySide.QtGui.QApplication.clipboard()
+        CLIPBOARD = PySide.QtGui.QApplication.clipboard()
     except (ImportError, AttributeError):
-        clipboard = None
+        CLIPBOARD = None
 
-basedir = os.path.dirname(os.path.realpath(__file__))
+BASEDIR = os.path.dirname(os.path.realpath(__file__))
 
 KATANA_NODE_WIDTH = 200
 KATANA_SPACE_WIDTH = 60
@@ -203,9 +202,9 @@ def iterate_mapping_recursive(mapping_dict, xml_group, node):
                         # In the end I've changed the PxrMultiTexture.xml
                         # and PxrNormalMap.xml file to fix the affected checkbox
                         for i, val in enumerate(maya_value):
-                            subValueNode = value_node.find(
+                            sub_value_node = value_node.find(
                                 "*[@name='i{index}']".format(index=i))
-                            subValueNode.attrib['value'] = str(val)
+                            sub_value_node.attrib['value'] = str(val)
                     else:
                         if isinstance(maya_value, bool):
                             maya_value = int(maya_value)
@@ -289,7 +288,7 @@ def process_node(node, renderer, mappings):
     if node_type not in mappings:
         return None
     xml_path = os.path.join(
-        basedir,
+        BASEDIR,
         'renderer',
         renderer,
         'nodes',
@@ -441,6 +440,9 @@ def calc_tree_pos(branch, x=0):
 
 
 def connect_xml(node_xml, dest, source):
+    '''
+    Connect ports and return True on success
+    '''
     port_node = node_xml.find(".//port[@name='{param}']".format(param=dest))
     if port_node is not None:
         conn_source = utils.get_out_connection(source)
@@ -451,34 +453,45 @@ def connect_xml(node_xml, dest, source):
 
 
 def get_all_shading_nodes(nodes):
+    '''
+    Get a list of all connected shading nodes
+    '''
     if not isinstance(nodes, list):
         nodes = [nodes]
-    resultNodes = []
+    result_nodes = []
     while nodes:
-        resultNodes += nodes
+        result_nodes += nodes
         nodes = cmds.listConnections(nodes, source=True, destination=False)
-    return resultNodes
+    return result_nodes
 
 
 def establish_connections(nodes, nodes_xml):
+    '''
+    Try to establish all the original connections
+    '''
     for node_name, node_xml in nodes_xml.items():
         for dest, source in nodes[node_name]['connections'].items():
             if connect_xml(node_xml, dest, source):
                 continue
+            incoming_port = nodes[node_name]['name'] + '.' + dest
+            source_port = source.get('node') + '.' + source.get('original_port')
             utils.log.warning(
-                'Incoming port "{node}.{port}" not found '
+                'Incoming port "%s" not found '
                 'while trying to establish connection '
-                'from "{source_node}.{source_port}"'
-                .format(
-                    port=dest,
-                    node=nodes[node_name]['name'],
-                    source_node=source.get('node'),
-                    source_port=source.get('original_port')))
+                'from "%s"',
+                incoming_port,
+                source_port)
 
 
 def generate_xml(node_names, renderer=None):
+    '''
+    Return a string containing a valid Katana XML
+    or an empty string if nothing can be copied
+    '''
     if not isinstance(node_names, list):
         node_names = [node_names]
+    if not node_names:
+        return ''
     # Let's prepare the katana frame to enclose our nodes
     xml_root = ET.Element('katana')
     xml_root.attrib['release'] = '2.6v4'
@@ -488,40 +501,41 @@ def generate_xml(node_names, renderer=None):
     xml_exported_nodes.attrib['type'] = 'Group'
     # Collect the whole network if shadingEngine node is selected alone
     probe_node = node_names[0]
-    if len(node_names) == 1 and cmds.nodeType(node_names[0]) == 'shadingEngine':
-        shadingGroup = node_names[0]
+    if (len(node_names) == 1
+            and cmds.nodeType(node_names[0]) == 'shadingEngine'):
+        shading_group = node_names[0]
         node_names = []
         surface_shader = ''
         if cmds.attributeQuery(
                 'aiSurfaceShader',
-                node=shadingGroup,
+                node=shading_group,
                 exists=True):
             surface_shader = cmds.listConnections(
-                shadingGroup + '.aiSurfaceShader')
+                shading_group + '.aiSurfaceShader')
         if not surface_shader:
             surface_shader = cmds.listConnections(
-                shadingGroup + '.surfaceShader')
+                shading_group + '.surfaceShader')
         if surface_shader:
             node_names += surface_shader
         volume_shader = ''
         if cmds.attributeQuery(
                 'aiVolumeShader',
-                node=shadingGroup,
+                node=shading_group,
                 exists=True):
             volume_shader = cmds.listConnections(
-                shadingGroup + '.aiVolumeShader')
+                shading_group + '.aiVolumeShader')
         if not volume_shader:
             volume_shader = cmds.listConnections(
-                shadingGroup + '.volumeShader')
+                shading_group + '.volumeShader')
         if volume_shader:
             node_names += volume_shader
         probe_node = surface_shader or volume_shader
         displacement_shader = cmds.listConnections(
-            shadingGroup + '.displacementShader')
+            shading_group + '.displacementShader')
         if displacement_shader:
             node_names += displacement_shader
         node_names = get_all_shading_nodes(node_names)
-        node_names.append(shadingGroup)
+        node_names.append(shading_group)
     if not renderer:
         shader_type = cmds.nodeType(probe_node)
         if shader_type.startswith('Pxr'):
@@ -543,9 +557,7 @@ def generate_xml(node_names, renderer=None):
         renderer_module = getattr(renderer_package, renderer)
         reload(renderer_module)
     except Exception as e:
-        utils.log.error('Error loading "{renderer}" renderer: {exc}'.format(
-            renderer=renderer,
-            exc=traceback.format_exc()))
+        utils.log.exception('Error loading "%s" renderer: %r', renderer, e)
         return ''
     # Collect the list of used node names to get unique names
     node_names = list(set(node_names))
@@ -598,19 +610,15 @@ def copy(renderer=None):
     Usage: Select the shading nodes to copy and call clip.copy()
     Then paste to Katana
     '''
-    if not clipboard:
+    if not CLIPBOARD:
         utils.log.info('Clipboard not available, sorry')
         return
     node_names = cmds.ls(selection=True)
     xml = generate_xml(node_names, renderer=renderer)
     if xml:
-        clipboard.setText(xml)
+        CLIPBOARD.setText(xml)
         utils.log.info(
             'Successfully copied nodes to clipboard. '
             'You can paste them to Katana now.')
     else:
         utils.log.info('Nothing copied, sorry')
-
-
-# FIXME: Remove
-generateXML = generate_xml
