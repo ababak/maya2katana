@@ -28,7 +28,6 @@ import os
 import maya.cmds as cmds
 
 from . import utils, ET
-reload(utils)
 
 try:
     import PySide2

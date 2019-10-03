@@ -23,12 +23,15 @@
     ------------------------------
 '''
 
-__version__ = '3.3.0'
+__version__ = '3.3.1'
 
 try:
     import xml.etree.cElementTree as ET
 except ImportError:
     import xml.etree.ElementTree as ET
+
+import utils
+reload(utils)
 
 import clip
 reload(clip)
