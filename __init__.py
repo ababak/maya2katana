@@ -1,5 +1,5 @@
 #!/usr/bin/python
-'''
+"""
     maya2katana
     Copyright (C) 2016-2019 Andriy Babak, Animagrad
 
@@ -21,9 +21,9 @@
     ------------------------------
     Copy shader nodes to Katana
     ------------------------------
-'''
+"""
 
-__version__ = '3.3.1'
+__version__ = "3.3.2"
 
 try:
     import xml.etree.cElementTree as ET
@@ -31,9 +31,11 @@ except ImportError:
     import xml.etree.ElementTree as ET
 
 import utils
+
 reload(utils)
 
 import clip
+
 reload(clip)
 copy = clip.copy
 generate_xml = clip.generate_xml
