@@ -495,6 +495,10 @@ def generate_xml(node_names, renderer=None):
         surface_shader = ""
         if cmds.attributeQuery("aiSurfaceShader", node=shading_group, exists=True):
             surface_shader = cmds.listConnections(shading_group + ".aiSurfaceShader")
+        if not surface_shader and cmds.attributeQuery(
+            "rman__surface", node=shading_group, exists=True
+        ):
+            surface_shader = cmds.listConnections(shading_group + ".rman__surface")
         if not surface_shader:
             surface_shader = cmds.listConnections(shading_group + ".surfaceShader")
         if surface_shader:
@@ -507,9 +511,15 @@ def generate_xml(node_names, renderer=None):
         if volume_shader:
             node_names += volume_shader
         probe_node = surface_shader or volume_shader
-        displacement_shader = cmds.listConnections(
-            shading_group + ".displacementShader"
-        )
+        displacement_shader = ""
+        if cmds.attributeQuery("rman__displacement", node=shading_group, exists=True):
+            displacement_shader = cmds.listConnections(
+                shading_group + ".rman__displacement"
+            )
+        if not displacement_shader:
+            displacement_shader = cmds.listConnections(
+                shading_group + ".displacementShader"
+            )
         if displacement_shader:
             node_names += displacement_shader
         node_names = get_all_shading_nodes(node_names)
