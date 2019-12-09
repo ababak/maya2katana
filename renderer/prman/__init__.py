@@ -89,14 +89,16 @@ def preprocess_network_material(node):
     node_name = node["name"]
     connections = node["connections"]
     new_connections = {}
-    for i in ["surfaceShader", "volumeShader"]:
+    for i in ["rman__surface", "surfaceShader", "volumeShader"]:
         connection = connections.get(i)
         if connection:
             new_connections["prmanBxdf"] = connection
             break
-    displacement_connection = connections.get("displacementShader")
-    if displacement_connection:
-        new_connections["prmanDisplacement"] = displacement_connection
+    for i in ["rman__displacement", "displacementShader"]:
+        connection = connections.get(i)
+        if connection:
+            new_connections["prmanDisplacement"] = connection
+            break
     nodes[node_name] = node
     node["connections"] = new_connections
     return nodes
