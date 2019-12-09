@@ -23,7 +23,7 @@
     ------------------------------
 """
 
-__version__ = "3.3.2"
+__version__ = "3.3.4"
 
 try:
     import xml.etree.cElementTree as ET

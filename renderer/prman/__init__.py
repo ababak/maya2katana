@@ -158,6 +158,22 @@ def preprocess_displacement(node):
     return nodes
 
 
+def get_ramp_attr(node_name, attr):
+    """
+    Translate the old attribute names if needed
+    """
+    if cmds.attributeQuery("colorRamp", node=node_name, exists=True):
+        new_ramp_attributes = {
+            r"^colors\[(\d+)\]$": r"^colorRamp\[(\d+)\]\.colorRamp_Color$",
+            "colors[{index}]": "colorRamp[{index}].colorRamp_Color",
+            "{node}.colors[{index}]": "{node}.colorRamp[{index}].colorRamp_Color",
+            "{node}.positions[{index}]": "{node}.colorRamp[{index}].colorRamp_Position",
+            "{node}.positions": "{node}.colorRamp",
+        }
+        attr = new_ramp_attributes.get(attr, attr)
+    return attr
+
+
 def preprocess_ramp(node):
     """
     Preprocess ramp
@@ -170,10 +186,12 @@ def preprocess_ramp(node):
     attributes = node["attributes"]
     colors = {}
     color_entry_list_size = cmds.getAttr(
-        "{node}.positions".format(node=node_name), size=True
+        get_ramp_attr(node_name, "{node}.positions").format(node=node_name), size=True
     )
     for connection_name, connection in connections.items():
-        colors_match = re.search(r"^colors\[(\d+)\]$", connection_name)
+        colors_match = re.search(
+            get_ramp_attr(node_name, r"^colors\[(\d+)\]$"), connection_name
+        )
         if not colors_match:
             continue
         i = int(colors_match.group(1))
@@ -191,7 +209,9 @@ def preprocess_ramp(node):
             if not connection:
                 hsl_name = utils.unique_name(node_name + "HSL" + str(i))
                 value_color = cmds.getAttr(
-                    "{node}.colors[{index}]".format(node=node_name, index=i)
+                    get_ramp_attr(node_name, "{node}.colors[{index}]").format(
+                        node=node_name, index=i
+                    )
                 )
                 value_color = value_color[0]
                 hsl = {
@@ -209,7 +229,9 @@ def preprocess_ramp(node):
                 }
             array_connections["i" + str(i)] = connection
             if i in colors:
-                del connections["colors[{}]".format(i)]
+                del connections[
+                    get_ramp_attr(node_name, "colors[{index}]").format(index=i)
+                ]
         connector = {
             "name": connector_name,
             "type": "ShadingNodeArrayConnector",
@@ -237,18 +259,25 @@ def process_ramp(xml_group, node):
     if not node_type:
         return
     color_entry_list_size = cmds.getAttr(
-        "{node}.positions".format(node=node_name), size=True
+        get_ramp_attr(node_name, "{node}.positions").format(node=node_name), size=True
     )
     color_entry_list = []
     color_entry_list_indices = sorted(
-        cmds.getAttr("{node}.positions".format(node=node_name), multiIndices=True)
+        cmds.getAttr(
+            get_ramp_attr(node_name, "{node}.positions").format(node=node_name),
+            multiIndices=True,
+        )
     )
     for i in color_entry_list_indices:
         value_position = cmds.getAttr(
-            "{node}.positions[{index}]".format(node=node_name, index=i)
+            get_ramp_attr(node_name, "{node}.positions[{index}]").format(
+                node=node_name, index=i
+            )
         )
         value_color = cmds.getAttr(
-            "{node}.colors[{index}]".format(node=node_name, index=i)
+            get_ramp_attr(node_name, "{node}.colors[{index}]").format(
+                node=node_name, index=i
+            )
         )
         value_color = value_color[0]
         color_entry_list.append({"colors": value_color, "positions": value_position})
